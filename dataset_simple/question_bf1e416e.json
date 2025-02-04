@@ -1,0 +1,619 @@
+{
+  "question_id": "bf1e416e",
+  "original": "integrate(x*log(x), x)",
+  "variants": [
+    {
+      "original": "integrate(x*log(x), x)",
+      "requested_difficulty": "easier",
+      "variant": "integrate(log(x)*x, x)",
+      "reasoning": "As a calculus professor, I prefer to simplify the integral by using integration by parts. We can let \\(u = \\log(x)\\) and \\(dv = x \\, dx\\) which gives us a clearer path to the solution.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "equivalent",
+      "transformations_used": [
+        "change a function to an easier one",
+        "simplify composite trigonometric functions",
+        "convert a product to a simpler sum",
+        "simplify the denominator",
+        "reduce an exponent"
+      ],
+      "solution": "x**2*log(x)/2 - x**2/4",
+      "evaluations": {
+        "7.044": 36.02278880164372,
+        "8.374": 56.978416737905896,
+        "1.421": -0.15020743883100837
+      },
+      "timestamp": "2025-02-02T23:10:05.676144Z"
+    },
+    {
+      "original": "integrate(x*log(x), x)",
+      "requested_difficulty": "easier",
+      "variant": "integrate(x*(x - 1)/(x - 1), x)",
+      "reasoning": "As a creative mathematician, I see that \\(\\log(x)\\) can be replaced with the sum of its series expansion near \\(x=1\\) to simplify the integral for small values around this point.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "equivalent",
+      "transformations_used": [
+        "change a function to an easier one",
+        "simplify composite trigonometric functions",
+        "convert a product to a simpler sum",
+        "simplify the denominator",
+        "reduce an exponent"
+      ],
+      "solution": "x**2/2",
+      "evaluations": {
+        "1.78": 1.5838010697711535,
+        "3.516": 6.180281537910637,
+        "-2.898": 4.198571063583295
+      },
+      "timestamp": "2025-02-02T23:10:05.670597Z"
+    },
+    {
+      "original": "integrate(x*log(x), x)",
+      "requested_difficulty": "easier",
+      "variant": "integrate(x*(x - 1)**2, x)",
+      "reasoning": "As a student who enjoys polynomials, I can rewrite \\(\\log(x)\\) in terms of a polynomial approximation using Taylor expansion. This will make the integration straightforward.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "easier",
+      "transformations_used": [
+        "change a function to an easier one",
+        "simplify composite trigonometric functions",
+        "convert a product to a simpler sum",
+        "simplify the denominator",
+        "reduce an exponent"
+      ],
+      "solution": "x**4/4 - 2*x**3/3 + x**2/2",
+      "evaluations": {
+        "-4.097": 124.64655931241742,
+        "1.57": 0.17134879304239314,
+        "-6.581": 680.667822281693
+      },
+      "timestamp": "2025-02-02T23:10:05.686596Z"
+    },
+    {
+      "original": "integrate(x*log(x), x)",
+      "requested_difficulty": "easier",
+      "variant": "integrate(x*exp(log(x)), x)",
+      "reasoning": "From the perspective of a theoretical physicist, transforming the logarithm into an exponential function might help clarify the structure of the integral, using the identity \\(y = e^{\\log(x)}\\).",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "equivalent",
+      "transformations_used": [
+        "change a function to an easier one",
+        "simplify composite trigonometric functions",
+        "convert a product to a simpler sum",
+        "simplify the denominator",
+        "reduce an exponent"
+      ],
+      "solution": "x**3/3",
+      "evaluations": {
+        "1.812": 1.981662105592141,
+        "9.75": 308.945596161853,
+        "-0.931": -0.2686497129974965
+      },
+      "timestamp": "2025-02-02T23:10:05.672431Z"
+    },
+    {
+      "original": "integrate(x*log(x), x)",
+      "requested_difficulty": "easier",
+      "variant": "integrate(x*(1 - (1 - x)**2/2), x)",
+      "reasoning": "As an engineer, I prefer practical approaches, so I can simplify the logarithmic function using a computational tool that approximates \\(\\log(x)\\) for numerical methods.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "easier",
+      "transformations_used": [
+        "change a function to an easier one",
+        "simplify composite trigonometric functions",
+        "convert a product to a simpler sum",
+        "simplify the denominator",
+        "reduce an exponent"
+      ],
+      "solution": "-x**4/8 + x**3/3 + x**2/4",
+      "evaluations": {
+        "-5.037": -116.69388415491443,
+        "3.768": -3.8151362874745978,
+        "-6.282": -267.42895208814406
+      },
+      "timestamp": "2025-02-02T23:10:05.725318Z"
+    },
+    {
+      "original": "integrate(x*log(x), x)",
+      "requested_difficulty": "easier",
+      "variant": "integrate(x*x/2, x)",
+      "reasoning": "Thinking like a creative mathematician, I can leverage the fact that integrating \\(\\log(x)\\) might be easier if we relate it to \\(\\int x \\, dx\\), simplifying the integral considerably.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "easier",
+      "transformations_used": [
+        "change a function to an easier one",
+        "simplify composite trigonometric functions",
+        "convert a product to a simpler sum",
+        "simplify the denominator",
+        "reduce an exponent"
+      ],
+      "solution": "x**3/6",
+      "evaluations": {
+        "7.7": 76.10092206812627,
+        "-0.666": -0.049169946063474995,
+        "-4.434": -14.524793330858598
+      },
+      "timestamp": "2025-02-02T23:10:07.200791Z"
+    },
+    {
+      "original": "integrate(x*log(x), x)",
+      "requested_difficulty": "easier",
+      "variant": "integrate(log(x), x)",
+      "reasoning": "As a calculus professor focused on elegant simplifications, I can see that \\( \\log(x) \\) can be simplified by using integration by parts. I will consider the integral of \\( \\log(x) \\) which is simpler than \\( x \\log(x) \\).",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "easier",
+      "transformations_used": [
+        "reduce the number of terms in the expression",
+        "change a function to an easier one",
+        "lower a coefficient"
+      ],
+      "solution": "x*log(x) - x",
+      "evaluations": {
+        "2.409": -0.2913651581184051,
+        "3.588": 0.9958873748465129,
+        "6.592": 5.8398374560709
+      },
+      "timestamp": "2025-02-02T23:10:04.099701Z"
+    },
+    {
+      "original": "integrate(x*log(x), x)",
+      "requested_difficulty": "easier",
+      "variant": "integrate(x**2 / 2, x)",
+      "reasoning": "As a student who prefers polynomials and rational functions, I can express \\( x \\log(x) \\) as \\( x \\cdot \\frac{1}{2} \\cdot x^2 \\) when looking for rational functions. I will focus on integrating simpler polynomial terms.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "easier",
+      "transformations_used": [
+        "reduce the number of terms in the expression",
+        "change a function to an easier one",
+        "lower a coefficient"
+      ],
+      "solution": "x**3/6",
+      "evaluations": {
+        "-6.95": -55.93940142128314,
+        "4.613": 16.35730757200445,
+        "-7.577": -72.48927670992171
+      },
+      "timestamp": "2025-02-02T23:10:04.172645Z"
+    },
+    {
+      "original": "integrate(x*log(x), x)",
+      "requested_difficulty": "easier",
+      "variant": "integrate(x**2 * log(x) / 2, x)",
+      "reasoning": "As a theoretical physicist who favors trigonometric forms, I can relate \\( \\log(x) \\) to exponential functions through \\( e^{\\log(x)} = x \\). This might lead to simpler exponent integrals.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "easier",
+      "transformations_used": [
+        "reduce the number of terms in the expression",
+        "change a function to an easier one",
+        "lower a coefficient"
+      ],
+      "solution": "x**3*log(x)/6 - x**3/18",
+      "evaluations": {
+        "4.897": 24.570727334824404,
+        "2.827": 2.656736142437542,
+        "9.694": 294.2946361478396
+      },
+      "timestamp": "2025-02-02T23:10:04.114870Z"
+    },
+    {
+      "original": "integrate(x*log(x), x)",
+      "requested_difficulty": "easier",
+      "variant": "integrate(x, x)",
+      "reasoning": "An engineer like me focuses on practical computation. Instead of the original integral, I can break it down to simpler components, integrating something like \\( x \\) or \\( \\log(x) \\) separately, which is more straightforward.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "easier",
+      "transformations_used": [
+        "reduce the number of terms in the expression",
+        "change a function to an easier one",
+        "lower a coefficient"
+      ],
+      "solution": "x**2/2",
+      "evaluations": {
+        "-0.917": 0.4205279474520582,
+        "-3.382": 5.718349572174664,
+        "5.489": 15.064475514198982
+      },
+      "timestamp": "2025-02-02T23:10:04.131092Z"
+    },
+    {
+      "original": "integrate(x*log(x), x)",
+      "requested_difficulty": "easier",
+      "variant": "integrate(log(x) / x, x)",
+      "reasoning": "A creative mathematician might utilize symmetry or periodicity properties of logarithm functions to transform this into a more manageable form while finding bounds.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "easier",
+      "transformations_used": [
+        "reduce the number of terms in the expression",
+        "change a function to an easier one",
+        "lower a coefficient"
+      ],
+      "solution": "log(x)**2/2",
+      "evaluations": {
+        "8.201": 2.2138505653608234,
+        "2.597": 0.45524627912464943,
+        "4.925": 1.2708018932368566
+      },
+      "timestamp": "2025-02-02T23:10:04.098552Z"
+    },
+    {
+      "original": "integrate(x*log(x), x)",
+      "requested_difficulty": "easier",
+      "variant": "integrate(x*log(1), x)",
+      "reasoning": "As a creative mathematician, I notice that I can consider the function \\(x\\) multiplied by a constant factor of \\(\\log(1)\\) to remove the logarithmic complexity altogether. This makes it a straightforward polynomial integral.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "easier",
+      "transformations_used": [
+        "simplify composite trigonometric functions",
+        "remove logarithmic terms",
+        "eliminate absolute value terms"
+      ],
+      "solution": "0",
+      "evaluations": {
+        "0.519": 0.0,
+        "-0.666": 0.0,
+        "-3.179": 0.0
+      },
+      "timestamp": "2025-02-02T23:10:04.096476Z"
+    },
+    {
+      "original": "integrate(x*log(x), x)",
+      "requested_difficulty": "easier",
+      "variant": "integrate(x * log(2), x)",
+      "reasoning": "From a number theory perspective, I enjoy working with powers. Reformulating the integral to the form involving natural logs as base transformations simplifies exposure to their properties.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "easier",
+      "transformations_used": [
+        "simplify composite trigonometric functions",
+        "remove logarithmic terms",
+        "eliminate absolute value terms"
+      ],
+      "solution": "x**2*log(2)/2",
+      "evaluations": {
+        "-7.318": 18.56082172411713,
+        "-9.219": 29.452385103716242,
+        "8.781": 26.72447788155418
+      },
+      "timestamp": "2025-02-02T23:10:04.183697Z"
+    },
+    {
+      "original": "integrate(x*log(x), x)",
+      "requested_difficulty": "easier",
+      "variant": "integrate((1/2) * x**2, x)",
+      "reasoning": "As a geometry enthusiast, I think in terms of area under curves. Therefore, I will transform the integral into a straightforward geometric area calculation by expressing it purely in terms of area functions without logarithms.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "easier",
+      "transformations_used": [
+        "simplify composite trigonometric functions",
+        "remove logarithmic terms",
+        "eliminate absolute value terms"
+      ],
+      "solution": "x**3/6",
+      "evaluations": {
+        "-5.225": -23.780982862243544,
+        "-0.777": -0.07825678623056265,
+        "9.683": 151.33322234602812
+      },
+      "timestamp": "2025-02-02T23:10:04.097619Z"
+    },
+    {
+      "original": "integrate(x*log(x), x)",
+      "requested_difficulty": "easier",
+      "variant": "integrate(x * 1, x)",
+      "reasoning": "Adopting the engineer's practical viewpoint again, I can utilize numerical integration directly, simplifying the handling of logarithmic expressions through approximations and returning to computational roots.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "easier",
+      "transformations_used": [
+        "simplify composite trigonometric functions",
+        "remove logarithmic terms",
+        "eliminate absolute value terms"
+      ],
+      "solution": "x**2/2",
+      "evaluations": {
+        "7.104": 25.23582851877084,
+        "3.076": 4.72947347734135,
+        "7.749": 30.024146502797688
+      },
+      "timestamp": "2025-02-02T23:10:04.111356Z"
+    },
+    {
+      "original": "integrate(x*log(x), x)",
+      "requested_difficulty": "easier",
+      "variant": "integrate(0*x + x, x)",
+      "reasoning": "As an enthusiastic student, I will treat \\(\\log(x)\\) as a negligible term and directly focus on integrating \\(x\\) for fundamental understanding, to demonstrate simplicity in calculus.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "easier",
+      "transformations_used": [
+        "simplify composite trigonometric functions",
+        "remove logarithmic terms",
+        "eliminate absolute value terms"
+      ],
+      "solution": "x**2/2",
+      "evaluations": {
+        "9.495": 45.07387447377072,
+        "-9.568": 45.774436991823734,
+        "4.128": 8.520300017706388
+      },
+      "timestamp": "2025-02-02T23:10:04.266332Z"
+    },
+    {
+      "original": "integrate(x*log(x), x)",
+      "requested_difficulty": "easier",
+      "variant": "integrate(x * log(x), x)",
+      "reasoning": "As a calculus professor, I appreciate simplifications. We can use integration by parts, letting \\( u = \\log(x) \\) which makes it easier to handle.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "equivalent",
+      "transformations_used": [
+        "simplify the denominator",
+        "change a function to an easier one",
+        "eliminate absolute value terms"
+      ],
+      "solution": "x**2*log(x)/2 - x**2/4",
+      "evaluations": {
+        "6.198": 25.432578520996053,
+        "5.205": 15.574233264181398,
+        "9.117": 71.07932869772696
+      },
+      "timestamp": "2025-02-02T23:10:05.014722Z"
+    },
+    {
+      "original": "integrate(x*log(x), x)",
+      "requested_difficulty": "easier",
+      "variant": "integrate(x * (x - 1 + (x**2)/2), x)",
+      "reasoning": "As a student who enjoys polynomials, I can analyze the logarithm and develop a polynomial approximation for small values of \\( x \\), which could simplify calculations.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "easier",
+      "transformations_used": [
+        "simplify the denominator",
+        "change a function to an easier one",
+        "eliminate absolute value terms"
+      ],
+      "solution": "x**4/8 + x**3/3 - x**2/2",
+      "evaluations": {
+        "-2.62": -3.5372112031304237,
+        "-8.528": 418.04983093248177,
+        "1.111": 0.030378961742609525
+      },
+      "timestamp": "2025-02-02T23:10:04.585072Z"
+    },
+    {
+      "original": "integrate(x*log(x), x)",
+      "requested_difficulty": "easier",
+      "variant": "integrate(x * exp(log(x)), x)",
+      "reasoning": "As a theoretical physicist, I can express the logarithm in terms of exponential functions, and subsequently relate it back to manageable integrals.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "equivalent",
+      "transformations_used": [
+        "simplify the denominator",
+        "change a function to an easier one",
+        "eliminate absolute value terms"
+      ],
+      "solution": "x**3/3",
+      "evaluations": {
+        "1.766": 1.8356862859301144,
+        "-8.169": -181.71308656461653,
+        "3.912": 19.95853117579823
+      },
+      "timestamp": "2025-02-02T23:10:04.646279Z"
+    },
+    {
+      "original": "integrate(x*log(x), x)",
+      "requested_difficulty": "easier",
+      "variant": "integrate(x * (x/2 - 1), x)",
+      "reasoning": "From a number theorist's perspective, I focus on approximating the logarithm with rational coefficients, testing specific values that yield simpler forms.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "easier",
+      "transformations_used": [
+        "simplify the denominator",
+        "change a function to an easier one",
+        "eliminate absolute value terms"
+      ],
+      "solution": "x**3/6 - x**2/2",
+      "evaluations": {
+        "-1.169": -0.9503601500090895,
+        "-3.837": -16.775138543613984,
+        "1.017": -0.34198492509167233
+      },
+      "timestamp": "2025-02-02T23:10:04.568957Z"
+    },
+    {
+      "original": "integrate(x*log(x), x)",
+      "requested_difficulty": "easier",
+      "variant": "integrate(x * (x - 1), x)",
+      "reasoning": "As a student who prefers polynomials, I recognize \\( x \\log(x) \\) behaves like a polynomial near \\( x = 1 \\). Let\u2019s investigate small values of \\( x \\) and approximate \\( \\log(x) \\).",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "easier",
+      "transformations_used": [
+        "convert a product to a simpler sum",
+        "replace transcendental functions with simpler algebraic ones",
+        "simplify composite trigonometric functions",
+        "remove a complicated term",
+        "drop a subexpression"
+      ],
+      "solution": "x**3/3 - x**2/2",
+      "evaluations": {
+        "-5.625": -75.14293656690504,
+        "8.65": 178.32676937295108,
+        "7.216": 99.22316485322537
+      },
+      "timestamp": "2025-02-02T23:10:06.199075Z"
+    },
+    {
+      "original": "integrate(x*log(x), x)",
+      "requested_difficulty": "easier",
+      "variant": "integrate(x * (x - 1 - 0.5*(x-1)**2), x)",
+      "reasoning": "As a theoretical physicist, I see that logarithmic expressions often have exponential counterparts. Let's analyze \\( \\log(x) \\) through its series expansion near \\( x = 1 \\).",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "easier",
+      "transformations_used": [
+        "convert a product to a simpler sum",
+        "replace transcendental functions with simpler algebraic ones",
+        "simplify composite trigonometric functions",
+        "remove a complicated term",
+        "drop a subexpression"
+      ],
+      "solution": "-0.125*x**4 + 0.666666666666667*x**3 - 0.75*x**2",
+      "evaluations": {
+        "2.693": 1.006650999235289,
+        "0.427": -0.08898697652307172,
+        "9.737": -579.3360120282767
+      },
+      "timestamp": "2025-02-02T23:10:06.341478Z"
+    },
+    {
+      "original": "integrate(x*log(x), x)",
+      "requested_difficulty": "easier",
+      "variant": "integrate(1 * log(2), x)",
+      "reasoning": "As a number theorist, I am intrigued by the properties of logarithms and primes. I will consider the integral from a smaller domain, focusing on integer values instead of general \\( x \\).",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "easier",
+      "transformations_used": [
+        "convert a product to a simpler sum",
+        "replace transcendental functions with simpler algebraic ones",
+        "simplify composite trigonometric functions",
+        "remove a complicated term",
+        "drop a subexpression"
+      ],
+      "solution": "x*log(2)",
+      "evaluations": {
+        "-4.743": -3.287294220464333,
+        "-5.028": -3.4849975608746555,
+        "-9.899": -6.8611894334795664
+      },
+      "timestamp": "2025-02-02T23:10:06.201501Z"
+    },
+    {
+      "original": "integrate(x*log(x), x)",
+      "requested_difficulty": "easier",
+      "variant": "integrate(x * (1 - 1/x), x)",
+      "reasoning": "As a creative mathematician, I can reduce the term inside the logarithm. Instead of integrating directly, let\u2019s consider a function that approximates \\( \\log(x) \\) for \\( x > 1 \\).",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "easier",
+      "transformations_used": [
+        "convert a product to a simpler sum",
+        "replace transcendental functions with simpler algebraic ones",
+        "simplify composite trigonometric functions",
+        "remove a complicated term",
+        "drop a subexpression"
+      ],
+      "solution": "x**2/2 - x",
+      "evaluations": {
+        "5.643": 10.279745715984133,
+        "2.462": 0.5692738583464337,
+        "-0.214": 0.2365068316741405
+      },
+      "timestamp": "2025-02-02T23:10:07.855708Z"
+    },
+    {
+      "original": "integrate(x*log(x), x)",
+      "requested_difficulty": "easier",
+      "variant": "integrate(log(1 + x), x)",
+      "reasoning": "As an engineer who values practical application, let\u2019s break the function using limits. Since \\( x \\log(x) \\) behaves predictably, we could examine just \\( \\log(x) \\) directly at lower bounds.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "easier",
+      "transformations_used": [
+        "convert a product to a simpler sum",
+        "replace transcendental functions with simpler algebraic ones",
+        "simplify composite trigonometric functions",
+        "remove a complicated term",
+        "drop a subexpression"
+      ],
+      "solution": "x*log(x + 1) - x + log(x + 1)",
+      "evaluations": {
+        "9.283": 14.680422874701717,
+        "2.55": 1.9474226674821646,
+        "1.071": 0.437004206745641
+      },
+      "timestamp": "2025-02-02T23:10:06.454470Z"
+    },
+    {
+      "original": "integrate(x*log(x), x)",
+      "requested_difficulty": "easier",
+      "variant": "integrate(u, x)",
+      "reasoning": "As a creative mathematician, I enjoy unusual substitutions. I will consider the expression \\( \\log(x) \\) with its substitution to explore: let \\( u = x \\), transforming the integral into a more direct format, removing the logarithm for simplicity.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "easier",
+      "transformations_used": [
+        "drop a subexpression",
+        "eliminate a radical",
+        "lower a coefficient",
+        "change a function to an easier one",
+        "replace a complex fraction with a simpler one"
+      ],
+      "solution": null,
+      "evaluations": {},
+      "timestamp": "2025-02-02T23:10:06.257081Z"
+    },
+    {
+      "original": "integrate(x*log(x), x)",
+      "requested_difficulty": "easier",
+      "variant": "integrate(x**2, x)",
+      "reasoning": "As a student focusing on polynomials, I find \\( x \\log(x) \\) quite complicated. To simplify our efforts, let\u2019s focus on integrating just a power of \\( x \\), which is much more approachable and allows us to avoid logarithmic complexity.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "easier",
+      "transformations_used": [
+        "drop a subexpression",
+        "eliminate a radical",
+        "lower a coefficient",
+        "change a function to an easier one",
+        "replace a complex fraction with a simpler one"
+      ],
+      "solution": "x**3/3",
+      "evaluations": {
+        "8.106": 177.52295329650727,
+        "8.026": 172.35327885917533,
+        "1.905": 2.3034146118536873
+      },
+      "timestamp": "2025-02-02T23:10:06.325265Z"
+    },
+    {
+      "original": "integrate(x*log(x), x)",
+      "requested_difficulty": "easier",
+      "variant": "integrate(1, x)",
+      "reasoning": "I am a creative mathematician who enjoys changing functions to simpler forms. Let\u2019s drop the logarithm entirely and just focus on a basic polynomial, which makes the integration process much simpler.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "easier",
+      "transformations_used": [
+        "drop a subexpression",
+        "eliminate a radical",
+        "lower a coefficient",
+        "change a function to an easier one",
+        "replace a complex fraction with a simpler one"
+      ],
+      "solution": "x",
+      "evaluations": {
+        "-2.664": -2.663832273610587,
+        "-5.087": -5.086717739400973,
+        "-1.361": -1.3608641486013955
+      },
+      "timestamp": "2025-02-02T23:10:06.322062Z"
+    }
+  ],
+  "num_valid_variants": 28
+}
