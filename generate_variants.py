@@ -25,7 +25,7 @@ from datetime import datetime
 import concurrent.futures
 import sympy as sp
 
-MODEL = "gpt-4o-mini"
+MODEL = "meta-llama/Llama-3.2-3B-Instruct"
 TIMEOUT_SECONDS = 2  # Maximum allowed seconds for integration
 
 # Import our LLM-based generation function from the provided utils.inference module.
