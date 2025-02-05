@@ -4,7 +4,7 @@ import datasets
 
 if __name__ == '__main__':
     # Path to the directory containing your JSON files
-    data_dir = 'dataset'  # Adjust this path as needed
+    data_dir = 'dataset_simple'  # Adjust this path as needed
 
     samples = []
     # Define the integration-specific instruction.
@@ -29,6 +29,10 @@ if __name__ == '__main__':
                 integration_expr = variant.get("variant", "").strip()
                 if not integration_expr:
                     continue  # Skip if there is no variant text.
+                
+                # Check if verification_passed is True
+                if not variant.get("verification_passed", False):
+                    continue  # Skip if verification_passed is not True
                 
                 # Build the prompt by combining the integration expression with the instruction.
                 prompt_content = f"{integration_expr}\n{instruction_following}"

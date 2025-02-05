@@ -3,17 +3,18 @@ eval_intergrals.py
 
 This script evaluates whether an LLM-generated solution for an integral is correct.
 It:
-  1. Prompts the LLM to solve an integral (provided as text) and return the antiderivative 
-     wrapped in <answer> ... </answer> tags (if applicable) as a valid Python sympy expression.
-  2. Extracts the candidate solution from within the <answer> tags (for evaluation) while also
-     retaining the full raw LLM response.
-  3. Computes the actual solution using sympy (based solely on the input integral).
-  4. Verifies the candidate solution by differentiating it and comparing against the original integrand
-     at several random points (to 5 decimal places).
-  5. Returns the candidate solution, the computed solution, the full raw LLM response, and a correctness flag.
+  1. Prompts the LLM to solve an integral (provided as text) and return the solution 
+     wrapped in <answer> ... </answer> tags as a valid Python sympy expression.
+     For definite integrals (with bounds specified as "from x=... to x=..."), the answer should be the numerical value.
+     For indefinite integrals, the answer should be an antiderivative.
+  2. Extracts the candidate solution from within the <answer> tags while retaining the full raw LLM response.
+  3. Verifies the candidate solution using numerical methods:
+       - For definite integrals, it compares the candidate value with a numerical quadrature result.
+       - For indefinite integrals, it evaluates F(b)-F(a) on random intervals and compares with numerical integration.
+  4. Returns the candidate solution, the computed solution (or numerical result), the full raw LLM response, and a correctness flag.
   
-Additionally, this script loads a list of integrals from base_questions.py, benchmarks the model’s performance
-across many integrals, prints progress as well as an overall accuracy summary, and optionally saves a new Python file
+Additionally, this script loads a list of integrals from a questions file, benchmarks the model's performance
+across many integrals, prints progress and an overall accuracy summary, and optionally saves a new Python file
 with only the integrals that were answered incorrectly.
 
 Usage example:
@@ -24,24 +25,43 @@ import re
 import random
 import sympy as sp
 import asyncio
+import mpmath as mp  # for numerical integration
 from utils.inference import generate_text  # Ensure this function is available
-from questions.intergration_mit_bee_questions import BASE_QUESTIONS as QUESTIONS
+from eval_questions import QUESTIONS_INCORRECT as QUESTIONS
 
 # ---------------- Configuration ----------------
 SAVE_INCORRECT_QUESTIONS = True  # Set to True to save a new file with the integrals answered incorrectly.
-INCORRECT_FILENAME = "incorrect_mit_bee_questions.py"  # Name of the file to save incorrect questions.
+INCORRECT_FILENAME = "incorrect_hardest_questions.py"  # Name of the file to save incorrect questions.
 
 # ---------------- Helper Functions ----------------
 
+def preprocess_integral_text(text: str) -> str:
+    """
+    Preprocesses the integral text to help Sympy parse advanced constructs.
+    
+    Replacements performed:
+      - Replace "sum(" with "Sum(" so that summations are parsed as sympy.Sum.
+      - Replace "ContinuedFraction(" with "continued_fraction(" so that they are recognized.
+    """
+    text = text.replace("sum(", "Sum(")
+    text = text.replace("ContinuedFraction(", "continued_fraction(")
+    return text
+
 def extract_candidate_solution(text: str) -> str:
     """
-    Extracts a candidate solution from the LLM response by looking for text wrapped in <answer> and </answer> tags.
+    Extracts a candidate solution from the LLM response by looking for text wrapped in <answer> and </answer> tags
+    or [box] and [/box] tags.
     
     If these tags are not found, the entire text is returned.
     """
     match = re.search(r"<answer>(.*?)</answer>", text, re.IGNORECASE | re.DOTALL)
     if match:
         return match.group(1).strip()
+    
+    match = re.search(r"\[box\](.*?)\[/box\]", text, re.IGNORECASE | re.DOTALL)
+    if match:
+        return match.group(1).strip()
+    
     return text.strip()
 
 def preprocess_candidate_solution(solution: str) -> str:
@@ -52,7 +72,8 @@ def preprocess_candidate_solution(solution: str) -> str:
     This function:
       - Removes LaTeX math delimiters such as "\(" and "\)", as well as "$" signs.
       - Replaces "\arctan" with "atan" (and you can add more replacements as needed).
-      - Removes any trailing "+ C".
+      - Replaces "\ln" with "log".
+      - Removes any trailing "+ C" or constant additions.
     """
     # Remove LaTeX delimiters
     solution = solution.replace(r"\(", "").replace(r"\)", "")
@@ -64,50 +85,107 @@ def preprocess_candidate_solution(solution: str) -> str:
     solution = re.sub(r"\+?\s*C", "", solution)
     return solution.strip()
 
+# Define a locals dictionary to help Sympy parse functions and constants.
+LOCALS_DICT = {
+    "pi": sp.pi,
+    "oo": sp.oo,
+    "sin": sp.sin,
+    "cos": sp.cos,
+    "tan": sp.tan,
+    "cot": sp.cot,
+    "csc": sp.csc,
+    "sec": sp.sec,
+    "log": sp.log,
+    "exp": sp.exp,
+    "factorial": sp.factorial,
+    "Sum": sp.Sum,
+    "sum": sp.Sum,  # map lowercase 'sum' to sympy.Sum
+    "arctan": sp.atan,
+    "arctanh": sp.atanh,
+    "arccos": sp.acos,
+    "sinh": sp.sinh,
+    "cosh": sp.cosh,
+    "continued_fraction": sp.continued_fraction,
+}
+
 async def evaluate_llm_solution(integral_text: str, num_tests: int = 5, model: str = "gpt-4o-mini", tol: float = 1e-5):
     """
-    Uses the LLM to generate a solution for the given integral and then verifies its correctness.
+    Uses the LLM to generate a solution for the given integral and then verifies its correctness using numerical methods.
+    
+    This function supports both definite and indefinite integrals.
+    
+    For definite integrals (with bounds specified as 'from x=<lower> to x=<upper>'):
+        - The candidate solution is expected to be the value of the definite integral.
+        - Verification is done by comparing the candidate value with mp.quad numerical integration.
+    
+    For indefinite integrals:
+        - The candidate solution is expected to be an antiderivative.
+        - Verification is done by evaluating F(b)-F(a) for random intervals and comparing with mp.quad.
     
     Parameters:
-        integral_text: A string of the form "integrate(<integrand>, x)"
-        num_tests: Number of random test points for verification.
-        tol: Tolerance (to 5 decimal places) for numerical verification.
+        integral_text: A string of the form "integrate(<integrand>, x)" or 
+                       "integrate(<integrand>, x) from x=<lower> to x=<upper>"
+        num_tests: Number of random test intervals for verification (only used for indefinite integrals).
+        tol: Tolerance for numerical verification.
     
     Returns:
         A tuple (candidate_solution, computed_solution, raw_llm_solution, is_correct) where:
-            - candidate_solution: The solution extracted from the LLM's output (from within <answer> tags) after preprocessing.
-            - computed_solution: The antiderivative computed by sympy (or an error message if integration failed).
+            - candidate_solution: The solution extracted from the LLM's output after preprocessing.
+            - computed_solution: The computed solution (or numerical result).
             - raw_llm_solution: The full raw response returned by the LLM.
             - is_correct: True if the candidate solution appears to be correct.
     """
+    # Preprocess the integral text to handle advanced constructs.
+    integral_text = preprocess_integral_text(integral_text)
     x = sp.symbols('x')
     
-    # Extract the integrand and compute the actual solution using sympy.
-    integrand_pattern = r"integrate\((.+),\s*x\)"
-    m = re.search(integrand_pattern, integral_text)
+    # Updated regex to extract the integrand and optional bounds.
+    pattern = r"integrate\((.+),\s*x\)(?:\s*from\s*x\s*=\s*(.+?)\s*to\s*x\s*=\s*(.+))?"
+    m = re.search(pattern, integral_text)
     if not m:
         raise ValueError("Could not extract the integrand from the provided integral text.")
+    
+    integrand_str = m.group(1)
+    lower_bound_str = m.group(2)
+    upper_bound_str = m.group(3)
+    
     try:
-        integrand_expr = sp.sympify(m.group(1))
+        integrand_expr = sp.sympify(integrand_str, locals=LOCALS_DICT)
     except Exception as e:
         return "", "Error parsing integrand: " + str(e), "", False
-    print("INTERGRATING")
-    computed_expr = sp.integrate(integrand_expr, x)
-    print("COMPUTED")
-    if computed_expr is None:
-        computed_expr = sp.integrate(integrand_expr, x, meijerg=True)
-    if computed_expr is None:
-        computed_solution = "Could not compute a closed-form antiderivative."
-    else:
-        computed_solution = str(computed_expr)
     
-    # Construct a prompt asking the LLM to solve the integral.
-    prompt = (
-        f"Solve the following integral and return ONLY your answer wrapped in <answer> and </answer> tags.\n"
-        f"Output your answer as a valid Python sympy expression without LaTeX formatting (for example, use 'atan(x)' not '\\arctan(x)').\n\n"
-        f"{integral_text}\n\n"
-        "Do not include any additional commentary or constants of integration."
-    )
+    # Check if bounds are provided (i.e. a definite integral).
+    definite = False
+    if lower_bound_str is not None and upper_bound_str is not None:
+        definite = True
+        try:
+            lower_bound = sp.sympify(lower_bound_str, locals=LOCALS_DICT)
+            upper_bound = sp.sympify(upper_bound_str, locals=LOCALS_DICT)
+        except Exception as e:
+            return "", "Error parsing bounds: " + str(e), "", False
+    
+    # Prepare the prompt based on whether the integral is definite or indefinite.
+    if definite:
+        # Compute the definite integral numerically using mpmath.
+        integrand_func = sp.lambdify(x, integrand_expr, "mpmath")
+        a_val = float(lower_bound.evalf())
+        b_val = float(upper_bound.evalf())
+        computed_value = mp.quad(integrand_func, [a_val, b_val])
+        computed_solution = str(computed_value)
+        prompt = (
+            f"Solve the following definite integral and return ONLY your answer wrapped in <answer> and </answer> tags.\n"
+            f"Output your answer as a valid Python sympy expression. Use 'pi' for π if needed.\n\n"
+            f"{integral_text}\n\n"
+            "Show your full working out before solving"
+        )
+    else:
+        computed_solution = "N/A (numerical verification used for antiderivative)"
+        prompt = (
+            f"Solve the following integral and return ONLY your answer wrapped in <answer> and </answer> tags.\n"
+            f"Output your answer as a valid Python sympy expression without LaTeX formatting (for example, use 'atan(x)' not '\\arctan(x)').\n\n"
+            f"{integral_text}\n\n"
+            "Show your full working out before solving, don't include any constants of integration."
+        )
     
     # Get the full LLM response.
     raw_llm_solution = await generate_text(model, prompt)
@@ -117,27 +195,38 @@ async def evaluate_llm_solution(integral_text: str, num_tests: int = 5, model: s
     candidate_solution = preprocess_candidate_solution(candidate_solution)
     
     try:
-        candidate_expr = sp.sympify(candidate_solution, locals={'C': 0})
+        
+        candidate_expr = sp.sympify(candidate_solution, locals=LOCALS_DICT)
     except Exception as e:
         # If candidate parsing fails, return false.
         return candidate_solution, computed_solution, raw_llm_solution, False
-
-    # Differentiate the candidate solution.
-    derived_expr = sp.diff(candidate_expr, x)
     
-    # Verify the candidate solution by comparing its derivative with the original integrand at random points.
-    is_correct = True
-    for _ in range(num_tests):
-        test_val = random.uniform(-100, 100)  # use a moderate range
+    # Verification step:
+    if definite:
+        # For definite integrals, evaluate the candidate expression and compare with numerical integration.
         try:
-            dv = float(derived_expr.subs({x: test_val}).evalf())
-            iv = float(integrand_expr.subs({x: test_val}).evalf())
-        except Exception as conv_e:
-            # If an evaluation error occurs, skip this test point.
-            continue
-        if abs(dv - iv) > tol:
-            is_correct = False
-            break
+            candidate_value = float(candidate_expr.evalf())
+        except Exception as e:
+            return candidate_solution, computed_solution, raw_llm_solution, False
+        is_correct = abs(candidate_value - float(computed_value)) < tol
+    else:
+        # For indefinite integrals, verify by comparing F(b)-F(a) with the numerical definite integral.
+        candidate_func = sp.lambdify(x, candidate_expr, "mpmath")
+        integrand_func = sp.lambdify(x, integrand_expr, "mpmath")
+        is_correct = True
+        for _ in range(num_tests):
+            a_val = random.uniform(-10, 10)
+            b_val = random.uniform(-10, 10)
+            if abs(b_val - a_val) < 1e-3:
+                continue
+            try:
+                candidate_diff = candidate_func(b_val) - candidate_func(a_val)
+                definite_integral = mp.quad(integrand_func, [a_val, b_val])
+            except Exception as conv_e:
+                continue
+            if abs(candidate_diff - definite_integral) > tol:
+                is_correct = False
+                break
 
     return candidate_solution, computed_solution, raw_llm_solution, is_correct
 
@@ -181,7 +270,8 @@ async def benchmark_integrals(batch_size: int = 10, model: str = "gpt-4o-mini"):
             print("--------------------------------------------------")
             print(f"Integral: {integral_text}")
             print(f"Candidate Solution: {candidate}")
-            print(f"Computed Solution: {computed}")
+            print(f"Raw LLM Response: {raw_response}")
+            # print(f"Computed Solution: {computed}")
             print(f"LLM Correct: {is_correct}")
             print("--------------------------------------------------\n")
         current_accuracy = (correct_count / (batch_start + len(batch))) * 100
@@ -215,12 +305,37 @@ def save_incorrect_questions(results, filename: str):
     except Exception as e:
         print(f"Failed to write incorrect questions to {filename}: {e}")
 
+# Add this function to save the correct questions
+def save_correct_questions(results, filename: str):
+    """
+    Given the benchmarking results, extract the integrals that were answered correctly
+    and save them to a Python file containing a list variable `QUESTIONS_CORRECT`.
+    """
+    correct_integrals = [res["integral"] for res in results if res["correct"]]
+    content = (
+        "# This file is auto-generated and contains the integrals that were answered correctly.\n"
+        "QUESTIONS_CORRECT = [\n"
+    )
+    for integral in correct_integrals:
+        content += f"    {repr(integral)},\n"
+    content += "]\n"
+    
+    try:
+        with open(filename, "w") as f:
+            f.write(content)
+        print(f"Correct questions saved to {filename}")
+    except Exception as e:
+        print(f"Failed to write correct questions to {filename}: {e}")
+
 # ---------------- Main Entry Point ----------------
 
 if __name__ == "__main__":
     async def main():
-        results = await benchmark_integrals(batch_size=10, model="gpt-4o")
+        results = await benchmark_integrals(batch_size=30, model="Qwen/Qwen2.5-7B-Instruct")
         if SAVE_INCORRECT_QUESTIONS:
             save_incorrect_questions(results, INCORRECT_FILENAME)
+        
+        # Add this line to save correct questions
+        save_correct_questions(results, "correct_hardest_questions.py")
     
     asyncio.run(main())

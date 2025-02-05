@@ -11,11 +11,11 @@ import json
 from datetime import datetime
 from pathlib import Path
 from typing import List, Dict
-from incorrect_questions import BASE_QUESTIONS_INCORRECT as QUESTIONS
+from base_questions import BASE_QUESTIONS as QUESTIONS
 from generate_variants import process_integral
-
-BATCH_SIZE = 5  # Number of integrals to process concurrently
-VARIANTS_PER_INTEGRAL = 10  # Number of variants to generate for each integral
+import random
+BATCH_SIZE = 1  # Number of integrals to process concurrently
+VARIANTS_PER_INTEGRAL = 30  # Number of variants to generate for each integral
 DIFFICULTIES = ["easier", "equivalent"]  # We want easier and equivalent variants
 
 async def process_batch(integrals: List[str]) -> List[Dict]:
@@ -39,9 +39,10 @@ async def main():
     # Process integrals in batches
     all_results = []
     total_integrals = len(QUESTIONS)
-    
+    shuffled_questions = QUESTIONS.copy()  # Create a copy of the list
+    random.shuffle(shuffled_questions)  # Shuffle the copy
     for i in range(0, total_integrals, BATCH_SIZE):
-        batch = QUESTIONS[i:i + BATCH_SIZE]
+        batch = shuffled_questions[i:i + BATCH_SIZE]
         print(f"Processing batch {i//BATCH_SIZE + 1}/{(total_integrals + BATCH_SIZE - 1)//BATCH_SIZE}")
         print(f"Integrals {i+1}-{min(i+BATCH_SIZE, total_integrals)} of {total_integrals}")
         

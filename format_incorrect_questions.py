@@ -1,7 +1,7 @@
 import os
 import datasets
 import sympy as sp
-from incorrect_questions import HARDEST_INTEGRALS as QUESTIONS
+from eval_questions import QUESTIONS_INCORRECT as QUESTIONS
 
 def extract_integrand(integral_text: str) -> str:
     """Extract the integrand from an integration problem text."""
@@ -17,7 +17,8 @@ if __name__ == '__main__':
     # Define an instruction for the incorrect questions.
     instruction_following = (
         "Analyze the following integral. Provide ONLY your antiderivative as a valid Python sympy expression "
-        "wrapped in <answer> and </answer> tags. Do not include any extra commentary."
+        "wrapped in <answer> and </answer> tags"
+        "Show your full working out before solving, don't include any constants of integration."
     )
     
     x = sp.symbols('x')

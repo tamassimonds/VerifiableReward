@@ -1,0 +1,834 @@
+[
+  [
+    {
+      "original": "integrate(x**2*exp(-x), x)",
+      "requested_difficulty": "easier",
+      "variant": "integrate(x**2 * exp(-x), x)",
+      "reasoning": "As a calculus professor, I recognize that integration by parts might simplify this integral. Let's set \\( u = x^2 \\) and \\( dv = e^{-x} dx \\) to create a more manageable form.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "equivalent",
+      "transformations_used": [
+        "simplify the denominator",
+        "reduce the degree of a polynomial",
+        "reduce an exponent",
+        "simplify composite trigonometric functions",
+        "reduce the number of terms in the expression"
+      ],
+      "solution": "(-x**2 - 2*x - 2)*exp(-x)",
+      "evaluations": {
+        "-0.86": -2.4096698941032955,
+        "-5.104": -2937.8714034182494,
+        "9.808": -0.006483125603900457
+      },
+      "timestamp": "2025-02-04T23:16:59.405458Z"
+    },
+    {
+      "original": "integrate(x**2*exp(-x), x)",
+      "requested_difficulty": "easier",
+      "variant": "integrate(x * exp(-x), x)",
+      "reasoning": "As a theoretical physicist, I like using the properties of the gamma function. The original integrand can be related to the gamma function for simplification.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "easier",
+      "transformations_used": [
+        "simplify the denominator",
+        "reduce the degree of a polynomial",
+        "reduce an exponent",
+        "simplify composite trigonometric functions",
+        "reduce the number of terms in the expression"
+      ],
+      "solution": "(-x - 1)*exp(-x)",
+      "evaluations": {
+        "0.513": -0.9056870373440797,
+        "-3.246": 57.70506251136493,
+        "9.548": -0.0007525780573309593
+      },
+      "timestamp": "2025-02-04T23:16:59.826150Z"
+    },
+    {
+      "original": "integrate(x**2*exp(-x), x)",
+      "requested_difficulty": "easier",
+      "variant": "integrate(x**2 * (1 - x + x**2/2 - x**3/6 + x**4/24), x)",
+      "reasoning": "From the perspective of a creative mathematician, I can rewrite \\( e^{-x} \\) using its Taylor series expansion for small \\( x \\) values to make the integral more polynomial-like.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "easier",
+      "transformations_used": [
+        "simplify the denominator",
+        "reduce the degree of a polynomial",
+        "reduce an exponent",
+        "simplify composite trigonometric functions",
+        "reduce the number of terms in the expression"
+      ],
+      "solution": "x**7/168 - x**6/36 + x**5/10 - x**4/4 + x**3/3",
+      "evaluations": {
+        "-4.985": -1385.2104186591243,
+        "-2.757": -56.79174809292737,
+        "6.675": 1986.007447379828
+      },
+      "timestamp": "2025-02-04T23:16:59.408560Z"
+    },
+    {
+      "original": "integrate(x**2*exp(-x), x)",
+      "requested_difficulty": "easier",
+      "variant": "integrate(exp(-x) * (x * x), x)",
+      "reasoning": "From the perspective of a creative mathematician, I can express the integrand as a convolution of simpler functions, leading to potential simplifications.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "equivalent",
+      "transformations_used": [
+        "simplify the denominator",
+        "reduce the degree of a polynomial",
+        "reduce an exponent",
+        "simplify composite trigonometric functions",
+        "reduce the number of terms in the expression"
+      ],
+      "solution": "(-x**2 - 2*x - 2)*exp(-x)",
+      "evaluations": {
+        "-4.162": -705.7449795808811,
+        "9.005": -0.012416629582597856,
+        "-7.07": -44537.17043001255
+      },
+      "timestamp": "2025-02-04T23:16:59.802679Z"
+    },
+    {
+      "original": "integrate(x**2*exp(-x), x)",
+      "requested_difficulty": "easier",
+      "variant": "integrate(x**2, x)",
+      "reasoning": "Channeling the spirit of a calculus professor once more, I can consider the integral as approaching the limit of simpler integrals.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "easier",
+      "transformations_used": [
+        "simplify the denominator",
+        "reduce the degree of a polynomial",
+        "reduce an exponent",
+        "simplify composite trigonometric functions",
+        "reduce the number of terms in the expression"
+      ],
+      "solution": "x**3/3",
+      "evaluations": {
+        "-2.837": -7.608297637253327,
+        "-3.695": -16.81013263950964,
+        "4.503": 30.431109625643167
+      },
+      "timestamp": "2025-02-04T23:16:59.686239Z"
+    },
+    {
+      "original": "integrate(x**2*exp(-x), x)",
+      "requested_difficulty": "easier",
+      "variant": "integrate(exp(-x), x)",
+      "reasoning": "As a creative mathematician, I love making clever substitutions. Here we can see that exp(-x) could be thought of as a decay function, and let\u2019s reduce complexity by focusing only on exp(-x). This helps minimize x's influence in the integral.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "easier",
+      "transformations_used": [
+        "drop a subexpression",
+        "replace a complex fraction with a simpler one",
+        "eliminate a radical"
+      ],
+      "solution": "-exp(-x)",
+      "evaluations": {
+        "-0.333": -1.3957830314101147,
+        "4.262": -0.014099828969034396,
+        "-3.396": -29.848571701037326
+      },
+      "timestamp": "2025-02-04T23:16:59.830247Z"
+    },
+    {
+      "original": "integrate(x**2*exp(-x), x)",
+      "requested_difficulty": "easier",
+      "variant": "integrate(x**2 * (1 - x + x**2/2 - x**3/6), x)",
+      "reasoning": "From a theoretical physicist's perspective, I can express the exponential function with its Taylor series expansion to obtain an easier integral. This way, I can focus on integrating a polynomial series rather than the product with an exponential directly.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "easier",
+      "transformations_used": [
+        "drop a subexpression",
+        "replace a complex fraction with a simpler one",
+        "eliminate a radical"
+      ],
+      "solution": "-x**6/36 + x**5/10 - x**4/4 + x**3/3",
+      "evaluations": {
+        "4.227": -78.16230424696211,
+        "-1.596": -4.466176156632625,
+        "4.402": -102.26833904552137
+      },
+      "timestamp": "2025-02-04T23:16:59.559424Z"
+    },
+    {
+      "original": "integrate(x**2*exp(-x), x)",
+      "requested_difficulty": "easier",
+      "variant": "integrate(x, x)",
+      "reasoning": "I\u2019m a number theorist, and I notice that handling power terms can often lead to simpler forms. Thus, taking out unnecessary coefficients might lead to an easier integral.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "easier",
+      "transformations_used": [
+        "drop a subexpression",
+        "replace a complex fraction with a simpler one",
+        "eliminate a radical"
+      ],
+      "solution": "x**2/2",
+      "evaluations": {
+        "4.413": 9.73935875760359,
+        "0.894": 0.3996235512747167,
+        "-9.265": 42.92193225878119
+      },
+      "timestamp": "2025-02-04T23:16:59.761878Z"
+    },
+    {
+      "original": "integrate(x**2*exp(-x), x)",
+      "requested_difficulty": "easier",
+      "variant": "integrate(x**2 * 1, x)",
+      "reasoning": "Looking at the structure of the integral from a creative perspective, I could propose altering the factors to introduce a more straightforward form while maintaining essential characteristics of the function being integrated.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "easier",
+      "transformations_used": [
+        "drop a subexpression",
+        "replace a complex fraction with a simpler one",
+        "eliminate a radical"
+      ],
+      "solution": "x**3/3",
+      "evaluations": {
+        "0.558": 0.05783279911667544,
+        "5.065": 43.3193762068383,
+        "7.233": 126.13710886783494
+      },
+      "timestamp": "2025-02-04T23:16:59.615487Z"
+    },
+    {
+      "original": "integrate(x**2*exp(-x), x)",
+      "requested_difficulty": "easier",
+      "variant": "integrate(2 * exp(-x), x)",
+      "reasoning": "As a theoretical physicist, I like manipulating the expression into a recognizable form. To simplify, I'll focus on integrating \\(e^{-x}\\) while treating the polynomial as a constant.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "easier",
+      "transformations_used": [
+        "drop a subexpression",
+        "replace a complex fraction with a simpler one",
+        "reduce the degree of a polynomial"
+      ],
+      "solution": "-2*exp(-x)",
+      "evaluations": {
+        "-5.583": -531.4829142474541,
+        "2.369": -0.18723959816842128,
+        "2.133": -0.23690181667552906
+      },
+      "timestamp": "2025-02-04T23:16:52.821707Z"
+    },
+    {
+      "original": "integrate(x**2*exp(-x), x)",
+      "requested_difficulty": "easier",
+      "variant": "integrate(x**2 * sin(0), x)",
+      "reasoning": "As a theoretical physicist, I enjoy exploring trigonometric forms. Substituting exponential functions with trigonometric identities can lead to simpler integrals even if that makes it less direct here.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "easier",
+      "transformations_used": [
+        "remove nested functions",
+        "remove a factor",
+        "replace transcendental functions with simpler algebraic ones"
+      ],
+      "solution": "0",
+      "evaluations": {
+        "5.845": 0.0,
+        "-7.012": 0.0,
+        "7.671": 0.0
+      },
+      "timestamp": "2025-02-04T23:16:55.344230Z"
+    },
+    {
+      "original": "integrate(x**2*exp(-x), x)",
+      "requested_difficulty": "easier",
+      "variant": "integrate(x**2 * (1/1), x)",
+      "reasoning": "As a number theorist, I find fascinating how simple rational coefficients can provide a straightforward integral. I will consider a rational function that retains polynomial characteristics but eliminates complexity.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "equivalent",
+      "transformations_used": [
+        "remove nested functions",
+        "remove a factor",
+        "replace transcendental functions with simpler algebraic ones"
+      ],
+      "solution": "x**3/3",
+      "evaluations": {
+        "5.347": 50.95446442490989,
+        "6.526": 92.65518216144886,
+        "5.256": 48.4050375469372
+      },
+      "timestamp": "2025-02-04T23:16:55.302023Z"
+    },
+    {
+      "original": "integrate(x**2*exp(-x), x)",
+      "requested_difficulty": "easier",
+      "variant": "integrate((x**2), x)",
+      "reasoning": "As a geometry enthusiast, I think in terms of geometric transformations; here, representing the function purely through its area gives way to a trivial integral.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "easier",
+      "transformations_used": [
+        "remove nested functions",
+        "remove a factor",
+        "replace transcendental functions with simpler algebraic ones"
+      ],
+      "solution": "x**3/3",
+      "evaluations": {
+        "-1.098": -0.4408986316415685,
+        "1.015": 0.3484129287233754,
+        "-2.034": -2.8070304791978025
+      },
+      "timestamp": "2025-02-04T23:16:56.772208Z"
+    },
+    {
+      "original": "integrate(x**2*exp(-x), x)",
+      "requested_difficulty": "easier",
+      "variant": "integrate(x * (x * 1), x)",
+      "reasoning": "As a calculus professor who loves integrating by parts, I first transform the integral by focusing on a polynomial structure while ignoring certain components to make integration clearer.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "easier",
+      "transformations_used": [
+        "remove nested functions",
+        "remove a factor",
+        "replace transcendental functions with simpler algebraic ones"
+      ],
+      "solution": "x**3/3",
+      "evaluations": {
+        "-3.976": -20.95142581860067,
+        "-2.068": -2.94862224611498,
+        "8.652": 215.91415312498953
+      },
+      "timestamp": "2025-02-04T23:16:55.309819Z"
+    },
+    {
+      "original": "integrate(x**2*exp(-x), x)",
+      "requested_difficulty": "easier",
+      "variant": "integrate(x**2 * 0, x)",
+      "reasoning": "A practical approach yields a constant function. Thinking in terms of the worst-case scenario, I can simplify the function entirely by adopting a trivial case of no decay.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "easier",
+      "transformations_used": [
+        "remove nested functions",
+        "remove a factor",
+        "replace transcendental functions with simpler algebraic ones"
+      ],
+      "solution": "0",
+      "evaluations": {
+        "8.393": 0.0,
+        "5.772": 0.0,
+        "-7.503": 0.0
+      },
+      "timestamp": "2025-02-04T23:16:59.541276Z"
+    },
+    {
+      "original": "integrate(x**2*exp(-x), x)",
+      "requested_difficulty": "easier",
+      "variant": "integrate(exp(-x) * (x**2 + 0*x), x)",
+      "reasoning": "From a geometric transformation perspective, viewing the product of terms as transformations can help visualize the area being computed. We can express the function in terms of its transformations.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "equivalent",
+      "transformations_used": [
+        "simplify the denominator",
+        "convert a product to a simpler sum",
+        "reduce the degree of a polynomial"
+      ],
+      "solution": "(-x**2 - 2*x - 2)*exp(-x)",
+      "evaluations": {
+        "-4.104": -644.1603409915045,
+        "-4.281": -850.1084572497501,
+        "4.819": -0.2815846528814831
+      },
+      "timestamp": "2025-02-04T23:16:59.813333Z"
+    },
+    {
+      "original": "integrate(x**2*exp(-x), x)",
+      "requested_difficulty": "easier",
+      "variant": "integrate(2*x * exp(-x), x)",
+      "reasoning": "As a calculus professor, let's again apply integration by parts, this time rearranging the original terms to focus on simpler parts\u2014one for polynomial and one for the exponential.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "easier",
+      "transformations_used": [
+        "simplify the denominator",
+        "convert a product to a simpler sum",
+        "reduce the degree of a polynomial"
+      ],
+      "solution": "(-2*x - 2)*exp(-x)",
+      "evaluations": {
+        "5.19": -0.0689995934423119,
+        "2.469": -0.5875443453448457,
+        "-1.862": 11.101678109679188
+      },
+      "timestamp": "2025-02-04T23:16:59.281485Z"
+    },
+    {
+      "original": "integrate(x**2*exp(-x), x)",
+      "requested_difficulty": "easier",
+      "variant": "integrate(exp(-x) * (2x + 1 - 1), x)",
+      "reasoning": "Taking a student's approach to polynomials, we could differentiate to find an antiderivative of related functions, leading to simpler terms.",
+      "variant_response": null,
+      "verification_passed": false,
+      "evaluation": "equivalent",
+      "transformations_used": [
+        "simplify the denominator",
+        "convert a product to a simpler sum",
+        "reduce the degree of a polynomial"
+      ],
+      "solution": null,
+      "evaluations": {},
+      "timestamp": "2025-02-04T23:16:59.560549Z"
+    },
+    {
+      "original": "integrate(x**2*exp(-x), x)",
+      "requested_difficulty": "equivalent",
+      "variant": "integrate(((x + 1)**2 - 2*x - 1) * exp(-x), x)",
+      "reasoning": "As a calculus professor, I prefer simplifying expressions. I can express \\( x^2 \\) as \\( (x + 1)^2 - 2x - 1 \\). This allows for an easier integration approach after expanding.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "easier",
+      "transformations_used": [
+        "change coefficient values slightly",
+        "distribute terms differently",
+        "exchange similar functions (e.g., sin to cos)",
+        "swap numerator and denominator with reciprocal",
+        "adjust parameters while keeping the integral equivalent"
+      ],
+      "solution": "(-x**2 - 2*x - 2)*exp(-x)",
+      "evaluations": {
+        "-9.167": -648196.9092319218,
+        "6.775": -0.07015117745828502,
+        "8.799": -0.014644328289975977
+      },
+      "timestamp": "2025-02-04T23:17:03.399308Z"
+    },
+    {
+      "original": "integrate(x**2*exp(-x), x)",
+      "requested_difficulty": "equivalent",
+      "variant": "integrate((x**2 - 0) * exp(-x), x)",
+      "reasoning": "Viewing this from a student\u2019s perspective, I see that integrating polynomials is straightforward. I can multiply the exponential by a linear term, creating an equivalent polynomial which is easier to deal with.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "equivalent",
+      "transformations_used": [
+        "change coefficient values slightly",
+        "distribute terms differently",
+        "exchange similar functions (e.g., sin to cos)",
+        "swap numerator and denominator with reciprocal",
+        "adjust parameters while keeping the integral equivalent"
+      ],
+      "solution": "(-x**2 - 2*x - 2)*exp(-x)",
+      "evaluations": {
+        "0.982": -1.845954022647042,
+        "2.674": -1.0000232227868202,
+        "-4.371": -977.9604703611158
+      },
+      "timestamp": "2025-02-04T23:17:03.450941Z"
+    },
+    {
+      "original": "integrate(x**2*exp(-x), x)",
+      "requested_difficulty": "equivalent",
+      "variant": "integrate((x**2/1) * exp(-x), x)",
+      "reasoning": "From the number theorist's perspective, I see that prime factor operations can facilitate equivalent forms. Converting to involve ratios can illustrate properties of rational functions.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "equivalent",
+      "transformations_used": [
+        "change coefficient values slightly",
+        "distribute terms differently",
+        "exchange similar functions (e.g., sin to cos)",
+        "swap numerator and denominator with reciprocal",
+        "adjust parameters while keeping the integral equivalent"
+      ],
+      "solution": "(-x**2 - 2*x - 2)*exp(-x)",
+      "evaluations": {
+        "2.845": -0.9174686058901798,
+        "-1.231": -3.6060556521526035,
+        "8.4": -0.020093797719935007
+      },
+      "timestamp": "2025-02-04T23:17:03.501574Z"
+    },
+    {
+      "original": "integrate(x**2*exp(-x), x)",
+      "requested_difficulty": "equivalent",
+      "variant": "integrate(((x+1)**2-2) * exp(-(x+1)), x)",
+      "reasoning": "As a geometry enthusiast, I can think of integrating in terms of geometric transformations. By shifting the variable slightly, I can represent it as a translation which maintains the area under the curve.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "easier",
+      "transformations_used": [
+        "change coefficient values slightly",
+        "distribute terms differently",
+        "exchange similar functions (e.g., sin to cos)",
+        "swap numerator and denominator with reciprocal",
+        "adjust parameters while keeping the integral equivalent"
+      ],
+      "solution": "(-x**2 - 4*x - 3)*exp(-x - 1)",
+      "evaluations": {
+        "6.681": -0.03430838777406829,
+        "-6.24": -3201.3994778948227,
+        "-7.382": -16523.918955623565
+      },
+      "timestamp": "2025-02-04T23:17:19.073459Z"
+    },
+    {
+      "original": "integrate(x**2*exp(-x), x)",
+      "requested_difficulty": "equivalent",
+      "variant": "integrate(x**2 * exp(-x + 1), x)",
+      "reasoning": "As a calculus professor, I see that we can pull a common factor out of the exponent before integrating. This can simplify our work somewhat.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "easier",
+      "transformations_used": [
+        "alter constant terms",
+        "exchange similar functions (e.g., sin to cos)",
+        "rearrange the order of terms",
+        "use trigonometric identities to rewrite expression",
+        "change variables while maintaining complexity"
+      ],
+      "solution": "(-x**2 - 2*x - 2)*exp(1 - x)",
+      "evaluations": {
+        "-1.289": -10.69086166076253,
+        "-6.691": -73054.5462076348,
+        "-1.64": -19.74616275562885
+      },
+      "timestamp": "2025-02-04T23:16:52.010761Z"
+    },
+    {
+      "original": "integrate(x**2*exp(-x), x)",
+      "requested_difficulty": "equivalent",
+      "variant": "integrate((x * x) * exp(-x), x)",
+      "reasoning": "In the mindset of a geometry enthusiast, I think of extending \\( x^2 \\) as the area of a square whose side length varies. This perspective leads to a new formulation of the integral.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "equivalent",
+      "transformations_used": [
+        "alter constant terms",
+        "exchange similar functions (e.g., sin to cos)",
+        "rearrange the order of terms",
+        "use trigonometric identities to rewrite expression",
+        "change variables while maintaining complexity"
+      ],
+      "solution": "(-x**2 - 2*x - 2)*exp(-x)",
+      "evaluations": {
+        "-5.932": -9551.659167638141,
+        "-5.85": -8514.385396088175,
+        "-1.095": -3.016886592633196
+      },
+      "timestamp": "2025-02-04T23:16:52.769408Z"
+    },
+    {
+      "original": "integrate(x**2*exp(-x), x)",
+      "requested_difficulty": "equivalent",
+      "variant": "integrate(x * x * exp(-1 * x), x)",
+      "reasoning": "As a calculus professor keen on simplifications, I can cleverly factor out common terms to rewrite the integral in a more straightforward form without altering its nature.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "equivalent",
+      "transformations_used": [
+        "alter constant terms",
+        "exchange similar functions (e.g., sin to cos)",
+        "rearrange the order of terms",
+        "use trigonometric identities to rewrite expression",
+        "change variables while maintaining complexity"
+      ],
+      "solution": "(-x**2 - 2*x - 2)*exp(-x)",
+      "evaluations": {
+        "-3.573": -271.3167628880702,
+        "-4.43": -1071.841718024835,
+        "-1.895": -11.985848019603528
+      },
+      "timestamp": "2025-02-04T23:16:52.600374Z"
+    },
+    {
+      "original": "integrate(x**2*exp(-x), x)",
+      "requested_difficulty": "equivalent",
+      "variant": "integrate(exp(-x) * x**2, x)",
+      "reasoning": "As a calculus professor who loves elegant simplifications, I can express the integral by factoring out common terms to make it simpler to compute. Here, we can rewrite it so that the exponential function and polynomial are separated clearly.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "equivalent",
+      "transformations_used": [
+        "distribute terms differently",
+        "use trigonometric identities to rewrite expression",
+        "modify an exponent slightly",
+        "change coefficient values slightly",
+        "apply algebraic identities that preserve complexity"
+      ],
+      "solution": "(-x**2 - 2*x - 2)*exp(-x)",
+      "evaluations": {
+        "0.151": -1.9989672936768517,
+        "-0.928": -2.543294257352959,
+        "-1.09": -2.9966124875585844
+      },
+      "timestamp": "2025-02-04T23:16:58.807829Z"
+    },
+    {
+      "original": "integrate(x**2*exp(-x), x)",
+      "requested_difficulty": "equivalent",
+      "variant": "integrate(x**2 * exp(-(x + 0.001)), x)",
+      "reasoning": "As an engineer looking for computational approaches, I will express the exponential decay in a slightly different way by adding a small constant to the exponent.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "easier",
+      "transformations_used": [
+        "distribute terms differently",
+        "use trigonometric identities to rewrite expression",
+        "modify an exponent slightly",
+        "change coefficient values slightly",
+        "apply algebraic identities that preserve complexity"
+      ],
+      "solution": "1.0*(-0.999000499833375*x**2 - 1.99800099966675*x - 1.99800099966675)*exp(-x)",
+      "evaluations": {
+        "-5.89": -8996.032997688571,
+        "-9.321": -783474.191083469,
+        "4.233": -0.41139547258552905
+      },
+      "timestamp": "2025-02-04T23:16:59.553270Z"
+    },
+    {
+      "original": "integrate(x**2*exp(-x), x)",
+      "requested_difficulty": "equivalent",
+      "variant": "integrate((2 * x**2) * exp(-x), x)",
+      "reasoning": "As a number theorist fascinated by prime numbers, I\u2019ll introduce prime-related coefficients while still focusing on integral characteristics.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "easier",
+      "transformations_used": [
+        "distribute terms differently",
+        "use trigonometric identities to rewrite expression",
+        "modify an exponent slightly",
+        "change coefficient values slightly",
+        "apply algebraic identities that preserve complexity"
+      ],
+      "solution": "(-2*x**2 - 4*x - 4)*exp(-x)",
+      "evaluations": {
+        "-7.073": -89410.6086989359,
+        "-7.293": -119402.25266456138,
+        "-7.577": -172778.5708260534
+      },
+      "timestamp": "2025-02-04T23:16:59.380043Z"
+    },
+    {
+      "original": "integrate(x**2*exp(-x), x)",
+      "requested_difficulty": "equivalent",
+      "variant": "integrate(((k*x)**2) * exp(-k*x), x)",
+      "reasoning": "As a geometry enthusiast, I think of geometric transformations. I\u2019ll use a scaling transformation on \\(x\\) to change the variable, although it\u2019s still equivalent.",
+      "variant_response": null,
+      "verification_passed": false,
+      "evaluation": "equivalent",
+      "transformations_used": [
+        "distribute terms differently",
+        "use trigonometric identities to rewrite expression",
+        "modify an exponent slightly",
+        "change coefficient values slightly",
+        "apply algebraic identities that preserve complexity"
+      ],
+      "solution": null,
+      "evaluations": {},
+      "timestamp": "2025-02-04T23:16:59.663450Z"
+    },
+    {
+      "original": "integrate(x**2*exp(-x), x)",
+      "requested_difficulty": "equivalent",
+      "variant": "integrate(x * x * exp(-x), x)",
+      "reasoning": "As a calculus professor, I can recognize that using standard properties of integrals helps to rearrange components nicely.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "equivalent",
+      "transformations_used": [
+        "distribute terms differently",
+        "use trigonometric identities to rewrite expression",
+        "modify an exponent slightly",
+        "change coefficient values slightly",
+        "apply algebraic identities that preserve complexity"
+      ],
+      "solution": "(-x**2 - 2*x - 2)*exp(-x)",
+      "evaluations": {
+        "-1.981": -14.223479459221226,
+        "-0.397": -2.028162599668709,
+        "4.029": -0.46762955931386607
+      },
+      "timestamp": "2025-02-04T23:16:59.437962Z"
+    },
+    {
+      "original": "integrate(x**2*exp(-x), x)",
+      "requested_difficulty": "equivalent",
+      "variant": "integrate((x**2 / 1) * exp(-x), x)",
+      "reasoning": "As a creative mathematician, I\u2019ll also apply product-to-sum or sum-to-product identities even though they will generally preserve the value but interested solo polynomial multiples.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "equivalent",
+      "transformations_used": [
+        "distribute terms differently",
+        "use trigonometric identities to rewrite expression",
+        "modify an exponent slightly",
+        "change coefficient values slightly",
+        "apply algebraic identities that preserve complexity"
+      ],
+      "solution": "(-x**2 - 2*x - 2)*exp(-x)",
+      "evaluations": {
+        "-3.736": -355.6466643225695,
+        "-1.923": -12.677572079726248,
+        "-1.789": -9.709274685612687
+      },
+      "timestamp": "2025-02-04T23:16:59.660558Z"
+    },
+    {
+      "original": "integrate(x**2*exp(-x), x)",
+      "requested_difficulty": "equivalent",
+      "variant": "integrate(x**2 * exp(-x + 0.01), x)",
+      "reasoning": "As a theoretical physicist, I will apply a small perturbation to the exponential term, maintaining some structural integrity to the polynomial.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "easier",
+      "transformations_used": [
+        "distribute terms differently",
+        "use trigonometric identities to rewrite expression",
+        "modify an exponent slightly",
+        "change coefficient values slightly",
+        "apply algebraic identities that preserve complexity"
+      ],
+      "solution": "1.0*(-1.01005016708417*x**2 - 2.02010033416834*x - 2.02010033416834)*exp(-x)",
+      "evaluations": {
+        "-9.085": -591461.9452818979,
+        "-3.484": -235.91308721690024,
+        "-9.091": -596024.5207062226
+      },
+      "timestamp": "2025-02-04T23:16:59.427516Z"
+    },
+    {
+      "original": "integrate(x**2*exp(-x), x)",
+      "requested_difficulty": "equivalent",
+      "variant": "integrate((x)*(x)*exp(-x), x)",
+      "reasoning": "As a creative mathematician, I can express the polynomial \\(x^2\\) as \\((x)(x)\\), which helps in visualizing the integration process. I can then apply integration by parts iteratively.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "equivalent",
+      "transformations_used": [
+        "rewrite the integrand in a different form without changing overall complexity",
+        "use trigonometric identities to rewrite expression",
+        "rearrange the order of terms"
+      ],
+      "solution": "(-x**2 - 2*x - 2)*exp(-x)",
+      "evaluations": {
+        "-4.929": -2273.6417887401794,
+        "9.426": -0.008841764189497978,
+        "2.636": -1.0189867589811072
+      },
+      "timestamp": "2025-02-04T23:16:52.811824Z"
+    },
+    {
+      "original": "integrate(x**2*exp(-x), x)",
+      "requested_difficulty": "equivalent",
+      "variant": "integrate(exp(-x) * (x**2), x)",
+      "reasoning": "As a student preferring rearrangements, I might manipulate the factors. By moving \\(e^{-x}\\) to a coefficient of the polynomial, I create a new perspective.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "equivalent",
+      "transformations_used": [
+        "rewrite the integrand in a different form without changing overall complexity",
+        "use trigonometric identities to rewrite expression",
+        "rearrange the order of terms"
+      ],
+      "solution": "(-x**2 - 2*x - 2)*exp(-x)",
+      "evaluations": {
+        "-1.457": -5.190560050630104,
+        "-1.055": -2.8801448571790513,
+        "-5.477": -5029.529502032325
+      },
+      "timestamp": "2025-02-04T23:16:52.595435Z"
+    },
+    {
+      "original": "integrate(x**2*exp(-x), x)",
+      "requested_difficulty": "equivalent",
+      "variant": "integrate(x**2 * (cos(-ix) + I*sin(-ix)), x)",
+      "reasoning": "The theoretical physicist in me prefers to express exponential decay in terms of complex exponentials. By using \\( e^{-x} = \\cos(ix) + i\\sin(ix) \\), new insights may emerge.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "equivalent",
+      "transformations_used": [
+        "use alternate but equivalent radical forms",
+        "alter constant terms",
+        "change variables while maintaining complexity"
+      ],
+      "solution": null,
+      "evaluations": {},
+      "timestamp": "2025-02-04T23:17:00.720261Z"
+    },
+    {
+      "original": "integrate(x**2*exp(-x), x)",
+      "requested_difficulty": "equivalent",
+      "variant": "integrate(exp(-x)*(x**2), x)",
+      "reasoning": "As a creative mathematician, I enjoy playing with the expression by factoring out common terms. Here, I incorporate \\(e^{-x}\\) as a base in a product.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "equivalent",
+      "transformations_used": [
+        "rewrite the integrand in a different form without changing overall complexity",
+        "distribute terms differently",
+        "use alternate but equivalent radical forms",
+        "rewrite using alternate algebraic forms",
+        "exchange similar functions (e.g., sin to cos)"
+      ],
+      "solution": "(-x**2 - 2*x - 2)*exp(-x)",
+      "evaluations": {
+        "-6.869": -34120.373356178636,
+        "-8.544": -297299.2440905749,
+        "-7.118": -47401.93149372147
+      },
+      "timestamp": "2025-02-04T23:16:54.870661Z"
+    },
+    {
+      "original": "integrate(x**2*exp(-x), x)",
+      "requested_difficulty": "equivalent",
+      "variant": "integrate((x**2) * exp(-x), x)",
+      "reasoning": "Viewing this from the perspective of a student fond of polynomials, I might rewrite the integrand to emphasize polynomial terms, thinking about \\(x^2\\) as a polynomial.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "equivalent",
+      "transformations_used": [
+        "rewrite the integrand in a different form without changing overall complexity",
+        "distribute terms differently",
+        "use alternate but equivalent radical forms",
+        "rewrite using alternate algebraic forms",
+        "exchange similar functions (e.g., sin to cos)"
+      ],
+      "solution": "(-x**2 - 2*x - 2)*exp(-x)",
+      "evaluations": {
+        "-3.789": -387.9211465954232,
+        "-1.023": -2.7822995801523653,
+        "4.379": -0.3754062071573036
+      },
+      "timestamp": "2025-02-04T23:16:54.985649Z"
+    },
+    {
+      "original": "integrate(x**2*exp(-x), x)",
+      "requested_difficulty": "equivalent",
+      "variant": "integrate((2 * x) * exp(-x) + x**2 * (-exp(-x)), x)",
+      "reasoning": "As a calculus enthusiast, I may want to reframe this integral in terms of logarithmic derivatives, showcasing an interesting manipulation of functional forms.",
+      "variant_response": null,
+      "verification_passed": true,
+      "evaluation": "easier",
+      "transformations_used": [
+        "rewrite the integrand in a different form without changing overall complexity",
+        "distribute terms differently",
+        "use alternate but equivalent radical forms",
+        "rewrite using alternate algebraic forms",
+        "exchange similar functions (e.g., sin to cos)"
+      ],
+      "solution": "x**2*exp(-x)",
+      "evaluations": {
+        "9.403": 0.0072924026580443845,
+        "-9.52": 1235495.187875505,
+        "-6.251": 20251.408419822947
+      },
+      "timestamp": "2025-02-04T23:16:54.939822Z"
+    }
+  ]
+]

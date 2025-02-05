@@ -12,6 +12,8 @@ An experimental pipeline that:
 - Points that produce complex values are skipped.
 - Variants judged as "harder" are filtered out when not desired.
 - All results are saved to "variants.json".
+
+If the integration (antiderivative computation) takes more than 5 seconds, it is skipped and the variant is marked as too hard.
 """
 
 import asyncio
@@ -20,19 +22,38 @@ import math
 import random
 import re
 from datetime import datetime
-
+import concurrent.futures
 import sympy as sp
 
-MODEL = "gpt-4o"
+MODEL = "gpt-4o-mini"
+TIMEOUT_SECONDS = 2  # Maximum allowed seconds for integration
 
 # Import our LLM-based generation function from the provided utils.inference module.
 from utils.inference import generate_text
 
+# Create a global process pool executor to reuse worker processes.
+executor = concurrent.futures.ProcessPoolExecutor(max_workers=4)
+
+def integrate_wrapper(integrand, x):
+    """
+    A top-level function to compute sp.integrate(integrand, x).
+    This function is picklable and can be used with the executor.
+    """
+    return sp.integrate(integrand, x)
+
+def run_integration(integrand, x, timeout=TIMEOUT_SECONDS):
+    """
+    Run sp.integrate(integrand, x) using a persistent process pool.
+    If it takes longer than 'timeout' seconds, a TimeoutError is raised.
+    """
+    future = executor.submit(integrate_wrapper, integrand, x)
+    return future.result(timeout=timeout)
 
 def verify_integral(integral_str: str) -> bool:
     """
     Verify the integral by checking that the derivative of the antiderivative equals the original integrand.
     Uses symbolic simplification to check for an exact zero difference.
+    If integration takes too long, the variant is considered too hard.
     """
     x = sp.symbols('x')
     try:
@@ -43,19 +64,23 @@ def verify_integral(integral_str: str) -> bool:
 
         integrand_str = match.group(1)
         integrand = sp.sympify(integrand_str)
-        antideriv = sp.integrate(integrand, x)
+        try:
+            antideriv = run_integration(integrand, x, timeout=TIMEOUT_SECONDS)
+        except Exception as e:
+            print("Integration timed out in verify_integral; marking as too hard.")
+            return False
+
         diff_expr = sp.simplify(sp.diff(antideriv, x) - integrand)
         return diff_expr == 0
     except Exception as e:
         print("Error verifying integral:", e)
         return False
 
-
 def compute_solution_and_evals(integral_str: str, num_points: int = 3, lower: float = -10, upper: float = 10, tol: float = 1e-6):
     """
     Given an integral string of the form "integrate(<integrand>, x)", compute the antiderivative (solution)
     and evaluate that solution at up to `num_points` random values of x.
-    If an evaluation produces a complex number (with non-negligible imaginary part), it is skipped.
+    If the antiderivative cannot be computed within TIMEOUT_SECONDS, returns None and an empty dict.
     
     Returns:
         solution_str: The antiderivative as a string.
@@ -67,9 +92,14 @@ def compute_solution_and_evals(integral_str: str, num_points: int = 3, lower: fl
         match = re.search(pattern, integral_str)
         if not match:
             return None, {}
+
         integrand_str = match.group(1)
         integrand = sp.sympify(integrand_str)
-        antideriv = sp.integrate(integrand, x)
+        try:
+            antideriv = run_integration(integrand, x, timeout=TIMEOUT_SECONDS)
+        except Exception as e:
+            print("Integration timed out in compute_solution_and_evals; question is too hard.")
+            return None, {}
         solution_str = str(antideriv)
         evaluations = {}
         attempts = 0
@@ -89,7 +119,6 @@ def compute_solution_and_evals(integral_str: str, num_points: int = 3, lower: fl
         print("Error computing solution/evaluations:", e)
         return None, {}
 
-
 def parse_variants(text: str) -> list:
     """
     Parse the LLM response text and extract a list of variant dictionaries.
@@ -102,7 +131,6 @@ def parse_variants(text: str) -> list:
     ====
     """
     variants = []
-    # Split on delimiter "===="
     blocks = re.split(r"====\s*", text)
     for block in blocks:
         if "Variant:" in block and "Reasoning:" in block:
@@ -113,7 +141,6 @@ def parse_variants(text: str) -> list:
                 reasoning_text = reasoning_match.group(1).strip() if reasoning_match else ""
                 variants.append({"reasoning": reasoning_text, "variant": variant_expr})
     return variants
-
 
 async def process_single_variant(original_integral: str, difficulty: str, variant_data: dict) -> dict:
     """
@@ -131,7 +158,6 @@ async def process_single_variant(original_integral: str, difficulty: str, varian
     if verification:
         solution, evaluations = compute_solution_and_evals(variant_integral)
 
-    # Second prompt: evaluate the variant relative to the original.
     evaluation = "unknown"
     prompt_evaluation = (
         f"Original integral: {original_integral}\n"
@@ -148,7 +174,7 @@ async def process_single_variant(original_integral: str, difficulty: str, varian
         "requested_difficulty": difficulty,
         "variant": variant_integral,
         "reasoning": variant_data.get("reasoning"),
-        "variant_response": None,  # the raw response text is not preserved here
+        "variant_response": None,
         "verification_passed": verification,
         "evaluation": evaluation,
         "transformations_used": variant_data.get("transformations_used", []),
@@ -157,24 +183,20 @@ async def process_single_variant(original_integral: str, difficulty: str, varian
         "timestamp": datetime.utcnow().isoformat() + "Z"
     }
 
-
 async def generate_variant_chunk(integral_str: str, difficulty: str, count: int) -> list:
     """
     Generate a chunk (up to 10) of variants in a single LLM call.
     The prompt instructs the LLM to produce `count` variants in the specified format.
     After receiving the response, each variant is parsed and then further processed.
     """
-    # Choose transformation instructions from the list.
     transformations = TRANSFORMATIONS_BY_DIFFICULTY.get(difficulty.lower(), [])
     if not transformations:
         transformations = ["make a small change"]
 
-    # Randomly choose a set of transformation ideas (for display in the prompt).
     num_choices = random.choice([3, 5])
     chosen_transforms = random.sample(transformations, min(num_choices, len(transformations)))
     transforms_text = " and ".join(chosen_transforms)
 
-    # List of personas.
     personas = [
         "a calculus professor who loves elegant simplifications",
         "a creative mathematician who enjoys unusual substitutions",
@@ -205,21 +227,16 @@ async def generate_variant_chunk(integral_str: str, difficulty: str, count: int)
     response_text = await generate_text(MODEL, prompt_variant, temperature=1.0)
     parsed_variants = parse_variants(response_text)
 
-    # Attach the chosen transforms to each variant (for record keeping).
     for variant in parsed_variants:
         variant["transformations_used"] = chosen_transforms
 
-    # Process each variant concurrently (verify, compute solution, and LLM evaluation).
     tasks = [
         process_single_variant(integral_str, difficulty, variant)
         for variant in parsed_variants
     ]
     processed_variants = await asyncio.gather(*tasks)
-    # Remove any None results.
     return [v for v in processed_variants if v is not None]
 
-
-# Define the transformation instructions for each difficulty level.
 TRANSFORMATIONS_BY_DIFFICULTY = {
     "easier": [
         "remove a complicated term",
@@ -273,7 +290,6 @@ TRANSFORMATIONS_BY_DIFFICULTY = {
     ]
 }
 
-
 async def process_integral(integral_str: str, difficulties: list, num_variants: int = 3) -> list:
     """
     Generate a batch of variants for the given integral and for each difficulty.
@@ -282,7 +298,7 @@ async def process_integral(integral_str: str, difficulties: list, num_variants: 
     """
     final_results = []
     seen_variants = set()
-    buffer_multiplier = 2  # request extra variants to allow filtering
+    buffer_multiplier = 2
     tasks = []
 
     for difficulty in difficulties:
@@ -292,14 +308,11 @@ async def process_integral(integral_str: str, difficulties: list, num_variants: 
             count = 10 if (i < num_chunks - 1) else (total_to_request - 10 * (num_chunks - 1))
             tasks.append((difficulty, generate_variant_chunk(integral_str, difficulty, count)))
 
-    # Launch all chunk calls concurrently.
     chunk_results = await asyncio.gather(*[t[1] for t in tasks])
-    # Organize results by difficulty.
     difficulty_dict = {d: [] for d in difficulties}
     for idx, (difficulty, _) in enumerate(tasks):
         for variant in chunk_results[idx]:
             variant_expr = variant.get("variant")
-            # Filter duplicates and (if not desired) variants that are evaluated as "harder"
             if (variant_expr 
                 and variant_expr not in seen_variants 
                 and not (variant.get("evaluation", "") == "harder" and difficulty != "harder")):
@@ -307,25 +320,19 @@ async def process_integral(integral_str: str, difficulties: list, num_variants: 
                 difficulty_dict[difficulty].append(variant)
     
     for difficulty in difficulties:
-        # Trim each difficulty's list to the requested number.
         final_results.extend(difficulty_dict[difficulty][:num_variants])
     
     return final_results
 
-
 async def main():
-    # Example: process a single integral.
     base_integral = "integrate(1/(x**2 - x + 1), x)"
-    # Request variants for each difficulty level.
     difficulties = ["easier", "equivalent", "harder"]
     print("Processing integral:", base_integral)
     variants = await process_integral(base_integral, difficulties, num_variants=3)
     
-    # Save the variants to a JSON file.
     with open("variants.json", "w") as outfile:
         json.dump(variants, outfile, indent=2)
     
-    # Print a summary.
     for idx, v in enumerate(variants, start=1):
         print(f"\n--- Variant {idx} ---")
         print("Requested difficulty:", v["requested_difficulty"])
@@ -335,7 +342,6 @@ async def main():
         print("LLM evaluation:", v["evaluation"])
         print("Solution (antiderivative):", v["solution"])
         print("Evaluations at random points:", v["evaluations"])
-
 
 if __name__ == "__main__":
     asyncio.run(main())
