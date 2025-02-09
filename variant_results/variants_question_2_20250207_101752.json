@@ -1,0 +1,1260 @@
+[
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(exp(x)*cos(x), x)",
+    "reasoning": "As a calculus professor, I appreciate elegant recursive methods. This integral can be recursively tackled by applying integration by parts twice.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "change variables while maintaining complexity",
+      "swap numerator and denominator with reciprocal",
+      "factor common terms differently"
+    ],
+    "solution": "exp(x)*sin(x)/2 + exp(x)*cos(x)/2",
+    "evaluations": {
+      "8.307": 935.0538490449575,
+      "0.856": 1.6606210990375252,
+      "6.157": 204.47875191561852
+    },
+    "timestamp": "2025-02-07T10:17:45.348880Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(exp(x) * re(exp(I*x)), x)",
+    "reasoning": "As a creative mathematician, I enjoy making unusual substitutions. Let\u2019s use Euler's formula to express cosine as part of a complex exponential.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "change variables while maintaining complexity",
+      "swap numerator and denominator with reciprocal",
+      "factor common terms differently"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:17:45.312499Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate((1 + 0)*exp(x)*cos(x), x)",
+    "reasoning": "As a student, I favor working with polynomials and introducing an expression that facilitates integration. Multiply numerator and denominator by (x^0 + x^0) for understanding.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "change variables while maintaining complexity",
+      "swap numerator and denominator with reciprocal",
+      "factor common terms differently"
+    ],
+    "solution": "exp(x)*sin(x)/2 + exp(x)*cos(x)/2",
+    "evaluations": {
+      "1.377": 2.326015794035535,
+      "-3.042": -0.02612320542238318,
+      "4.267": -47.52457222702063
+    },
+    "timestamp": "2025-02-07T10:17:47.369864Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(exp(x)*diff(sin(x), x)",
+    "reasoning": "As a theoretical physicist, I might prefer expressing the cosine function in terms of sine derivatives.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "change variables while maintaining complexity",
+      "swap numerator and denominator with reciprocal",
+      "factor common terms differently"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:17:45.409331Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(exp(x) * (exp(I*x)/2 + exp(-I*x)/2).expand(), x)",
+    "reasoning": "As an engineer, I utilize practical approaches such as exponential form representations. Express the cosine function as part of real parts of exponentials.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "change variables while maintaining complexity",
+      "swap numerator and denominator with reciprocal",
+      "factor common terms differently"
+    ],
+    "solution": "exp(x)*exp(I*x)/4 - I*exp(x)*exp(I*x)/4 + exp(x)*exp(-I*x)/4 + I*exp(x)*exp(-I*x)/4",
+    "evaluations": {
+      "-6.727": 0.00028406999966047947,
+      "1.543": 2.4033780363482427,
+      "-6.852": 0.00016086603957757992
+    },
+    "timestamp": "2025-02-07T10:17:44.988417Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(exp(x)*cos(x).series(n=5).removeO(), x)",
+    "reasoning": "As a number theorist, I enjoy utilizing numbers in interesting ways, even in calculus, like representing cos(x) as part of a geometric series for theoretical beauty.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "easier",
+    "transformations_used": [
+      "change variables while maintaining complexity",
+      "swap numerator and denominator with reciprocal",
+      "factor common terms differently"
+    ],
+    "solution": "(x**4 - 4*x**3 + 24)*exp(x)/24",
+    "evaluations": {
+      "8.08": 292820.3070621615,
+      "1.108": 2.532033146193,
+      "-0.093": 0.9114809861787945
+    },
+    "timestamp": "2025-02-07T10:17:45.063792Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(exp(x)*(cos(x) + sin(x) - sin(x)), x)",
+    "reasoning": "As a geometry enthusiast, I might relate the problem to geometrical rotations and reduce it to similar integrals.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "change variables while maintaining complexity",
+      "swap numerator and denominator with reciprocal",
+      "factor common terms differently"
+    ],
+    "solution": "exp(x)*sin(x)/2 + exp(x)*cos(x)/2",
+    "evaluations": {
+      "4.336": -49.564222218397965,
+      "-9.602": -2.7304397358346254e-05,
+      "7.336": 1046.2591486721315
+    },
+    "timestamp": "2025-02-07T10:17:45.357124Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(exp(x)*diff(sinh(x), x)",
+    "reasoning": "As a creative mathematician liking unusual paths, consider cos(x) as a derivative of some hyperbolic trigonometric function.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "easier",
+    "transformations_used": [
+      "change variables while maintaining complexity",
+      "swap numerator and denominator with reciprocal",
+      "factor common terms differently"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:17:45.272795Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(exp(x)*sqrt(1 - sin(x)**2), x)",
+    "reasoning": "As a physics-inspired mathematician, restructure using trigonometric Pythagorean identities to simplify cos as a square root identity initially.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "change variables while maintaining complexity",
+      "swap numerator and denominator with reciprocal",
+      "factor common terms differently"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:17:48.343938Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(exp(x)*(cos(x+y) + cos(x-y)).subs({y:0}), x)",
+    "reasoning": "As an engineer, I may use quick computational logic that involves trigonometric angle addition formulas for rewriting.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "change variables while maintaining complexity",
+      "swap numerator and denominator with reciprocal",
+      "factor common terms differently"
+    ],
+    "solution": "exp(x)*sin(x) + exp(x)*cos(x)",
+    "evaluations": {
+      "-5.899": 0.0035719895895680136,
+      "-0.139": 0.7408235568346468,
+      "6.343": 601.9983227047153
+    },
+    "timestamp": "2025-02-07T10:17:44.831155Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(exp(x)*(exp(I*x) + exp(-I*x))/2, x)",
+    "reasoning": "From the perspective of a calculus professor, simplifying the use of trigonometric identities, rewriting the cosine function using Euler's formula can work wonders.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "use trigonometric identities to rewrite expression",
+      "rewrite using alternate algebraic forms",
+      "exchange similar functions (e.g., sin to cos)",
+      "substitute equivalent exponential forms",
+      "change coefficient values slightly"
+    ],
+    "solution": "exp(x)*exp(I*x)/4 - I*exp(x)*exp(I*x)/4 + exp(x)*exp(-I*x)/4 + I*exp(x)*exp(-I*x)/4",
+    "evaluations": {
+      "5.622": 24.241332132820585,
+      "-3.864": -0.0009416013125363908,
+      "-4.568": 0.0043892288171673245
+    },
+    "timestamp": "2025-02-07T10:17:45.228122Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(exp(x)*(cosh(I*x)), x)",
+    "reasoning": "As a creative mathematician, I relish in employing unusual substitutions. Let's use a substitution involving hyperbolic functions which are closely related to trigonometric functions.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "use trigonometric identities to rewrite expression",
+      "rewrite using alternate algebraic forms",
+      "exchange similar functions (e.g., sin to cos)",
+      "substitute equivalent exponential forms",
+      "change coefficient values slightly"
+    ],
+    "solution": "exp(x)*sin(x)/2 + exp(x)*cos(x)/2",
+    "evaluations": {
+      "7.302": 1020.0946092066395,
+      "0.56": 1.2072515431089357,
+      "-2.143": -0.08104362020333451
+    },
+    "timestamp": "2025-02-07T10:17:45.035030Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(0.5*(exp((1 + I)*x) + exp((1 - I)*x)), x)",
+    "reasoning": "A theoretical physicist might choose a transformation highlighting symmetric properties offered by related trigonometric and exponential functions.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "use trigonometric identities to rewrite expression",
+      "rewrite using alternate algebraic forms",
+      "exchange similar functions (e.g., sin to cos)",
+      "substitute equivalent exponential forms",
+      "change coefficient values slightly"
+    ],
+    "solution": "0.25*exp(x)*exp(I*x) - 0.25*I*exp(x)*exp(I*x) + 0.25*exp(x)*exp(-I*x) + 0.25*I*exp(x)*exp(-I*x)",
+    "evaluations": {
+      "-0.973": -0.04987233315622851,
+      "0.766": 1.5204835107969754,
+      "-9.596": -2.7723542882323065e-05
+    },
+    "timestamp": "2025-02-07T10:17:45.242001Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate((3/2)*exp(x)*cos(x) - (1/2)*exp(x)*sin(x), x)",
+    "reasoning": "From a number theorist's perspective, involving rational coefficients like fractions with prime numerators shines light on exactness.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "use trigonometric identities to rewrite expression",
+      "rewrite using alternate algebraic forms",
+      "exchange similar functions (e.g., sin to cos)",
+      "substitute equivalent exponential forms",
+      "change coefficient values slightly"
+    ],
+    "solution": "exp(x)*sin(x)/2 + exp(x)*cos(x)",
+    "evaluations": {
+      "-1.993": -0.11800087364165149,
+      "-6.808": 0.0006800016633261281,
+      "-4.024": -0.0044669413923982635
+    },
+    "timestamp": "2025-02-07T10:17:45.075520Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(exp(x)*Re(exp(I*x)), x)",
+    "reasoning": "A geometry enthusiast may transform the integrand by envisioning it through rotational symmetries in the complex plane.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "use trigonometric identities to rewrite expression",
+      "rewrite using alternate algebraic forms",
+      "exchange similar functions (e.g., sin to cos)",
+      "substitute equivalent exponential forms",
+      "change coefficient values slightly"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:17:45.216380Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(exp(x)*sin(x + pi/2), x)",
+    "reasoning": "From a calculus professor's point of view, focusing on elegant simplifications, exploiting symmetry by rewriting in terms of sine could make it more elegant.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "use trigonometric identities to rewrite expression",
+      "rewrite using alternate algebraic forms",
+      "exchange similar functions (e.g., sin to cos)",
+      "substitute equivalent exponential forms",
+      "change coefficient values slightly"
+    ],
+    "solution": "exp(x)*sin(x)/2 + exp(x)*cos(x)/2",
+    "evaluations": {
+      "-9.191": -6.142259120881205e-05,
+      "-9.558": -3.0298949500918727e-05,
+      "-2.528": -0.05558101916169161
+    },
+    "timestamp": "2025-02-07T10:17:45.085732Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate((2.71828**x)*cos(x), x)",
+    "reasoning": "As a creative mathematician, I choose to use unusual base changes, like changing the base of the exponent.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "use trigonometric identities to rewrite expression",
+      "rewrite using alternate algebraic forms",
+      "exchange similar functions (e.g., sin to cos)",
+      "substitute equivalent exponential forms",
+      "change coefficient values slightly"
+    ],
+    "solution": "0.500000336326472*2.71828**x*sin(x) + 0.499999999999887*2.71828**x*cos(x)",
+    "evaluations": {
+      "5.275": -30.496039630174984,
+      "-5.603": 0.002591941608047553,
+      "8.418": 703.3911127275304
+    },
+    "timestamp": "2025-02-07T10:17:48.967004Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate((2*exp(x)*cos(x) - exp(x)*sin(x)) / 2, x)",
+    "reasoning": "From a number theorist\u2019s angle, devising expressions around modular-like relationships using multiplicative inverses can yield simpler forms.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "use trigonometric identities to rewrite expression",
+      "rewrite using alternate algebraic forms",
+      "exchange similar functions (e.g., sin to cos)",
+      "substitute equivalent exponential forms",
+      "change coefficient values slightly"
+    ],
+    "solution": "exp(x)*sin(x)/4 + 3*exp(x)*cos(x)/4",
+    "evaluations": {
+      "0.01": 0.7603692708715132,
+      "1.931": -0.21166822056997925,
+      "-4.34": -0.0005256426633173932
+    },
+    "timestamp": "2025-02-07T10:17:45.103688Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(exp(x) * (exp(I*x) + exp(-I*x)) / 2, x)",
+    "reasoning": "As a creative mathematician, I enjoy unusual substitutions, such as using Euler's formula to express cosine in terms of complex exponentials, which can simplify integration.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "factor common terms differently",
+      "rewrite the integrand in a different form without changing overall complexity",
+      "distribute terms differently"
+    ],
+    "solution": "exp(x)*exp(I*x)/4 - I*exp(x)*exp(I*x)/4 + exp(x)*exp(-I*x)/4 + I*exp(x)*exp(-I*x)/4",
+    "evaluations": {
+      "7.476": 1146.0888601289948,
+      "-0.575": 0.08316810210607016,
+      "0.901": 1.7296598913781231
+    },
+    "timestamp": "2025-02-07T10:17:45.159526Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate((1/2)*(exp((1+I)*x) + exp((1-I)*x)), x)",
+    "reasoning": "As a student fond of polynomials and rational functions, I opt for rewriting complex function products with polynomial-like structures to identify symmetries or simplifications.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "factor common terms differently",
+      "rewrite the integrand in a different form without changing overall complexity",
+      "distribute terms differently"
+    ],
+    "solution": "exp(x)*exp(I*x)/4 - I*exp(x)*exp(I*x)/4 + exp(x)*exp(-I*x)/4 + I*exp(x)*exp(-I*x)/4",
+    "evaluations": {
+      "8.246": 1032.8699477011457,
+      "-2.167": -0.07951403245380068,
+      "-3.681": -0.004343836143148967
+    },
+    "timestamp": "2025-02-07T10:17:45.163079Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(exp((1+I)*x)/2 + exp((1-I)*x)/2, x)",
+    "reasoning": "Theoretical physics often employs complex numbers to simplify calculations, thus converting trigonometric expressions into exponential forms to further streamline integration.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "factor common terms differently",
+      "rewrite the integrand in a different form without changing overall complexity",
+      "distribute terms differently"
+    ],
+    "solution": "exp(x)*exp(I*x)/4 - I*exp(x)*exp(I*x)/4 + exp(x)*exp(-I*x)/4 + I*exp(x)*exp(-I*x)/4",
+    "evaluations": {
+      "-5.655": 0.00244486633758125,
+      "9.511": -7315.648757659913,
+      "-1.146": -0.07934310077185977
+    },
+    "timestamp": "2025-02-07T10:17:45.268508Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(exp(x) * cos(x), x)",
+    "reasoning": "An engineer values practicality and computational efficiency, so approximations or simplifications that leverage properties of real-valued functions are often preferred.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "factor common terms differently",
+      "rewrite the integrand in a different form without changing overall complexity",
+      "distribute terms differently"
+    ],
+    "solution": "exp(x)*sin(x)/2 + exp(x)*cos(x)/2",
+    "evaluations": {
+      "-0.843": -0.01753622608850067,
+      "9.43": -6264.800714706362,
+      "-1.151": -0.07997396851141464
+    },
+    "timestamp": "2025-02-07T10:17:45.118851Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(exp(x) * (1 - (x^2)/(2!)), x)",
+    "reasoning": "As a number theorist intrigued by rational constants, rewriting integrals in forms that expose rational coefficients appeals to the underlying harmonic structure.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "easier",
+    "transformations_used": [
+      "factor common terms differently",
+      "rewrite the integrand in a different form without changing overall complexity",
+      "distribute terms differently"
+    ],
+    "solution": "(-x**2 + 2*x)*exp(x)/2",
+    "evaluations": {
+      "2.251": -2.6771608750953177,
+      "-7.521": -0.019392773579936542,
+      "-8.092": -0.012497781017548457
+    },
+    "timestamp": "2025-02-07T10:17:44.901770Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(re(exp(x + I*x)), x)",
+    "reasoning": "A geometry enthusiast might interpret \\(e^x \\cos(x)\\) as a rotational transformation, focusing on the interaction between linear growth and circular motion in the complex plane.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "factor common terms differently",
+      "rewrite the integrand in a different form without changing overall complexity",
+      "distribute terms differently"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:17:44.930311Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(0.5*exp(x)*exp(I*x) + 0.5*exp(x)*exp(-I*x), x)",
+    "reasoning": "As an engineer, decomposing functions into simpler weighted sums allows piecewise analysis and potentially more efficient numerical integration algorithms.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "factor common terms differently",
+      "rewrite the integrand in a different form without changing overall complexity",
+      "distribute terms differently"
+    ],
+    "solution": "0.25*exp(x)*exp(I*x) - 0.25*I*exp(x)*exp(I*x) + 0.25*exp(x)*exp(-I*x) + 0.25*I*exp(x)*exp(-I*x)",
+    "evaluations": {
+      "7.107": 862.2680753879735,
+      "1.156": 2.0940779956351747,
+      "4.356": -50.1264990457202
+    },
+    "timestamp": "2025-02-07T10:17:45.011468Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(exp(x) * cos(x) * cos(pi * 0), x)",
+    "reasoning": "A theoretical physicist might view phase shifts in terms of fundamental frequency transformations, reconfiguring the integral to align with harmonic paradigms.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "factor common terms differently",
+      "rewrite the integrand in a different form without changing overall complexity",
+      "distribute terms differently"
+    ],
+    "solution": "exp(x)*sin(x)/2 + exp(x)*cos(x)/2",
+    "evaluations": {
+      "-4.866": 0.004396074155456094,
+      "8.065": 1222.3877562086855,
+      "8.942": -1609.830815568018
+    },
+    "timestamp": "2025-02-07T10:17:45.106130Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(re(exp(x)*exp(I*x)), x)",
+    "reasoning": "As a theoretical physicist, using hyperbolic forms can sometimes provide insights by considering identities like \\( \\cos(x) = \\text{Re}\\{e^{ix}\\} \\).",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "substitute equivalent exponential forms",
+      "alter constant terms",
+      "distribute terms differently",
+      "apply algebraic identities that preserve complexity",
+      "rearrange the order of terms"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:17:44.634911Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(exp(x)*cos(x) + exp(x)*sin(x).diff(x), x)",
+    "reasoning": "As an engineer, practical decomposition into simpler known forms can be computationally efficient. Applying integration by parts twice will result in an equation that can be solved algebraically.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "substitute equivalent exponential forms",
+      "alter constant terms",
+      "distribute terms differently",
+      "apply algebraic identities that preserve complexity",
+      "rearrange the order of terms"
+    ],
+    "solution": "exp(x)*sin(x) + exp(x)*cos(x)",
+    "evaluations": {
+      "-9.511": -6.744384043112304e-05,
+      "-5.661": 0.00485610676764303,
+      "9.069": -5106.678720362341
+    },
+    "timestamp": "2025-02-07T10:17:44.745794Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(exp(x)*(1 - 2*sin(x)**2), x)",
+    "reasoning": "As a number theorist, I appreciate the use of identities that lead to exact solutions with integer coefficients.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "substitute equivalent exponential forms",
+      "alter constant terms",
+      "distribute terms differently",
+      "apply algebraic identities that preserve complexity",
+      "rearrange the order of terms"
+    ],
+    "solution": "-6*exp(x)*sin(x)**2/5 + 4*exp(x)*sin(x)*cos(x)/5 - 4*exp(x)*cos(x)**2/5 + exp(x)",
+    "evaluations": {
+      "9.254": 565.5682946528076,
+      "6.302": 117.08840766065136,
+      "-9.198": 3.59112210917261e-05
+    },
+    "timestamp": "2025-02-07T10:17:44.796631Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(exp(x - pi/4)*cos(x - pi/4 + pi/4), x)",
+    "reasoning": "As a creative mathematician, substitute another variable to transform the problem, like letting \\( u = x + \\pi/4 \\).",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "substitute equivalent exponential forms",
+      "alter constant terms",
+      "distribute terms differently",
+      "apply algebraic identities that preserve complexity",
+      "rearrange the order of terms"
+    ],
+    "solution": "exp(-pi/4)*exp(x)*sin(x)/2 + exp(-pi/4)*exp(x)*cos(x)/2",
+    "evaluations": {
+      "2.697": -1.5959161616661677,
+      "3.319": -7.3119374854881185,
+      "-2.11": -0.037902244509071537
+    },
+    "timestamp": "2025-02-07T10:17:44.604945Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(exp(x)*cos(x)*sin(x), x)",
+    "reasoning": "As a calculus professor who appreciates a challenge, let's introduce an additional trigonometric product. If we multiply by sin(x), this creates a more complex trigonometric interaction within the product-exponential context.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "complicate the denominator",
+      "add a product of functions",
+      "introduce an additional polynomial factor"
+    ],
+    "solution": "exp(x)*sin(x)**2/5 + exp(x)*sin(x)*cos(x)/5 - exp(x)*cos(x)**2/5",
+    "evaluations": {
+      "6.074": -97.01189745760787,
+      "9.104": -1978.0518897873105,
+      "0.774": 0.20736447166243294
+    },
+    "timestamp": "2025-02-07T10:17:44.911409Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate((x**2 + 1)*exp(x)*cos(x), x)",
+    "reasoning": "As a creative mathematician, I enjoy unusual substitutions; introducing a polynomial factor like (x^2 + 1) can create an interesting interplay with the exponential function.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "complicate the denominator",
+      "add a product of functions",
+      "introduce an additional polynomial factor"
+    ],
+    "solution": "x**2*exp(x)*sin(x)/2 + x**2*exp(x)*cos(x)/2 - x*exp(x)*sin(x) + exp(x)*sin(x)",
+    "evaluations": {
+      "9.24": -367286.2848389203,
+      "6.955": 31760.337283293935,
+      "1.136": 2.285975806434096
+    },
+    "timestamp": "2025-02-07T10:17:45.122577Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(exp(x)*cos(x)/(x^2 + 1), x)",
+    "reasoning": "As a student working with polynomials, let's change it into a rational function by adding a polynomial in the denominator involving x.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "harder",
+    "transformations_used": [
+      "complicate the denominator",
+      "add a product of functions",
+      "introduce an additional polynomial factor"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:17:45.307984Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(exp(x)*cos(x)*exp(-x), x)",
+    "reasoning": "As a theoretical physicist, I can complicate things by involving exponential growth and decay. Adding an exp(-x) term will modify the exponential dynamics.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "easier",
+    "transformations_used": [
+      "complicate the denominator",
+      "add a product of functions",
+      "introduce an additional polynomial factor"
+    ],
+    "solution": "sin(x)",
+    "evaluations": {
+      "9.627": -0.2005052849087812,
+      "-9.158": -0.2634758362269931,
+      "7.52": 0.9446633031798057
+    },
+    "timestamp": "2025-02-07T10:17:45.092032Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate((2*x + 3)*exp(x)*cos(x), x)",
+    "reasoning": "As an engineer, let's introduce an additional engineering twist by multiplying by a linear polynomial. This simulates practical, real-world layering of factors.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "complicate the denominator",
+      "add a product of functions",
+      "introduce an additional polynomial factor"
+    ],
+    "solution": "x*exp(x)*sin(x) + x*exp(x)*cos(x) + exp(x)*sin(x)/2 + 3*exp(x)*cos(x)/2",
+    "evaluations": {
+      "-2.405": 0.17598539558585002,
+      "-0.152": 1.098221520498617,
+      "-8.202": 0.0026109025979978826
+    },
+    "timestamp": "2025-02-07T10:17:45.262837Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate((3/7)*exp(x)*cos(x), x)",
+    "reasoning": "As a number theorist, I'd like to see what happens when using rational coefficients in the mix. This might reveal interesting patterns or simplifications.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "complicate the denominator",
+      "add a product of functions",
+      "introduce an additional polynomial factor"
+    ],
+    "solution": "3*exp(x)*sin(x)/14 + 3*exp(x)*cos(x)/14",
+    "evaluations": {
+      "-9.168": -2.7283121397423675e-05,
+      "7.497": 496.93439945905743,
+      "-6.117": 0.0005439025785529189
+    },
+    "timestamp": "2025-02-07T10:17:44.857103Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(exp(x)*cos(x)*sec(x), x)",
+    "reasoning": "As a geometry enthusiast, considering geometric transformations, adding a secant function will provide a blend of geometric and trigonometric complexity.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "harder",
+    "transformations_used": [
+      "complicate the denominator",
+      "add a product of functions",
+      "introduce an additional polynomial factor"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:17:45.146510Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(exp(x)*cos(x)*sinh(x), x)",
+    "reasoning": "As a calculus professor who enjoys elegant simplifications, adding a hyperbolic function such as sinh(x) could lead to fun reduction or expansion pathways.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "complicate the denominator",
+      "add a product of functions",
+      "introduce an additional polynomial factor"
+    ],
+    "solution": "3*exp(x)*sin(x)*sinh(x)/5 - 2*exp(x)*sin(x)*cosh(x)/5 + exp(x)*cos(x)*sinh(x)/5 + exp(x)*cos(x)*cosh(x)/5",
+    "evaluations": {
+      "-4.802": -0.4979805804621776,
+      "1.315": 1.560090435593762,
+      "-2.269": 0.38094727534205747
+    },
+    "timestamp": "2025-02-07T10:17:44.995614Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(x**4*exp(x)*cos(x), x)",
+    "reasoning": "As a creative mathematician, using a higher power of x such as (x^4) in the polynomial factor can increase the polynomial challenge complexity.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "complicate the denominator",
+      "add a product of functions",
+      "introduce an additional polynomial factor"
+    ],
+    "solution": "x**4*exp(x)*sin(x)/2 + x**4*exp(x)*cos(x)/2 - 2*x**3*exp(x)*sin(x) + 3*x**2*exp(x)*sin(x) - 3*x**2*exp(x)*cos(x) + 6*x*exp(x)*cos(x) - 3*exp(x)*sin(x) - 3*exp(x)*cos(x)",
+    "evaluations": {
+      "9.844": -100333797.78410818,
+      "-4.709": 4.666601953289916,
+      "-3.568": 1.944473386486246
+    },
+    "timestamp": "2025-02-07T10:17:45.237944Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(exp(x)*cos(x)/(x + 7), x)",
+    "reasoning": "As a number theorist intrigued by primes in denominators, modifying the denominator to involve a prime number produces a unique rational interplay.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "harder",
+    "transformations_used": [
+      "complicate the denominator",
+      "add a product of functions",
+      "introduce an additional polynomial factor"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:17:52.028824Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(exp(x) * cos(x) * sec(x), x)",
+    "reasoning": "As a calculus professor, I appreciate adding complexity by incorporating additional functions while maintaining elegance. Let's introduce a secant function, making it trickier yet elegant.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "harder",
+    "transformations_used": [
+      "add a non-linear term",
+      "introduce a composite trigonometric function",
+      "insert a logarithmic factor",
+      "introduce an additional polynomial factor",
+      "embed an extra constant factor that makes the expression less trivial"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:17:45.280672Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(exp(x) * cos(x) * tan(x), x)",
+    "reasoning": "As a creative mathematician, I find joy in unusual substitutions. Adding a tangent function will create a more intriguing problem since it induces singularities.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "harder",
+    "transformations_used": [
+      "add a non-linear term",
+      "introduce a composite trigonometric function",
+      "insert a logarithmic factor",
+      "introduce an additional polynomial factor",
+      "embed an extra constant factor that makes the expression less trivial"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:17:45.188322Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate((x**2 + 1) * exp(x) * cos(x), x)",
+    "reasoning": "As a student, I enjoy working with polynomials. Including a quadratic polynomial will increase the complexity in a familiar way.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "add a non-linear term",
+      "introduce a composite trigonometric function",
+      "insert a logarithmic factor",
+      "introduce an additional polynomial factor",
+      "embed an extra constant factor that makes the expression less trivial"
+    ],
+    "solution": "x**2*exp(x)*sin(x)/2 + x**2*exp(x)*cos(x)/2 - x*exp(x)*sin(x) + exp(x)*sin(x)",
+    "evaluations": {
+      "-6.268": 0.03803773515352445,
+      "-4.15": 0.11107434879588458,
+      "2.664": -32.7664727379048
+    },
+    "timestamp": "2025-02-07T10:17:45.073317Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(exp(x) * sin(x)**2, x)",
+    "reasoning": "As a theoretical physicist, I adore trigonometric identities. I will replace the cosine with a composite of sine functions to explore new trigonometric territory.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "add a non-linear term",
+      "introduce a composite trigonometric function",
+      "insert a logarithmic factor",
+      "introduce an additional polynomial factor",
+      "embed an extra constant factor that makes the expression less trivial"
+    ],
+    "solution": "3*exp(x)*sin(x)**2/5 - 2*exp(x)*sin(x)*cos(x)/5 + 2*exp(x)*cos(x)**2/5",
+    "evaluations": {
+      "9.166": 4898.620550209466,
+      "-2.081": 0.04767307390569116,
+      "3.043": 9.249409715210483
+    },
+    "timestamp": "2025-02-07T10:17:44.927377Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(exp(x) * cos(x) * log(x), x)",
+    "reasoning": "As an engineer, the inclusion of logarithmic factors piques my interest for practical computational challenges.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "harder",
+    "transformations_used": [
+      "add a non-linear term",
+      "introduce a composite trigonometric function",
+      "insert a logarithmic factor",
+      "introduce an additional polynomial factor",
+      "embed an extra constant factor that makes the expression less trivial"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:17:45.181487Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(7 * exp(x) * cos(x) + 11 * x, x)",
+    "reasoning": "As a number theorist, the integration of prime numbers as coefficients creates an appealing algebraic complexity.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "add a non-linear term",
+      "introduce a composite trigonometric function",
+      "insert a logarithmic factor",
+      "introduce an additional polynomial factor",
+      "embed an extra constant factor that makes the expression less trivial"
+    ],
+    "solution": "11*x**2/2 + 7*exp(x)*sin(x)/2 + 7*exp(x)*cos(x)/2",
+    "evaluations": {
+      "4.375": -249.17051712951448,
+      "-4.38": 105.55162535049993,
+      "-6.563": 236.93456452144224
+    },
+    "timestamp": "2025-02-07T10:17:45.177170Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(exp(x) * sin(x)**2 * cos(x), x)",
+    "reasoning": "As a geometry enthusiast, I view equations through transformations. Including a sine function squared will require deeper geometric understanding.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "add a non-linear term",
+      "introduce a composite trigonometric function",
+      "insert a logarithmic factor",
+      "introduce an additional polynomial factor",
+      "embed an extra constant factor that makes the expression less trivial"
+    ],
+    "solution": "exp(x)*sin(x)**3/5 + exp(x)*sin(x)**2*cos(x)/5 - exp(x)*sin(x)*cos(x)**2/10 + exp(x)*cos(x)**3/10",
+    "evaluations": {
+      "3.155": -2.31408762486082,
+      "-8.541": -3.175879873726199e-05,
+      "7.81": 512.7503522430154
+    },
+    "timestamp": "2025-02-07T10:17:45.743104Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(exp(x) * cos(x) + atan(x), x)",
+    "reasoning": "A calculus professor finds reversing simplicity challenging. Adding an arctangent adds non-linearity and complicates integration.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "add a non-linear term",
+      "introduce a composite trigonometric function",
+      "insert a logarithmic factor",
+      "introduce an additional polynomial factor",
+      "embed an extra constant factor that makes the expression less trivial"
+    ],
+    "solution": "x*atan(x) + exp(x)*sin(x)/2 + exp(x)*cos(x)/2 - log(x**2 + 1)/2",
+    "evaluations": {
+      "6.785": 608.4123896272223,
+      "8.612": 116.87260207461534,
+      "-1.937": 1.2476611842468406
+    },
+    "timestamp": "2025-02-07T10:17:45.141317Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(exp(x) * cosh(x) * cos(x), x)",
+    "reasoning": "From the perspective of a creative mathematician, replacing cosine with a product of hyperbolic and trigonometric functions explores interesting identities.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "add a non-linear term",
+      "introduce a composite trigonometric function",
+      "insert a logarithmic factor",
+      "introduce an additional polynomial factor",
+      "embed an extra constant factor that makes the expression less trivial"
+    ],
+    "solution": "-2*exp(x)*sin(x)*sinh(x)/5 + 3*exp(x)*sin(x)*cosh(x)/5 + exp(x)*cos(x)*sinh(x)/5 + exp(x)*cos(x)*cosh(x)/5",
+    "evaluations": {
+      "3.097": -95.71079243855668,
+      "-5.668": 0.2886337948420782,
+      "-4.893": 0.49183363466962027
+    },
+    "timestamp": "2025-02-07T10:17:44.944336Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(exp(2*x) * cos(x), x)",
+    "reasoning": "As a theoretical physicist, I enjoy analyzing exponential envelopes; fusing exponentials with sinusoidal expression introduces layers of complexity.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "add a non-linear term",
+      "introduce a composite trigonometric function",
+      "insert a logarithmic factor",
+      "introduce an additional polynomial factor",
+      "embed an extra constant factor that makes the expression less trivial"
+    ],
+    "solution": "exp(2*x)*sin(x)/5 + 2*exp(2*x)*cos(x)/5",
+    "evaluations": {
+      "-1.451": -0.008280722651532707,
+      "0.814": 2.139364324574493,
+      "1.24": 3.8099935225859576
+    },
+    "timestamp": "2025-02-07T10:17:45.968177Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(exp(x)*cos(x)*x, x)",
+    "reasoning": "As a calculus professor, I appreciate adding layers by introducing an extra polynomial term, which can increase the complexity in recognizing a pattern for integration by parts.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "add a non-linear term",
+      "include a higher degree term",
+      "embed an extra constant factor that makes the expression less trivial",
+      "introduce an additional polynomial factor",
+      "complicate the denominator"
+    ],
+    "solution": "x*exp(x)*sin(x)/2 + x*exp(x)*cos(x)/2 - exp(x)*sin(x)/2",
+    "evaluations": {
+      "-5.636": -0.015150463350038591,
+      "1.457": 1.3296825403845811,
+      "-1.526": 0.2668807634230736
+    },
+    "timestamp": "2025-02-07T10:17:44.548288Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(exp(x^2)*cos(x), x)",
+    "reasoning": "As a creative mathematician, I enjoy seeing how unusual substitutions might simplify what appears complex. By adding a non-linear term, we challenge conventional approaches.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "add a non-linear term",
+      "include a higher degree term",
+      "embed an extra constant factor that makes the expression less trivial",
+      "introduce an additional polynomial factor",
+      "complicate the denominator"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:17:44.805976Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(exp(x)*cos(x)*(x^2 + 1), x)",
+    "reasoning": "As a student with a focus on polynomials, integrating a trigonometric identity with a polynomial weight adds depth to the original integral.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "add a non-linear term",
+      "include a higher degree term",
+      "embed an extra constant factor that makes the expression less trivial",
+      "introduce an additional polynomial factor",
+      "complicate the denominator"
+    ],
+    "solution": "x**2*exp(x)*sin(x)/2 + x**2*exp(x)*cos(x)/2 - x*exp(x)*sin(x) + exp(x)*sin(x)",
+    "evaluations": {
+      "7.41": 50887.64525876456,
+      "-8.604": -0.01088448621073385,
+      "-3.762": 0.02602511275479733
+    },
+    "timestamp": "2025-02-07T10:17:45.150996Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(exp(x)*x^2*cos(x), x)",
+    "reasoning": "As a theoretical physicist, integrating exponential and trigonometric functions with higher powers of x broadens the problem scope, encouraging deeper analysis of oscillatory behavior.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "add a non-linear term",
+      "include a higher degree term",
+      "embed an extra constant factor that makes the expression less trivial",
+      "introduce an additional polynomial factor",
+      "complicate the denominator"
+    ],
+    "solution": "x**2*exp(x)*sin(x)/2 + x**2*exp(x)*cos(x)/2 - x*exp(x)*sin(x) + exp(x)*sin(x)/2 - exp(x)*cos(x)/2",
+    "evaluations": {
+      "-2.241": -0.5707559974826033,
+      "2.08": -2.416439345636893,
+      "3.725": -307.8105418192472
+    },
+    "timestamp": "2025-02-07T10:17:44.929251Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(exp(x)*exp(-x/2)*cos(x), x)",
+    "reasoning": "As an engineer, including a damping factor like exp(-x) affects the balance between rapidly growing and decaying functions, creating a more complex dynamic.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "add a non-linear term",
+      "include a higher degree term",
+      "embed an extra constant factor that makes the expression less trivial",
+      "introduce an additional polynomial factor",
+      "complicate the denominator"
+    ],
+    "solution": "4*exp(x/2)*sin(x)/5 + 2*exp(x/2)*cos(x)/5",
+    "evaluations": {
+      "-9.236": -0.005359376652286956,
+      "-5.222": 0.06564345421560018,
+      "-1.242": -0.33740742690108133
+    },
+    "timestamp": "2025-02-07T10:17:44.456520Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(exp(3*x)*cos(5*x), x)",
+    "reasoning": "As a number theorist, embedding prime coefficients can imbue the integral with arithmetic richness, akin to selecting special frequencies in signal processing.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "add a non-linear term",
+      "include a higher degree term",
+      "embed an extra constant factor that makes the expression less trivial",
+      "introduce an additional polynomial factor",
+      "complicate the denominator"
+    ],
+    "solution": "5*exp(3*x)*sin(5*x)/34 + 3*exp(3*x)*cos(5*x)/34",
+    "evaluations": {
+      "-6.527": -3.377310370823299e-10,
+      "4.301": -3705.356898839616,
+      "3.524": -4251.331110264939
+    },
+    "timestamp": "2025-02-07T10:17:44.825922Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(exp(2*x)*cos(x/3), x)",
+    "reasoning": "As a geometry enthusiast, transforming the integral through scaling introduces a different scale analysis akin to dilation transformations in geometric figures.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "add a non-linear term",
+      "include a higher degree term",
+      "embed an extra constant factor that makes the expression less trivial",
+      "introduce an additional polynomial factor",
+      "complicate the denominator"
+    ],
+    "solution": "3*exp(2*x)*sin(x/3)/37 + 18*exp(2*x)*cos(x/3)/37",
+    "evaluations": {
+      "5.999": -20912.574782513424,
+      "5.248": -241.02451698317503,
+      "-0.134": 0.3690539178558198
+    },
+    "timestamp": "2025-02-07T10:17:44.928188Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(exp(x)*cos(x)/(x^2 + x + 1), x)",
+    "reasoning": "As a calculus professor, adding a rational function with a non-trivial denominator elevates the challenge, forcing a reconsideration of the strategy.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "add a non-linear term",
+      "include a higher degree term",
+      "embed an extra constant factor that makes the expression less trivial",
+      "introduce an additional polynomial factor",
+      "complicate the denominator"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:17:44.645706Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(exp(x)*cos(x^2 + x), x)",
+    "reasoning": "As a creative mathematician, mixing transcendental equations with polynomial partitioning enhances the quest for a closed-form solution.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "add a non-linear term",
+      "include a higher degree term",
+      "embed an extra constant factor that makes the expression less trivial",
+      "introduce an additional polynomial factor",
+      "complicate the denominator"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:17:44.698230Z"
+  },
+  {
+    "original": "integrate(exp(x)*cos(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate((x**2) * exp(x) * cos(x), x)",
+    "reasoning": "As a calculus professor who loves elegant simplifications, I introduce a quadratic polynomial factor to the integrand to increase the algebraic complexity.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "insert a logarithmic factor",
+      "introduce an additional polynomial factor",
+      "add a non-linear term"
+    ],
+    "solution": "x**2*exp(x)*sin(x)/2 + x**2*exp(x)*cos(x)/2 - x*exp(x)*sin(x) + exp(x)*sin(x)/2 - exp(x)*cos(x)/2",
+    "evaluations": {
+      "-3.183": -0.17427551429614033,
+      "5.328": 53.71434926443304,
+      "-9.242": -0.004941274693601809
+    },
+    "timestamp": "2025-02-07T10:17:45.370444Z"
+  }
+]

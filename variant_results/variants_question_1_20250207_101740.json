@@ -1,0 +1,1140 @@
+[
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(exp(-x) * (exp(I*2*x) - exp(-I*2*x)) / (2*I), x)",
+    "reasoning": "As a calculus professor, I will simplify the integral by converting the sine function to its exponential form using Euler's formula.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "substitute equivalent exponential forms",
+      "change coefficient values slightly",
+      "apply algebraic identities that preserve complexity"
+    ],
+    "solution": "-I*(-exp(-x)*exp(2*I*x)/5 - 2*I*exp(-x)*exp(2*I*x)/5 + exp(-x)*exp(-2*I*x)/5 - 2*I*exp(-x)*exp(-2*I*x)/5)/2",
+    "evaluations": {
+      "-3.368": -7.896019801706772,
+      "-0.179": -0.3642946161920944,
+      "0.803": -0.08326157605556644
+    },
+    "timestamp": "2025-02-07T10:17:36.265757Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(exp(-x) * (2*x - (8*x**3)/6 + (32*x**5)/120 - (128*x**7)/5040), x)",
+    "reasoning": "As a student, I'm familiar with polynomial and rational functions, so I'll introduce a rational change by expressing sin(2x) in terms of its Taylor series.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "easier",
+    "transformations_used": [
+      "substitute equivalent exponential forms",
+      "change coefficient values slightly",
+      "apply algebraic identities that preserve complexity"
+    ],
+    "solution": "(8*x**7 + 56*x**6 + 252*x**5 + 1260*x**4 + 5460*x**3 + 16380*x**2 + 32130*x + 32130)*exp(-x)/315",
+    "evaluations": {
+      "-1.089": 103.56631399007406,
+      "-9.069": -526996717.17230284,
+      "5.481": 88.45878952485805
+    },
+    "timestamp": "2025-02-07T10:17:36.485445Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(exp(-x) * 2 * cos(x) * sin(x), x)",
+    "reasoning": "As a theoretical physicist, I prefer trigonometric identities and write sin(2x) using a double angle formula involving cosines.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "substitute equivalent exponential forms",
+      "change coefficient values slightly",
+      "apply algebraic identities that preserve complexity"
+    ],
+    "solution": "2*exp(-x)*sin(x)**2/5 - 2*exp(-x)*sin(x)*cos(x)/5 - 2*exp(-x)*cos(x)**2/5",
+    "evaluations": {
+      "9.068": -1.97922525378301e-05,
+      "-8.002": 968.5869708975331,
+      "-1.046": 1.0600675146210918
+    },
+    "timestamp": "2025-02-07T10:17:36.379754Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(exp(-x) * (sin(2*(x + 0.1))), x)",
+    "reasoning": "As an engineer, I seek practical approaches and appreciate computational techniques, so I introduce damping factors slightly in the sinusoidal component.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "substitute equivalent exponential forms",
+      "change coefficient values slightly",
+      "apply algebraic identities that preserve complexity"
+    ],
+    "solution": "-exp(-x)*sin(2*x + 0.2)/5 - 2*exp(-x)*cos(2*x + 0.2)/5",
+    "evaluations": {
+      "-8.892": -2262.194291606157,
+      "4.367": 0.003282116511861855,
+      "5.132": 0.0022134539541791873
+    },
+    "timestamp": "2025-02-07T10:17:36.339205Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(exp(-x) * sin(3*x), x)",
+    "reasoning": "Embracing number theory, I target the frequency term with a fascination for rational coefficients, altering the sine frequency to use another prime.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "substitute equivalent exponential forms",
+      "change coefficient values slightly",
+      "apply algebraic identities that preserve complexity"
+    ],
+    "solution": "-exp(-x)*sin(3*x)/10 - 3*exp(-x)*cos(3*x)/10",
+    "evaluations": {
+      "7.022": 8.986585480328909e-05,
+      "-4.681": 7.678762695213684,
+      "-4.376": -15.949665845370646
+    },
+    "timestamp": "2025-02-07T10:17:36.771672Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(exp(-x) * cos(2*(x - pi/4)), x)",
+    "reasoning": "From a geometric transformation perspective, I consider phase shifting the sine wave to express symmetry about the origin.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "substitute equivalent exponential forms",
+      "change coefficient values slightly",
+      "apply algebraic identities that preserve complexity"
+    ],
+    "solution": "-exp(-x)*sin(2*x)/5 - 2*exp(-x)*cos(2*x)/5",
+    "evaluations": {
+      "0.433": -0.2667219308771501,
+      "8.629": 3.729461055641852e-05,
+      "8.556": 5.0647280933678133e-05
+    },
+    "timestamp": "2025-02-07T10:17:36.433853Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(exp(-x) * sinh(2*I*x), x)",
+    "reasoning": "Using a creative approach, I adopt an imaginary unit substitution to explore relationships with hyperbolic functions.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "substitute equivalent exponential forms",
+      "change coefficient values slightly",
+      "apply algebraic identities that preserve complexity"
+    ],
+    "solution": "I*(-exp(-x)*sin(2*x)/5 - 2*exp(-x)*cos(2*x)/5)",
+    "evaluations": {
+      "5.73": 0.0
+    },
+    "timestamp": "2025-02-07T10:17:36.157097Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(exp(-x) * (cos(x) * cos(x) - sin(x) * sin(x)), x)",
+    "reasoning": "As someone who loves algebraic identity, I'll express the integrand using a product-to-sum formula on the trigonometric function.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "substitute equivalent exponential forms",
+      "change coefficient values slightly",
+      "apply algebraic identities that preserve complexity"
+    ],
+    "solution": "exp(-x)*sin(x)**2/5 + 4*exp(-x)*sin(x)*cos(x)/5 - exp(-x)*cos(x)**2/5",
+    "evaluations": {
+      "-6.67": -333.290662269193,
+      "1.625": 0.030618186616440567,
+      "2.149": -0.03331491979337269
+    },
+    "timestamp": "2025-02-07T10:17:36.194048Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(exp(-x) * (exp(2*I*x) - exp(-2*I*x)) / (2*I), x)",
+    "reasoning": "As a calculus professor, I appreciate the elegance of using Euler's formula to express trigonometric functions in terms of exponentials. This transforms the integral into one with an exponential integrand, facilitating straightforward computation.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "change a function to a different one",
+      "adjust parameters while keeping the integral equivalent",
+      "swap numerator and denominator with reciprocal"
+    ],
+    "solution": "-I*(-exp(-x)*exp(2*I*x)/5 - 2*I*exp(-x)*exp(2*I*x)/5 + exp(-x)*exp(-2*I*x)/5 - 2*I*exp(-x)*exp(-2*I*x)/5)/2",
+    "evaluations": {
+      "-4.407": 36.30085007792401,
+      "-3.657": -1.316525102453922,
+      "-9.838": -2318.8332741925583
+    },
+    "timestamp": "2025-02-07T10:17:36.563077Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(exp(-x) * (2*x - (8*x**3)/6 + (32*x**5)/120), x)",
+    "reasoning": "As a student who prefers working with polynomials and rational functions, I prefer expressing sine using its Taylor series expansion to approximate the integral for small x values.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "easier",
+    "transformations_used": [
+      "change a function to a different one",
+      "adjust parameters while keeping the integral equivalent",
+      "swap numerator and denominator with reciprocal"
+    ],
+    "solution": "(-4*x**5 - 20*x**4 - 60*x**3 - 180*x**2 - 390*x - 390)*exp(-x)/15",
+    "evaluations": {
+      "-1.995": -20.76340712403839,
+      "1.052": -25.58722507097697,
+      "-9.842": 281914283.4881819
+    },
+    "timestamp": "2025-02-07T10:17:36.509668Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(exp(-x + 2*I*x) / (2*I) - exp(-x - 2*I*x) / (2*I), x)",
+    "reasoning": "As a theoretical physicist, expressing sin(2*x) using complex exponentials allows me to treat the oscillatory part in exponential terms, allowing potential Fourier transform applications.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "change a function to a different one",
+      "adjust parameters while keeping the integral equivalent",
+      "swap numerator and denominator with reciprocal"
+    ],
+    "solution": "I*(-exp(-x)*exp(-2*I*x)/5 + 2*I*exp(-x)*exp(-2*I*x)/5)/2 - I*(-exp(-x)*exp(2*I*x)/5 - 2*I*exp(-x)*exp(2*I*x)/5)/2",
+    "evaluations": {
+      "-3.913": 9.464363836105345,
+      "-6.907": 62.601312640699085,
+      "-1.943": 1.1077141577804086
+    },
+    "timestamp": "2025-02-07T10:17:36.337627Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(Re(exp(-x + 2*I*x)), x)",
+    "reasoning": "As an engineer, I like practical approaches and using digital signal processing techniques. Expressing sine using phasor notation (complex exponentials) allows easy manipulation.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "change a function to a different one",
+      "adjust parameters while keeping the integral equivalent",
+      "swap numerator and denominator with reciprocal"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:17:36.534877Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(exp(-x)*2*sin(x)*cos(x), x)",
+    "reasoning": "As a geometry enthusiast, I think of sin(2*x) in terms of its reflection properties about the y-axis. This symmetry can help in visualizing alternate forms using trigonometric identities.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "change a function to a different one",
+      "adjust parameters while keeping the integral equivalent",
+      "swap numerator and denominator with reciprocal"
+    ],
+    "solution": "2*exp(-x)*sin(x)**2/5 - 2*exp(-x)*sin(x)*cos(x)/5 - 2*exp(-x)*cos(x)**2/5",
+    "evaluations": {
+      "3.704": -0.008700753690265564,
+      "9.654": -2.868501134705886e-05,
+      "3.752": -0.007628685295090967
+    },
+    "timestamp": "2025-02-07T10:17:36.755965Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(u*v.diff(x) - v*u.diff(x), x)",
+    "reasoning": "As a calculus professor who appreciates reduction of complexity, the method of integration by parts applied to this product of functions is a classic way to transform it.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "change a function to a different one",
+      "adjust parameters while keeping the integral equivalent",
+      "swap numerator and denominator with reciprocal"
+    ],
+    "solution": "0",
+    "evaluations": {
+      "9.066": 0.0,
+      "-9.003": 0.0,
+      "0.207": 0.0
+    },
+    "timestamp": "2025-02-07T10:17:36.194445Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate((exp(-x)/(1 - (2*I/x))) - (exp(-x)/(1 + (2*I/x))), x)",
+    "reasoning": "As an engineer, I look for integrals that are tractable via numeric computation, approximating the integral's behavior by partial fraction decomposition where available.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "change a function to a different one",
+      "adjust parameters while keeping the integral equivalent",
+      "swap numerator and denominator with reciprocal"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:17:36.276684Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(Im(exp(2*I*x) * exp(-x)), x)",
+    "reasoning": "As a creative mathematician, expressing the sine function in terms of its imaginary part provides an elegant transformation using Euler's formula.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "change a function to a different one",
+      "adjust parameters while keeping the integral equivalent",
+      "swap numerator and denominator with reciprocal"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:17:36.326834Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(exp(-x) * (cos(x) * sin(x) * 4), x)",
+    "reasoning": "As a calculus professor, I appreciate direct simplifications and prefer working with common trigonometric transformations.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "rearrange the order of terms",
+      "distribute terms differently",
+      "use trigonometric identities to rewrite expression",
+      "adjust parameters while keeping the integral equivalent",
+      "alter constant terms"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:17:36.449780Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(exp(-x) * (1/(2*I)) * (exp(2*I*x) - exp(-2*I*x)), x)",
+    "reasoning": "As a creative mathematician, I like using Euler's identity for trigonometric functions to express sin(2*x) using imaginary exponentials.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "rearrange the order of terms",
+      "distribute terms differently",
+      "use trigonometric identities to rewrite expression",
+      "adjust parameters while keeping the integral equivalent",
+      "alter constant terms"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:17:36.368925Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(exp(-x) * 2 * sin(x) * cos(x), x)",
+    "reasoning": "As a student fond of polynomials, I focus on expanding the expression using the double-angle formula for sine.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "rearrange the order of terms",
+      "distribute terms differently",
+      "use trigonometric identities to rewrite expression",
+      "adjust parameters while keeping the integral equivalent",
+      "alter constant terms"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:17:36.320755Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(exp(-x) * (sinh(I*x) * exp(I*x) + sinh(I*x) * exp(-I*x)), x)",
+    "reasoning": "As a theoretical physicist, I enjoy using hyperbolic functions, which often align with exponential manipulations.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "rearrange the order of terms",
+      "distribute terms differently",
+      "use trigonometric identities to rewrite expression",
+      "adjust parameters while keeping the integral equivalent",
+      "alter constant terms"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:17:36.385033Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(exp(-x) * (4/2) * sin(2*x), x)",
+    "reasoning": "As a number theorist, I enjoy altering rational constants, such as expressing 2 as a ratio to see its effects in potential symbolic simplifications.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "rearrange the order of terms",
+      "distribute terms differently",
+      "use trigonometric identities to rewrite expression",
+      "adjust parameters while keeping the integral equivalent",
+      "alter constant terms"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:17:36.377365Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(exp(-x) * (-sin(-2*x)), x)",
+    "reasoning": "As a geometry enthusiast, I note the symmetrical properties of sine with respect to the x-axis and consider flipping the argument.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "rearrange the order of terms",
+      "distribute terms differently",
+      "use trigonometric identities to rewrite expression",
+      "adjust parameters while keeping the integral equivalent",
+      "alter constant terms"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:17:36.514594Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(exp(-x) * cos(2*x - pi/2), x)",
+    "reasoning": "As a calculus professor, I love expressing sine in terms of complementary cosine but against a negative argument.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "rearrange the order of terms",
+      "distribute terms differently",
+      "use trigonometric identities to rewrite expression",
+      "adjust parameters while keeping the integral equivalent",
+      "alter constant terms"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:17:36.329829Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(exp(-x) * -cos(pi/2 - 2*x), x)",
+    "reasoning": "As a creative mathematician and inspired by symmetry, I use the identity cos(2x) = -sin(2x - pi/2) for equivalence.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "rearrange the order of terms",
+      "distribute terms differently",
+      "use trigonometric identities to rewrite expression",
+      "adjust parameters while keeping the integral equivalent",
+      "alter constant terms"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:17:36.389779Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(exp(-x) * sin(2*x + pi - pi), x)",
+    "reasoning": "As a number theorist, incorporating irrational factors like pi fascinates me in observing positive shifts even when seemingly irrelevant to the evaluation.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "rearrange the order of terms",
+      "distribute terms differently",
+      "use trigonometric identities to rewrite expression",
+      "adjust parameters while keeping the integral equivalent",
+      "alter constant terms"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:17:36.437002Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(exp(-x) * sin(2*x), x)",
+    "reasoning": "As a calculus professor who loves elegant simplifications, I recognize this integral as a perfect candidate for integration by parts, which can simplify the process by breaking it down into manageable pieces.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "change a function to an easier one",
+      "rewrite using different logarithmic properties",
+      "apply algebraic identities that preserve complexity"
+    ],
+    "solution": "-exp(-x)*sin(2*x)/5 - 2*exp(-x)*cos(2*x)/5",
+    "evaluations": {
+      "8.83": 5.359441545870647e-06,
+      "-4.598": 43.182805465322616,
+      "0.007": -0.3999441730569488
+    },
+    "timestamp": "2025-02-07T10:17:36.627518Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(exp(-x) * (2*x - (8/3)*x**3 + (32/15)*x**5), x)",
+    "reasoning": "As a student who prefers working with polynomials and rational functions, I substitute sin(2x) with its Taylor series expansion to create an infinite polynomial series.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "easier",
+    "transformations_used": [
+      "change a function to an easier one",
+      "rewrite using different logarithmic properties",
+      "apply algebraic identities that preserve complexity"
+    ],
+    "solution": "(-32*x**5 - 160*x**4 - 600*x**3 - 1800*x**2 - 3630*x - 3630)*exp(-x)/15",
+    "evaluations": {
+      "-6.898": 17839122.489528444,
+      "-1.132": -239.9430769043905,
+      "5.613": -127.49399066919295
+    },
+    "timestamp": "2025-02-07T10:17:36.430322Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(Re(exp(2*I*x - x)), x)",
+    "reasoning": "As a geometry enthusiast, I transform the integral by considering euler's formula connecting exponential and trigonometric functions, thus emphasizing geometric transformations.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "change a function to an easier one",
+      "rewrite using different logarithmic properties",
+      "apply algebraic identities that preserve complexity"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:17:36.456153Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(exp(-x) * I*(exp(2*I*x) - exp(-2*I*x))/2, x)",
+    "reasoning": "As a practical engineer, employing symmetry properties in sinusoidal functions to simplify the computation by symmetry of exp(ix) using Euler's identities.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "change a function to an easier one",
+      "rewrite using different logarithmic properties",
+      "apply algebraic identities that preserve complexity"
+    ],
+    "solution": "I*(-exp(-x)*exp(2*I*x)/5 - 2*I*exp(-x)*exp(2*I*x)/5 + exp(-x)*exp(-2*I*x)/5 - 2*I*exp(-x)*exp(-2*I*x)/5)/2",
+    "evaluations": {
+      "-7.883": -1028.1101580750258,
+      "0.05": 0.397577237928562,
+      "6.702": 0.0005111941010802184
+    },
+    "timestamp": "2025-02-07T10:17:36.188219Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(exp(-x) * sin(2 * x), x)",
+    "reasoning": "As a calculus professor, I prefer working with simpler forms, so let's factor out a common exponential term.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "change coefficient values slightly",
+      "factor common terms differently",
+      "modify an exponent slightly",
+      "use trigonometric identities to rewrite expression",
+      "alter constant terms"
+    ],
+    "solution": "-exp(-x)*sin(2*x)/5 - 2*exp(-x)*cos(2*x)/5",
+    "evaluations": {
+      "-9.628": -4376.851389850799,
+      "7.497": 9.505369633171326e-05,
+      "3.945": -0.0035894980935846674
+    },
+    "timestamp": "2025-02-07T10:17:36.494957Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(exp(-2*x) * x**2 * sin(2*x), x)",
+    "reasoning": "As a calculus professor, I prefer to introduce a polynomial factor that increases the complexity of integration by parts.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "harder",
+    "transformations_used": [
+      "introduce an additional polynomial factor",
+      "add a product of functions",
+      "embed an extra constant factor that makes the expression less trivial"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:17:36.364679Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(exp(I*3*x) * exp(-x) * sin(2*x), x)",
+    "reasoning": "As a creative mathematician, I love unusual substitutions. Adding a complex exponential could spice things up.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "introduce an additional polynomial factor",
+      "add a product of functions",
+      "embed an extra constant factor that makes the expression less trivial"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:17:36.280561Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(exp(-x) * sin(2*x) / (x + 1), x)",
+    "reasoning": "As a student who prefers polynomials and rational functions, I introduce a rational factor to complicate partial fraction decomposition.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "harder",
+    "transformations_used": [
+      "introduce an additional polynomial factor",
+      "add a product of functions",
+      "embed an extra constant factor that makes the expression less trivial"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:17:36.439988Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(exp(2*x) * exp(-x) * sin(2*x), x)",
+    "reasoning": "As a theoretical physicist, combining exponential growth with decay terms often yields more intriguing forms.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "introduce an additional polynomial factor",
+      "add a product of functions",
+      "embed an extra constant factor that makes the expression less trivial"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:17:36.347494Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(log(x + 1) * exp(-x) * sin(2*x), x)",
+    "reasoning": "As an engineer focused on practicality, incorporating a logarithmic term challenges numerical solvers and practical computation.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "harder",
+    "transformations_used": [
+      "introduce an additional polynomial factor",
+      "add a product of functions",
+      "embed an extra constant factor that makes the expression less trivial"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:17:36.778782Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(exp(-x) * sin(4*x) * x**2, x)",
+    "reasoning": "Being a number theorist, exploring double angle formulas mixed with polynomial coefficients can be quite intriguing.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "harder",
+    "transformations_used": [
+      "introduce an additional polynomial factor",
+      "add a product of functions",
+      "embed an extra constant factor that makes the expression less trivial"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:17:36.452966Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(exp(-x) * (sin(2*x) + cos(2*x)), x)",
+    "reasoning": "As a geometry enthusiast, a transformation representing rotations could involve multiple trigonometric terms.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "harder",
+    "transformations_used": [
+      "introduce an additional polynomial factor",
+      "add a product of functions",
+      "embed an extra constant factor that makes the expression less trivial"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:17:36.468338Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(exp(-x) * sin(2*x) * cos(3*x), x)",
+    "reasoning": "As a calculus professor, adding another trigonometric function creates more opportunities for resonance and complex analysis.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "harder",
+    "transformations_used": [
+      "introduce an additional polynomial factor",
+      "add a product of functions",
+      "embed an extra constant factor that makes the expression less trivial"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:17:36.206839Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(exp(-pi*x) * sin(2*x), x)",
+    "reasoning": "As a creative mathematician, I appreciate the role of transcendental numbers, incorporating additional transcendental complexity.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "introduce an additional polynomial factor",
+      "add a product of functions",
+      "embed an extra constant factor that makes the expression less trivial"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:17:36.319538Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(exp(-x) * sinh(2*x), x)",
+    "reasoning": "As an engineer who values test cases, introducing hyperbolic functions can be useful for seeing how they affect solutions.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "introduce an additional polynomial factor",
+      "add a product of functions",
+      "embed an extra constant factor that makes the expression less trivial"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:17:36.315213Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(exp(-x)*x*sin(2*x), x)",
+    "reasoning": "As a calculus professor, I recognize that including a polynomial term will require integration by parts multiple times, thus complicating the integration process.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "include a higher degree term",
+      "insert a logarithmic factor",
+      "introduce a composite trigonometric function"
+    ],
+    "solution": "-x*exp(-x)*sin(2*x)/5 - 2*x*exp(-x)*cos(2*x)/5 + 3*exp(-x)*sin(2*x)/25 - 4*exp(-x)*cos(2*x)/25",
+    "evaluations": {
+      "-9.765": 27948.611722506736,
+      "8.914": -7.085208711317487e-05,
+      "6.125": -0.004674806881145193
+    },
+    "timestamp": "2025-02-07T10:17:36.558806Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(exp(-x)*x**2*sin(2*x), x)",
+    "reasoning": "The creative mathematician in me suggests introducing a quadratic polynomial, which adds complexity due to its non-linear nature.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "include a higher degree term",
+      "insert a logarithmic factor",
+      "introduce a composite trigonometric function"
+    ],
+    "solution": "-x**2*exp(-x)*sin(2*x)/5 - 2*x**2*exp(-x)*cos(2*x)/5 + 6*x*exp(-x)*sin(2*x)/25 - 8*x*exp(-x)*cos(2*x)/25 + 22*exp(-x)*sin(2*x)/125 + 4*exp(-x)*cos(2*x)/125",
+    "evaluations": {
+      "-2.603": -33.22967571634026,
+      "6.42": -0.031889492311281464,
+      "-5.102": 300.6528335251198
+    },
+    "timestamp": "2025-02-07T10:17:36.325092Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(exp(-x)/(x+1)*sin(2*x), x)",
+    "reasoning": "As a student working with polynomials and rational functions, embedding a rational function introduces complexity, demanding partial fraction decomposition.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "include a higher degree term",
+      "insert a logarithmic factor",
+      "introduce a composite trigonometric function"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:17:36.203210Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(exp(-2*x)*sin(2*x), x)",
+    "reasoning": "As a theoretical physicist, I find adding an exponential function with a different rate will result in a new set of frequencies to handle.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "include a higher degree term",
+      "insert a logarithmic factor",
+      "introduce a composite trigonometric function"
+    ],
+    "solution": "-exp(-2*x)*sin(2*x)/4 - exp(-2*x)*cos(2*x)/4",
+    "evaluations": {
+      "-0.459": 0.11733308004145662,
+      "-3.338": -107.21292996312019,
+      "-9.39": -38209029.651342876
+    },
+    "timestamp": "2025-02-07T10:17:36.475553Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(exp(-x)*log(x)*sin(2*x), x)",
+    "reasoning": "In pursuit of practical methods, an engineer would see the insertion of a logarithmic factor as a pathway to exercise numerical methods.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "harder",
+    "transformations_used": [
+      "include a higher degree term",
+      "insert a logarithmic factor",
+      "introduce a composite trigonometric function"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:17:36.406312Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(exp(-3*x/2)*sin(2*x), x)",
+    "reasoning": "As a number theorist, the introduction of a rational coefficient creates new algebraic structures to contend with.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "include a higher degree term",
+      "insert a logarithmic factor",
+      "introduce a composite trigonometric function"
+    ],
+    "solution": "-6*exp(-3*x/2)*sin(2*x)/25 - 8*exp(-3*x/2)*cos(2*x)/25",
+    "evaluations": {
+      "-9.698": -309279.87874199485,
+      "2.171": 0.013097151974920087,
+      "-1.082": 1.9171878617967173
+    },
+    "timestamp": "2025-02-07T10:17:36.416159Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(exp(-x)*sin(2*x)*cos(3*x), x)",
+    "reasoning": "As a geometry enthusiast, introducing a composite trigonometric function creates intricate wave interference patterns requiring careful algebraic manipulation.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "include a higher degree term",
+      "insert a logarithmic factor",
+      "introduce a composite trigonometric function"
+    ],
+    "solution": "9*exp(-x)*sin(2*x)*sin(3*x)/26 - 7*exp(-x)*sin(2*x)*cos(3*x)/26 + 3*exp(-x)*sin(3*x)*cos(2*x)/13 + 2*exp(-x)*cos(2*x)*cos(3*x)/13",
+    "evaluations": {
+      "4.011": -0.007326185348295837,
+      "9.888": -1.9625889363616073e-05,
+      "8.325": 4.623549765676284e-05
+    },
+    "timestamp": "2025-02-07T10:17:36.318341Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(exp(-x)*exp(x**2)*sin(2*x), x)",
+    "reasoning": "As a creative mathematician, I introduce an additional exponential factor that respects the Euler identity linking complex numbers.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "harder",
+    "transformations_used": [
+      "include a higher degree term",
+      "insert a logarithmic factor",
+      "introduce a composite trigonometric function"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:17:36.573293Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(exp(-x)*x**3*sin(2*x), x)",
+    "reasoning": "The number theorist in me suggests involving a polynomial term with an odd exponent to represent an asymmetrical, challenging case.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "include a higher degree term",
+      "insert a logarithmic factor",
+      "introduce a composite trigonometric function"
+    ],
+    "solution": "-x**3*exp(-x)*sin(2*x)/5 - 2*x**3*exp(-x)*cos(2*x)/5 + 9*x**2*exp(-x)*sin(2*x)/25 - 12*x**2*exp(-x)*cos(2*x)/25 + 66*x*exp(-x)*sin(2*x)/125 + 12*x*exp(-x)*cos(2*x)/125 + 42*exp(-x)*sin(2*x)/625 + 144*exp(-x)*cos(2*x)/625",
+    "evaluations": {
+      "6.603": -0.17822924374332927,
+      "6.896": -0.09509600920773124,
+      "-9.565": 3381826.1190630593
+    },
+    "timestamp": "2025-02-07T10:17:36.539192Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(exp(-x)*exp(-2*x)*sin(2*x), x)",
+    "reasoning": "From the perspective of an engineer, incorporating two separate exponential decay terms tests the limits of computational efficiency.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "easier",
+    "transformations_used": [
+      "include a higher degree term",
+      "insert a logarithmic factor",
+      "introduce a composite trigonometric function"
+    ],
+    "solution": "-3*exp(-3*x)*sin(2*x)/13 - 2*exp(-3*x)*cos(2*x)/13",
+    "evaluations": {
+      "-1.102": 7.547995525684772,
+      "-3.559": 2928.8575386757766,
+      "0.506": -0.06080846398740532
+    },
+    "timestamp": "2025-02-07T10:17:36.499346Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(exp(-3*x)*sin(2*x), x)",
+    "reasoning": "As a calculus professor, I appreciate simple and elegant transformations. Let's make the exponential decay rate faster by introducing a constant factor to the exponent.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "include a higher degree term",
+      "embed an extra constant factor that makes the expression less trivial",
+      "introduce a composite trigonometric function"
+    ],
+    "solution": "-3*exp(-3*x)*sin(2*x)/13 - 2*exp(-3*x)*cos(2*x)/13",
+    "evaluations": {
+      "9.858": -3.9417746036799465e-14,
+      "9.334": -7.560683233015277e-14,
+      "-7.792": 2572252713.8111815
+    },
+    "timestamp": "2025-02-07T10:17:36.503129Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(exp(-x)*sin(2*x^2 + 1), x)",
+    "reasoning": "As a creative mathematician, let's try some unusual substitutions. I'll introduce a polynomial into the sine function argument to see how it complicates the integral.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "harder",
+    "transformations_used": [
+      "include a higher degree term",
+      "embed an extra constant factor that makes the expression less trivial",
+      "introduce a composite trigonometric function"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:17:36.418913Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(exp(-(x + 1/x))*sin(2*x), x)",
+    "reasoning": "As a student focused on polynomials and rational functions, I'm curious about the behavior when we add a rational function to the exponent.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "harder",
+    "transformations_used": [
+      "include a higher degree term",
+      "embed an extra constant factor that makes the expression less trivial",
+      "introduce a composite trigonometric function"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:17:36.479872Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(exp(-x)*sin(2*x)*sin(3*x), x)",
+    "reasoning": "As a theoretical physicist, I wonder about the interplay of multiple frequencies, so I add another sine term with a different frequency.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "harder",
+    "transformations_used": [
+      "include a higher degree term",
+      "embed an extra constant factor that makes the expression less trivial",
+      "introduce a composite trigonometric function"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:17:36.382739Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(exp(-x^2)*sin(2*x), x)",
+    "reasoning": "As an engineer, I'm interested in more complex damping scenarios. Thus, I introduce a quadratic term in the exponent.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "harder",
+    "transformations_used": [
+      "include a higher degree term",
+      "embed an extra constant factor that makes the expression less trivial",
+      "introduce a composite trigonometric function"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:17:36.352019Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(exp(-(5*x + 3))*sin(2*x), x)",
+    "reasoning": "As a number theorist, I wonder about the challenge of a more complex exponent involving prime numbers.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "harder",
+    "transformations_used": [
+      "include a higher degree term",
+      "embed an extra constant factor that makes the expression less trivial",
+      "introduce a composite trigonometric function"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:17:36.582438Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(exp(-2*(x - 1))*sin(2*(x + 1)), x)",
+    "reasoning": "As a geometry enthusiast, I appreciate transformations and consider adding a geometric transformation on x itself, like a scaling and translation.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "include a higher degree term",
+      "embed an extra constant factor that makes the expression less trivial",
+      "introduce a composite trigonometric function"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:17:36.335771Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(exp(-x)*(sin(2*x) + cos(2*x)), x)",
+    "reasoning": "As a calculus professor, reducing symmetry can be interesting, so I'll mix sine with cosine to break the symmetry.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "harder",
+    "transformations_used": [
+      "include a higher degree term",
+      "embed an extra constant factor that makes the expression less trivial",
+      "introduce a composite trigonometric function"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:17:36.260173Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(exp(-x)*sin(x^2 + 2*x), x)",
+    "reasoning": "As a student who likes polynomials, let's see how introducing a polynomial into the trigonometric function affects the complexity.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "harder",
+    "transformations_used": [
+      "include a higher degree term",
+      "embed an extra constant factor that makes the expression less trivial",
+      "introduce a composite trigonometric function"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:17:36.356752Z"
+  },
+  {
+    "original": "integrate(exp(-x)*sin(2*x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(exp(-x)*sinh(2*x), x)",
+    "reasoning": "As a theoretical physicist, I\u2019m intrigued by combinations of exponential and hyperbolic functions.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "include a higher degree term",
+      "embed an extra constant factor that makes the expression less trivial",
+      "introduce a composite trigonometric function"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:17:36.669705Z"
+  }
+]

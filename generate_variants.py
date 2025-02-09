@@ -6,14 +6,15 @@ An experimental pipeline that:
 - For each requested difficulty (e.g., easier, equivalent, or harder) it generates several variants.
 - Each LLM prompt now generates up to 10 variants at once. If the user requests more than 10 variants,
   the work is split into multiple concurrent calls.
-- Each variant is verified symbolically via Sympy.
+- Each variant’s antiderivative is attempted symbolically via Sympy.
 - A second LLM prompt asks for a difficulty evaluation (easier/harder/equivalent) as a double-check.
 - The antiderivative solution (i.e. the integration result) is computed, and it is evaluated at three random points.
 - Points that produce complex values are skipped.
 - Variants judged as "harder" are filtered out when not desired.
 - All results are saved to "variants.json".
 
-If the integration (antiderivative computation) takes more than 5 seconds, it is skipped and the variant is marked as too hard.
+If the integration (antiderivative computation) takes more than 5 seconds, it is skipped and the variant is
+returned with a solution of None (and an empty evaluation dictionary), rather than being thrown out.
 """
 
 import asyncio
@@ -25,8 +26,8 @@ from datetime import datetime
 import concurrent.futures
 import sympy as sp
 
-MODEL = "meta-llama/Llama-3.2-3B-Instruct"
-TIMEOUT_SECONDS = 2  # Maximum allowed seconds for integration
+MODEL = "gpt-4o-mini"
+TIMEOUT_SECONDS = 1  # Maximum allowed seconds for integration
 
 # Import our LLM-based generation function from the provided utils.inference module.
 from utils.inference import generate_text
@@ -53,7 +54,7 @@ def verify_integral(integral_str: str) -> bool:
     """
     Verify the integral by checking that the derivative of the antiderivative equals the original integrand.
     Uses symbolic simplification to check for an exact zero difference.
-    If integration takes too long, the variant is considered too hard.
+    Note: In this revised version we no longer use this result to drop variants.
     """
     x = sp.symbols('x')
     try:
@@ -67,7 +68,7 @@ def verify_integral(integral_str: str) -> bool:
         try:
             antideriv = run_integration(integrand, x, timeout=TIMEOUT_SECONDS)
         except Exception as e:
-            print("Integration timed out in verify_integral; marking as too hard.")
+            print("Integration timed out in verify_integral; returning non-verified result.")
             return False
 
         diff_expr = sp.simplify(sp.diff(antideriv, x) - integrand)
@@ -83,7 +84,7 @@ def compute_solution_and_evals(integral_str: str, num_points: int = 3, lower: fl
     If the antiderivative cannot be computed within TIMEOUT_SECONDS, returns None and an empty dict.
     
     Returns:
-        solution_str: The antiderivative as a string.
+        solution_str: The antiderivative as a string (or None if not computable).
         evaluations: A dictionary mapping each random x value (rounded) to the numerical evaluation.
     """
     x = sp.symbols('x')
@@ -98,7 +99,7 @@ def compute_solution_and_evals(integral_str: str, num_points: int = 3, lower: fl
         try:
             antideriv = run_integration(integrand, x, timeout=TIMEOUT_SECONDS)
         except Exception as e:
-            print("Integration timed out in compute_solution_and_evals; question is too hard.")
+            print("Integration timed out in compute_solution_and_evals; marking as too hard.")
             return None, {}
         solution_str = str(antideriv)
         evaluations = {}
@@ -145,18 +146,40 @@ def parse_variants(text: str) -> list:
 async def process_single_variant(original_integral: str, difficulty: str, variant_data: dict) -> dict:
     """
     Process one variant dictionary:
-      - Verify the integral.
-      - If verified, compute its solution and numerical evaluations.
+      - Attempt to compute its antiderivative (solution) and numerical evaluations.
+        If integration takes too long (or otherwise fails) the solution is set to None.
+      - Attempt a verification by differentiating the computed solution if available.
       - Ask the LLM for a difficulty evaluation.
+    
+    Note: Even if the antiderivative computation takes too long, the variant is still returned;
+          it just carries a solution of None and verification of None.
     """
     variant_integral = variant_data.get("variant")
     if not variant_integral:
         return None
 
-    verification = verify_integral(variant_integral)
-    solution, evaluations = (None, {})
-    if verification:
-        solution, evaluations = compute_solution_and_evals(variant_integral)
+    # Always attempt to compute the solution; if the integration is too hard, solution will be None.
+    solution, evaluations = compute_solution_and_evals(variant_integral)
+
+    # Try to verify the computed solution only if available.
+    x = sp.symbols('x')
+    verification = None
+    pattern = r"integrate\((.+),\s*x\)"
+    match = re.search(pattern, variant_integral)
+    if match:
+        try:
+            integrand_str = match.group(1)
+            integrand = sp.sympify(integrand_str)
+            if solution is not None:
+                antideriv = sp.sympify(solution)
+                diff_expr = sp.simplify(sp.diff(antideriv, x) - integrand)
+                verification = (diff_expr == 0)
+            else:
+                verification = None
+        except Exception as e:
+            verification = None
+    else:
+        verification = None
 
     evaluation = "unknown"
     prompt_evaluation = (
@@ -178,8 +201,8 @@ async def process_single_variant(original_integral: str, difficulty: str, varian
         "verification_passed": verification,
         "evaluation": evaluation,
         "transformations_used": variant_data.get("transformations_used", []),
-        "solution": solution,
-        "evaluations": evaluations,
+        "solution": solution,           # Will be None if integration took too long.
+        "evaluations": evaluations,       # Will be {} if integration took too long.
         "timestamp": datetime.utcnow().isoformat() + "Z"
     }
 
@@ -235,6 +258,7 @@ async def generate_variant_chunk(integral_str: str, difficulty: str, count: int)
         for variant in parsed_variants
     ]
     processed_variants = await asyncio.gather(*tasks)
+    # Filter out any None results (if any parsing issues occur)
     return [v for v in processed_variants if v is not None]
 
 TRANSFORMATIONS_BY_DIFFICULTY = {
@@ -242,6 +266,8 @@ TRANSFORMATIONS_BY_DIFFICULTY = {
         "remove a complicated term",
         "simplify the denominator",
         "reduce an exponent",
+        "change a function to an easier one",
+ 
         "lower a coefficient",
         "remove a factor",
         "eliminate a radical",
@@ -259,6 +285,8 @@ TRANSFORMATIONS_BY_DIFFICULTY = {
         "change a function to an easier one"
     ],
     "equivalent": [
+        "change a function to an easier one",
+        "change a function to a different one",
         "change coefficient values slightly",
         "alter constant terms",
         "modify an exponent slightly",
@@ -313,6 +341,7 @@ async def process_integral(integral_str: str, difficulties: list, num_variants: 
     for idx, (difficulty, _) in enumerate(tasks):
         for variant in chunk_results[idx]:
             variant_expr = variant.get("variant")
+            # Do not discard the variant based on integration difficulty; only filter based on LLM's evaluation.
             if (variant_expr 
                 and variant_expr not in seen_variants 
                 and not (variant.get("evaluation", "") == "harder" and difficulty != "harder")):

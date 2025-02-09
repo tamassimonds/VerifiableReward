@@ -1,0 +1,1200 @@
+[
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(1/sympy.cosh(x), x)",
+    "reasoning": "As a calculus professor, I appreciate an elegant simplification. Using the fact that \\( \\cosh(x) = \\frac{e^x + e^{-x}}{2} \\), the integral can be expressed in terms of hyperbolic functions directly.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "substitute equivalent exponential forms",
+      "exchange similar functions (e.g., sin to cos)",
+      "alter constant terms"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:36:47.853395Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(1/((sympy.exp(x) + sympy.exp(-x))/2), x)",
+    "reasoning": "As a creative mathematician, I opt for an unusual substitution with exponential functions. Utilizing the exponential definition, \\( \\cosh(x) = \\frac{e^x + e^{-x}}{2} \\), I write the integral in exponential form.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "substitute equivalent exponential forms",
+      "exchange similar functions (e.g., sin to cos)",
+      "alter constant terms"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:36:47.829377Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(1/(1 + x**2/2), x)",
+    "reasoning": "As a student who enjoys polynomials, I'll replace hyperbolic functions with equivalent polynomial fractions. Given the polynomial approximation for \\( \\cosh(x) \\approx 1 + \\frac{x^2}{2} \\) for small \\( x \\).",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "easier",
+    "transformations_used": [
+      "substitute equivalent exponential forms",
+      "exchange similar functions (e.g., sin to cos)",
+      "alter constant terms"
+    ],
+    "solution": "sqrt(2)*atan(sqrt(2)*x/2)",
+    "evaluations": {
+      "-1.069": -0.9154465244490807,
+      "4.434": 1.7847853187347174,
+      "-1.654": -1.2211319874100708
+    },
+    "timestamp": "2025-02-07T10:36:48.409034Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(1/sympy.cos(I*x), x)",
+    "reasoning": "As a theoretical physicist, I convert the hyperbolic function into trigonometric form using \\( \\cosh(x) = \\cos(ix) \\).",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "substitute equivalent exponential forms",
+      "exchange similar functions (e.g., sin to cos)",
+      "alter constant terms"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:36:47.392385Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(1/sympy.sqrt(1 + sympy.sinh(x)**2), x)",
+    "reasoning": "As a geometry enthusiast, I apply geometric transformations to relate hyperbolic functions to circles, using the identity \\( \\cosh^2(x) - \\sinh^2(x) = 1 \\) to form a unity relation.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "substitute equivalent exponential forms",
+      "exchange similar functions (e.g., sin to cos)",
+      "alter constant terms"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:36:47.586854Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(2/(1 + sympy.tanh(x/2)**2), x)",
+    "reasoning": "As a calculus professor, I employ the Weierstrass substitution where \\( t = \\tanh(x/2) \\), thereby transforming the integral to utilize more standard trigonometric substitutions.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "substitute equivalent exponential forms",
+      "exchange similar functions (e.g., sin to cos)",
+      "alter constant terms"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:36:48.168814Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(sympy.sech(x), x)",
+    "reasoning": "As a creative mathematician, I'll invert reciprocal identities where \\( 1/\\cosh(x) = \\sech(x) \\), employing the sech function directly.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "substitute equivalent exponential forms",
+      "exchange similar functions (e.g., sin to cos)",
+      "alter constant terms"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:36:48.291712Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(2/(exp(x) + exp(-x)), x)",
+    "reasoning": "As a calculus professor who loves elegant simplifications, I recognize that the integral of 1/cosh(x) can be elegantly transformed by using hyperbolic identities.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "modify an exponent slightly",
+      "distribute terms differently",
+      "change variables while maintaining complexity",
+      "factor common terms differently",
+      "rewrite the integrand in a different form without changing overall complexity"
+    ],
+    "solution": "RootSum(_z**2 + 1, Lambda(_i, _i*log(-_i + exp(-x))))",
+    "evaluations": {
+      "7.444": 3.14042256364014,
+      "3.827": 3.098036224302686,
+      "1.727": 2.7896282111132953
+    },
+    "timestamp": "2025-02-07T10:36:48.375267Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(2/(e**x + e**(-x)), x)",
+    "reasoning": "As a theoretical physicist, I would like to express the integrand in terms of trigonometric functions, leveraging the relationship between hyperbolic and trigonometric functions.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "modify an exponent slightly",
+      "distribute terms differently",
+      "change variables while maintaining complexity",
+      "factor common terms differently",
+      "rewrite the integrand in a different form without changing overall complexity"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:36:46.823343Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(2/(1 + sinh(x)**2), x)",
+    "reasoning": "As an engineer who favors practical approaches, I focus on a computational perspective by rewriting cosh(x) in terms of exponentials to simplify calculations.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "modify an exponent slightly",
+      "distribute terms differently",
+      "change variables while maintaining complexity",
+      "factor common terms differently",
+      "rewrite the integrand in a different form without changing overall complexity"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:36:46.937443Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(2/(1 + (e**(2*x) - 1)/(e**(2*x) + 1)), x)",
+    "reasoning": "As a number theorist, I explore expressions with integer coefficients and rewrite the integrand using known expansions.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "modify an exponent slightly",
+      "distribute terms differently",
+      "change variables while maintaining complexity",
+      "factor common terms differently",
+      "rewrite the integrand in a different form without changing overall complexity"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:36:47.084297Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(1/(0.5*(e**x + e**(-x))), x)",
+    "reasoning": "As a student, I prefer working with rational functions, so I'll express cosh(x) in terms of exponential functions to handle it in a polynomial-like manner.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "modify an exponent slightly",
+      "distribute terms differently",
+      "change variables while maintaining complexity",
+      "factor common terms differently",
+      "rewrite the integrand in a different form without changing overall complexity"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:36:46.971793Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(1/cos(1j*x), x)",
+    "reasoning": "As a geometry enthusiast, I appreciate expressions involving transformations, recognizing that hyperbolic functions reflect geometric properties similar to trigonometric functions.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "modify an exponent slightly",
+      "distribute terms differently",
+      "change variables while maintaining complexity",
+      "factor common terms differently",
+      "rewrite the integrand in a different form without changing overall complexity"
+    ],
+    "solution": "2*atan(tanh(x/2))",
+    "evaluations": {
+      "-2.398": -1.389573152493244,
+      "-0.285": -0.28138552078491014,
+      "-5.098": -1.5585783063539878
+    },
+    "timestamp": "2025-02-07T10:36:48.524429Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(1/math.sqrt(1 + tanh(x)**2), x)",
+    "reasoning": "As an engineer, I admire computational efficiency, so I rewrite the integral by separating variables using a lesser-known identity involving hyperbolic sine and cosine.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "modify an exponent slightly",
+      "distribute terms differently",
+      "change variables while maintaining complexity",
+      "factor common terms differently",
+      "rewrite the integrand in a different form without changing overall complexity"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:36:46.906692Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(2/(1 + tanh(x)**2), x)",
+    "reasoning": "As a student who prefers working with polynomials, I like converting hyperbolic functions to their algebraic forms. Express the hyperbolic cosine function using its polynomial-like form.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "rewrite using alternate algebraic forms",
+      "factor common terms differently",
+      "distribute terms differently",
+      "alter constant terms",
+      "exchange similar functions (e.g., sin to cos)"
+    ],
+    "solution": "x + atan(tanh(x))",
+    "evaluations": {
+      "-8.609": -9.394338406956141,
+      "9.059": 9.844829038043342,
+      "-4.479": -5.264227735497311
+    },
+    "timestamp": "2025-02-07T10:36:47.620365Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(1/cos(I*x), x)",
+    "reasoning": "As a theoretical physicist, I have an affinity for trigonometric forms. Using the relationship between hyperbolic and regular trigonometric functions through imaginary numbers, I use cosh(x) = cos(ix).",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "rewrite using alternate algebraic forms",
+      "factor common terms differently",
+      "distribute terms differently",
+      "alter constant terms",
+      "exchange similar functions (e.g., sin to cos)"
+    ],
+    "solution": "2*atan(tanh(x/2))",
+    "evaluations": {
+      "-8.792": -1.570492421018651,
+      "4.639": 1.5514658710168239,
+      "3.749": 1.5237094361834933
+    },
+    "timestamp": "2025-02-07T10:36:47.379233Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(2*(exp(x) - exp(-x))/((exp(x) + exp(-x))**2), x)",
+    "reasoning": "As a number theorist, I enjoy working with rational coefficients and explore the field of hyperbolic functions in a rational context.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "rewrite using alternate algebraic forms",
+      "factor common terms differently",
+      "distribute terms differently",
+      "alter constant terms",
+      "exchange similar functions (e.g., sin to cos)"
+    ],
+    "solution": "-2*exp(-x)/(1 + exp(-2*x))",
+    "evaluations": {
+      "2.85": -0.11534926945457911,
+      "-5.623": -0.00722764136808126,
+      "-9.865": -0.00010389252803317498
+    },
+    "timestamp": "2025-02-07T10:36:47.477222Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(2/(1 + tan(usinh(x))**2), x)",
+    "reasoning": "As a geometry enthusiast, I think about integrals in terms of geometric transformations. Recognizing cosh(x) as related to the hyperbola, one can consider geometric substitutions.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "rewrite using alternate algebraic forms",
+      "factor common terms differently",
+      "distribute terms differently",
+      "alter constant terms",
+      "exchange similar functions (e.g., sin to cos)"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:36:47.841433Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(1/(1 - sechn(x)**2), x)",
+    "reasoning": "As a creative mathematician, I see analogies in function transformations. Transform cosh(x) using its relation to the secant function and express the integral in terms of arccosh.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "rewrite using alternate algebraic forms",
+      "factor common terms differently",
+      "distribute terms differently",
+      "alter constant terms",
+      "exchange similar functions (e.g., sin to cos)"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:36:48.072319Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(2*exp(-x)/(1 + exp(-2*x)), x)",
+    "reasoning": "As a theoretical physicist, I like to use exponential forms to express hyperbolic functions, expressing cosh(x) using e^x.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "rewrite using alternate algebraic forms",
+      "factor common terms differently",
+      "distribute terms differently",
+      "alter constant terms",
+      "exchange similar functions (e.g., sin to cos)"
+    ],
+    "solution": "RootSum(_z**2 + 1, Lambda(_i, _i*log(-_i + exp(-x))))",
+    "evaluations": {
+      "-8.774": 0.00030942553628833806,
+      "6.451": 3.1384362601082114,
+      "-7.595": 0.0010060917854640404
+    },
+    "timestamp": "2025-02-07T10:36:47.431386Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(1/(cosh(x)), x)",
+    "reasoning": "As an engineer, I employ a practical approach using a recognizable integral result, that is the integration constant addition.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "rewrite using alternate algebraic forms",
+      "factor common terms differently",
+      "distribute terms differently",
+      "alter constant terms",
+      "exchange similar functions (e.g., sin to cos)"
+    ],
+    "solution": "2*atan(tanh(x/2))",
+    "evaluations": {
+      "4.361": 1.5452609579061187,
+      "4.722": 1.5530003563578008,
+      "6.86": 1.568698732220792
+    },
+    "timestamp": "2025-02-07T10:36:47.740835Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(1/(cosh(0.5*x)), x)",
+    "reasoning": "As a creative mathematician who enjoys unusual substitutions, I'll replace \\( x \\) with a scaled version to modify the behavior of the hyperbolic function.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "apply algebraic identities that preserve complexity",
+      "change a function to an easier one",
+      "change coefficient values slightly",
+      "alter constant terms",
+      "rewrite using alternate algebraic forms"
+    ],
+    "solution": "4.0*atan(tanh(0.25*x))",
+    "evaluations": {
+      "6.041": 2.946613945575287,
+      "-5.397": -2.8728246696582715,
+      "-9.593": -3.108557361017166
+    },
+    "timestamp": "2025-02-07T10:36:47.063137Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(1/(1/cos(I*x)), x)",
+    "reasoning": "As a theoretical physicist who enjoys trigonometric forms, I use the identity \\( \\cosh(x) = \\frac{1}{\\cos(i x)} \\) to connect hyperbolic and trigonometric functions.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "apply algebraic identities that preserve complexity",
+      "change a function to an easier one",
+      "change coefficient values slightly",
+      "alter constant terms",
+      "rewrite using alternate algebraic forms"
+    ],
+    "solution": "sinh(x)",
+    "evaluations": {
+      "-4.676": -53.68942906785241,
+      "-4.158": -31.978672645309477,
+      "9.542": 6965.826571794194
+    },
+    "timestamp": "2025-02-07T10:36:47.340893Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(1/((1 + x**2/2)/(1 - x**2/6)), x)",
+    "reasoning": "As an engineer who favors practical, computational approaches, I employ a numerical approximation using a truncated continued fraction for \\( \\cosh(x) \\).",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "apply algebraic identities that preserve complexity",
+      "change a function to an easier one",
+      "change coefficient values slightly",
+      "alter constant terms",
+      "rewrite using alternate algebraic forms"
+    ],
+    "solution": "-x/3 + 4*sqrt(2)*atan(sqrt(2)*x/2)/3",
+    "evaluations": {
+      "-8.226": 0.10120317227122386,
+      "-5.7": -0.6034069393072893,
+      "9.387": -0.44917555855999025
+    },
+    "timestamp": "2025-02-07T10:36:47.876594Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(1/(cosh(2*x)), x)",
+    "reasoning": "As a number theorist intrigued by rational coefficients, I explore an integral with integer multiples in the argument of \\( \\cosh(x) \\) to study patterns.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "apply algebraic identities that preserve complexity",
+      "change a function to an easier one",
+      "change coefficient values slightly",
+      "alter constant terms",
+      "rewrite using alternate algebraic forms"
+    ],
+    "solution": "atan(tanh(x))",
+    "evaluations": {
+      "-2.102": -0.770462734087633,
+      "-9.415": -0.7853981567570368,
+      "-0.345": -0.3205033581189125
+    },
+    "timestamp": "2025-02-07T10:36:47.015098Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(1/(cosh(x - 1)), x)",
+    "reasoning": "As a geometry enthusiast, I consider how transformations affect the hyperbolic curve, opt for a simple translation.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "apply algebraic identities that preserve complexity",
+      "change a function to an easier one",
+      "change coefficient values slightly",
+      "alter constant terms",
+      "rewrite using alternate algebraic forms"
+    ],
+    "solution": "2*atan(tanh(x/2 - 1/2))",
+    "evaluations": {
+      "7.607": 1.5680957078360946,
+      "-6.573": -1.5697679594900644,
+      "5.717": 1.5529116825389184
+    },
+    "timestamp": "2025-02-07T10:36:46.986452Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(1/(1 - tanh(x)**2), x)",
+    "reasoning": "As a calculus enthusiast, I recognize the utility of using a strategic tanh-substitution to simplify integration.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "apply algebraic identities that preserve complexity",
+      "change a function to an easier one",
+      "change coefficient values slightly",
+      "alter constant terms",
+      "rewrite using alternate algebraic forms"
+    ],
+    "solution": "x*tanh(x)**2/(2*tanh(x)**2 - 2) - x/(2*tanh(x)**2 - 2) - tanh(x)/(2*tanh(x)**2 - 2)",
+    "evaluations": {
+      "1.054": 1.5405733448348449,
+      "6.884": 119191.37849219181,
+      "0.038": 0.03839582015340454
+    },
+    "timestamp": "2025-02-07T10:36:47.286626Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(2 / (exp(x) + exp(-x)), x)",
+    "reasoning": "As a calculus professor who appreciates elegant simplification, I recognize that the hyperbolic function cosh(x) can be expressed in terms of exponentials. This allows us to rewrite the integral in a more tractable form.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "swap numerator and denominator with reciprocal",
+      "adjust parameters while keeping the integral equivalent",
+      "distribute terms differently",
+      "apply algebraic identities that preserve complexity",
+      "rewrite using different logarithmic properties"
+    ],
+    "solution": "RootSum(_z**2 + 1, Lambda(_i, _i*log(-_i + exp(-x))))",
+    "evaluations": {
+      "4.983": 3.127885040985276,
+      "-0.092": 1.4791473283516816,
+      "-2.602": 0.14802179540308447
+    },
+    "timestamp": "2025-02-07T10:36:47.400850Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(1 / (1 - tanh(x/2)**2), x)",
+    "reasoning": "From the perspective of a creative mathematician, unusual substitutions are intriguing. By substituting u = tanh(x/2), the problem can be flipped to reflect those preferences.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "swap numerator and denominator with reciprocal",
+      "adjust parameters while keeping the integral equivalent",
+      "distribute terms differently",
+      "apply algebraic identities that preserve complexity",
+      "rewrite using different logarithmic properties"
+    ],
+    "solution": "x*tanh(x/2)**2/(2*tanh(x/2)**2 - 2) - x/(2*tanh(x/2)**2 - 2) - 2*tanh(x/2)/(2*tanh(x/2)**2 - 2)",
+    "evaluations": {
+      "9.32": 2795.627430233467,
+      "-1.74": -2.2507072670054096,
+      "-6.568": -181.2398073870633
+    },
+    "timestamp": "2025-02-07T10:36:48.353891Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate((exp(x) + exp(-x)) / ((exp(x) + exp(-x))**2), x)",
+    "reasoning": "As a student of polynomials, I relish the opportunity to express this integral via polynomial identities and partial fraction decomposition.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "swap numerator and denominator with reciprocal",
+      "adjust parameters while keeping the integral equivalent",
+      "distribute terms differently",
+      "apply algebraic identities that preserve complexity",
+      "rewrite using different logarithmic properties"
+    ],
+    "solution": "RootSum(4*_z**2 + 1, Lambda(_i, _i*log(-2*_i + exp(-x))))",
+    "evaluations": {
+      "0.384": 0.9727368734623898,
+      "-6.373": 0.001707857386998551,
+      "6.764": 1.5696417487161185
+    },
+    "timestamp": "2025-02-07T10:36:47.280298Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(1/(cosh(x)*(x**2 + 1)), x)",
+    "reasoning": "The calculus professor adds a quadratic function to the denominator to complicate the integration process by creating potential for partial fraction decomposition.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "complicate the denominator",
+      "introduce an additional polynomial factor",
+      "embed an extra constant factor that makes the expression less trivial"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:36:49.081058Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(exp(x)/(cosh(x**2)), x)",
+    "reasoning": "The creative mathematician introduces an exponential transformation of x to the hyperbolic cosine, which may lead to unusual substitutions.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "complicate the denominator",
+      "introduce an additional polynomial factor",
+      "embed an extra constant factor that makes the expression less trivial"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:36:46.829157Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate((x + 1)/(cosh(x)), x)",
+    "reasoning": "The student adds a rational function in x, requiring polynomial long division or partial fraction decomposition to solve.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "complicate the denominator",
+      "introduce an additional polynomial factor",
+      "embed an extra constant factor that makes the expression less trivial"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:36:46.866046Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(1/(cosh(x) + sin(x)), x)",
+    "reasoning": "The theoretical physicist incorporates a sine function into the denominator, adding trigonometric complexity.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "complicate the denominator",
+      "introduce an additional polynomial factor",
+      "embed an extra constant factor that makes the expression less trivial"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:36:46.947111Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(1/((cosh(x))*(x**3 + x + 1)), x)",
+    "reasoning": "The engineer introduces a higher order polynomial in x to make the function more practical for numerical integration.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "harder",
+    "transformations_used": [
+      "complicate the denominator",
+      "introduce an additional polynomial factor",
+      "embed an extra constant factor that makes the expression less trivial"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:36:46.965703Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(1/((cosh(x))*(2*x + 3*x**2)), x)",
+    "reasoning": "The number theorist adds an additional factor involving prime numbers, engaging their interest in prime factorization.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "complicate the denominator",
+      "introduce an additional polynomial factor",
+      "embed an extra constant factor that makes the expression less trivial"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:36:46.882022Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(1/(cosh(x)**2 + x), x)",
+    "reasoning": "The geometry enthusiast introduces a square of a hyperbolic cosine function to suggest the need for geometric transformations.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "complicate the denominator",
+      "introduce an additional polynomial factor",
+      "embed an extra constant factor that makes the expression less trivial"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:36:47.352711Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(1/(cosh(x + 1)), x)",
+    "reasoning": "The calculus professor introduces a linear shift in x to explore symmetry and simplification opportunities.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "complicate the denominator",
+      "introduce an additional polynomial factor",
+      "embed an extra constant factor that makes the expression less trivial"
+    ],
+    "solution": "2*atan(tanh(x/2 + 1/2))",
+    "evaluations": {
+      "8.123": 1.5705780070780269,
+      "6.746": 1.5699311766165416,
+      "5.808": 1.5685866869737943
+    },
+    "timestamp": "2025-02-07T10:36:46.982707Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(1/(cosh(x) + arccosh(x)), x)",
+    "reasoning": "The creative mathematician introduces an inverse hyperbolic cosine, producing an interplay of inverse functions.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "harder",
+    "transformations_used": [
+      "complicate the denominator",
+      "introduce an additional polynomial factor",
+      "embed an extra constant factor that makes the expression less trivial"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:36:47.106805Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(1/(2*cosh(x) + e**x), x)",
+    "reasoning": "The theoretical physicist combines hyperbolic and exponential terms to create complexity challenging known identities.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "complicate the denominator",
+      "introduce an additional polynomial factor",
+      "embed an extra constant factor that makes the expression less trivial"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:36:47.261041Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(1/(cosh(x) + x**3), x)",
+    "reasoning": "As a calculus professor, I appreciate the beauty of adding complexity via higher degree terms. Let's include a cubic term in the denominator.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "harder",
+    "transformations_used": [
+      "include a higher degree term",
+      "add a non-linear term",
+      "introduce an additional polynomial factor",
+      "introduce a composite trigonometric function",
+      "complicate the denominator"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:36:47.727997Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(1/(cosh(x**2)), x)",
+    "reasoning": "As a creative mathematician, I enjoy using substitutions that transform the problem into a novel form. Introduce a non-linear term inside the hyperbolic function.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "include a higher degree term",
+      "add a non-linear term",
+      "introduce an additional polynomial factor",
+      "introduce a composite trigonometric function",
+      "complicate the denominator"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:36:48.445419Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(log(x)/(cosh(x)), x)",
+    "reasoning": "As an engineer, practical approaches often involve combined functions. Introduce a logarithm in the numerator to complicate calculations.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "include a higher degree term",
+      "add a non-linear term",
+      "introduce an additional polynomial factor",
+      "introduce a composite trigonometric function",
+      "complicate the denominator"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:36:47.552043Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate((3/2) / (5*cosh(x)), x)",
+    "reasoning": "As a number theorist, adding rational coefficients brings a new flavor. Multiple each term by a rational number.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "include a higher degree term",
+      "add a non-linear term",
+      "introduce an additional polynomial factor",
+      "introduce a composite trigonometric function",
+      "complicate the denominator"
+    ],
+    "solution": "3*atan(tanh(x/2))/5",
+    "evaluations": {
+      "3.564": 0.4542535675941931,
+      "9.937": 0.4712098790768615,
+      "4.439": 0.46415357094538573
+    },
+    "timestamp": "2025-02-07T10:36:48.017416Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(1/(cosh(x)*cos(x)), x)",
+    "reasoning": "As a geometry enthusiast, composite trigonometric functions intrigue me. Blend trigonometric and hyperbolic functions.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "include a higher degree term",
+      "add a non-linear term",
+      "introduce an additional polynomial factor",
+      "introduce a composite trigonometric function",
+      "complicate the denominator"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:36:47.414747Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(1/(cosh(x) + e**x), x)",
+    "reasoning": "As an abstract mathematician, combining different domains brings challenge. Inject an exponential function to diversify the denominator.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "include a higher degree term",
+      "add a non-linear term",
+      "introduce an additional polynomial factor",
+      "introduce a composite trigonometric function",
+      "complicate the denominator"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:36:48.268455Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(1/(7*cosh(x)), x)",
+    "reasoning": "As a number theorist, linking integrals to number properties is fascinating. Incorporate an additional prime number factor in the denominator.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "include a higher degree term",
+      "add a non-linear term",
+      "introduce an additional polynomial factor",
+      "introduce a composite trigonometric function",
+      "complicate the denominator"
+    ],
+    "solution": "2*atan(tanh(x/2))/7",
+    "evaluations": {
+      "-0.153": -0.021771751409009686,
+      "3.793": 0.2179626027900898,
+      "6.873": 0.22410363115128545
+    },
+    "timestamp": "2025-02-07T10:36:47.513005Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(1/(cosh(x) + x^4), x)",
+    "reasoning": "As an engineer using computational approaches, adding a polynomial may offer practical difficulty. Apply a polynomial in the denominator.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "include a higher degree term",
+      "add a non-linear term",
+      "introduce an additional polynomial factor",
+      "introduce a composite trigonometric function",
+      "complicate the denominator"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:36:47.610819Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(x**2 / cosh(x), x)",
+    "reasoning": "As a calculus professor, I like to explore integrals by adding a polynomial term to increase complexity. Here, multiplying by a quadratic x^2 term should make it more interesting.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "introduce an additional polynomial factor",
+      "include a higher degree term",
+      "add a product of functions",
+      "increase the exponent",
+      "insert a logarithmic factor"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:36:47.996843Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(sin(x) / cosh(x), x)",
+    "reasoning": "From a creative mathematician's perspective, incorporating a sine function introduces more interaction between hyperbolic and trigonometric identities.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "introduce an additional polynomial factor",
+      "include a higher degree term",
+      "add a product of functions",
+      "increase the exponent",
+      "insert a logarithmic factor"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:36:47.498816Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(1 / (cosh(x) * (1 + x)), x)",
+    "reasoning": "As a student, I aim to become proficient with rationals, so I add an extra rational term to the integrand.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "introduce an additional polynomial factor",
+      "include a higher degree term",
+      "add a product of functions",
+      "increase the exponent",
+      "insert a logarithmic factor"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:36:47.358943Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(exp(-x) / cosh(x), x)",
+    "reasoning": "As a theoretical physicist, exponential functions are intriguing, especially when combined with hyperbolic functions, adding an extra layer of computation.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "introduce an additional polynomial factor",
+      "include a higher degree term",
+      "add a product of functions",
+      "increase the exponent",
+      "insert a logarithmic factor"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:36:47.600829Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(x**3 / cosh(x), x)",
+    "reasoning": "As an engineer, practical and higher-order polynomial computations are crucial, hence adding a cubic x^3 term complicates the real-world applicability.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "introduce an additional polynomial factor",
+      "include a higher degree term",
+      "add a product of functions",
+      "increase the exponent",
+      "insert a logarithmic factor"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:36:47.315115Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate((1 + sqrt(2)) / cosh(x), x)",
+    "reasoning": "As a number theorist, rational coefficients remind me of number patterns. Introducing (1 + sqrt(2)) as a factor interests me.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "introduce an additional polynomial factor",
+      "include a higher degree term",
+      "add a product of functions",
+      "increase the exponent",
+      "insert a logarithmic factor"
+    ],
+    "solution": "2*(1 + sqrt(2))*atan(tanh(x/2))",
+    "evaluations": {
+      "-7.963": -3.7905575152828312,
+      "3.708": 3.673781343480181,
+      "4.369": 3.7310891852495667
+    },
+    "timestamp": "2025-02-07T10:36:47.423055Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(1 / cosh(2*x), x)",
+    "reasoning": "A geometry enthusiast focuses on transformations; applying a linear transformation like 2x shifts the perspective.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "introduce an additional polynomial factor",
+      "include a higher degree term",
+      "add a product of functions",
+      "increase the exponent",
+      "insert a logarithmic factor"
+    ],
+    "solution": "atan(tanh(x))",
+    "evaluations": {
+      "-2.292": -0.7751886663113611,
+      "0.9": 0.6214207205979669,
+      "7.985": 0.785398047440346
+    },
+    "timestamp": "2025-02-07T10:36:47.953468Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(log(x) / cosh(x), x)",
+    "reasoning": "Exploring logarithms speaks to the creative mathematician, blending transcendental and hyperbolic functions complexity.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "introduce an additional polynomial factor",
+      "include a higher degree term",
+      "add a product of functions",
+      "increase the exponent",
+      "insert a logarithmic factor"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:36:47.800843Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(sinh(x) / cosh(x), x)",
+    "reasoning": "Introducing hyperbolic sine adds another hyperbolic dimension, intriguing for theoretical exploration.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "easier",
+    "transformations_used": [
+      "introduce an additional polynomial factor",
+      "include a higher degree term",
+      "add a product of functions",
+      "increase the exponent",
+      "insert a logarithmic factor"
+    ],
+    "solution": "log(cosh(x))",
+    "evaluations": {
+      "-7.836": 7.143298947144822,
+      "-9.061": 8.36747559875375,
+      "-0.921": 0.37476727541937355
+    },
+    "timestamp": "2025-02-07T10:36:48.249631Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate((1 + x) / cosh(x), x)",
+    "reasoning": "Adding a constant term with hyperbolic cosine investigates limits and behaviors at infinity, appealing to a calculus aficionado.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "introduce an additional polynomial factor",
+      "include a higher degree term",
+      "add a product of functions",
+      "increase the exponent",
+      "insert a logarithmic factor"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:36:48.226641Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(x^2 / cosh(x), x)",
+    "reasoning": "I am a creative mathematician who enjoys unusual substitutions. Introducing an additional polynomial factor can make an interesting complication.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "insert a logarithmic factor",
+      "increase the exponent",
+      "complicate the denominator",
+      "introduce an additional polynomial factor",
+      "embed an extra constant factor that makes the expression less trivial"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:36:47.771744Z"
+  },
+  {
+    "original": "integrate(1/(cosh(x)), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(1 / (cosh(x) * (1 + sinh(x)^2)), x)",
+    "reasoning": "As a student who prefers working with rational functions, complicating the denominator by making it a polynomial in terms of \\(\\sinh(x)\\) adds depth to the problem.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "harder",
+    "transformations_used": [
+      "insert a logarithmic factor",
+      "increase the exponent",
+      "complicate the denominator",
+      "introduce an additional polynomial factor",
+      "embed an extra constant factor that makes the expression less trivial"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:36:48.329545Z"
+  }
+]

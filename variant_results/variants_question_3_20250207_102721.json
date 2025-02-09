@@ -1,0 +1,1268 @@
+[
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(u*v.diff(x) - integrate(v.diff(x)*u, x)",
+    "reasoning": "As a calculus professor, I love using integration by parts, which simplifies integrals involving products of polynomials and exponentials.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "change a function to a different one",
+      "exchange similar functions (e.g., sin to cos)",
+      "rearrange the order of terms",
+      "modify an exponent slightly",
+      "factor common terms differently"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:26:27.262009Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(exp(log(x**2) + x), x)",
+    "reasoning": "As a creative mathematician, let's perform a substitution that simplifies the product into a single exponential component.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "change a function to a different one",
+      "exchange similar functions (e.g., sin to cos)",
+      "rearrange the order of terms",
+      "modify an exponent slightly",
+      "factor common terms differently"
+    ],
+    "solution": "(x**2 - 2*x + 2)*exp(x)",
+    "evaluations": {
+      "-9.269": 0.010039919789408987,
+      "-1.932": 1.3903331304827644,
+      "1.303": 4.020435197766065
+    },
+    "timestamp": "2025-02-07T10:26:26.830723Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate((x**2) * exp(x), x)",
+    "reasoning": "As a student, I prefer breaking the polynomial and handling terms separately.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "change a function to a different one",
+      "exchange similar functions (e.g., sin to cos)",
+      "rearrange the order of terms",
+      "modify an exponent slightly",
+      "factor common terms differently"
+    ],
+    "solution": "(x**2 - 2*x + 2)*exp(x)",
+    "evaluations": {
+      "-0.182": 1.9982370905793183,
+      "-1.29": 1.7189758990907968,
+      "9.537": 1024741.1225311847
+    },
+    "timestamp": "2025-02-07T10:26:26.835073Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(c*exp(a*x), x)",
+    "reasoning": "As an engineer, I'll utilize a formulaic approach to compute the integral directly.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "easier",
+    "transformations_used": [
+      "change a function to a different one",
+      "exchange similar functions (e.g., sin to cos)",
+      "rearrange the order of terms",
+      "modify an exponent slightly",
+      "factor common terms differently"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:26:26.938745Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate((1/1)*x**2*exp(x), x)",
+    "reasoning": "As a number theorist, I'm intrigued by rational coefficients and apply a simple constant reformation.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "change a function to a different one",
+      "exchange similar functions (e.g., sin to cos)",
+      "rearrange the order of terms",
+      "modify an exponent slightly",
+      "factor common terms differently"
+    ],
+    "solution": "(x**2 - 2*x + 2)*exp(x)",
+    "evaluations": {
+      "-4.932": 0.26091453417586574,
+      "-5.335": 0.19826482547491664,
+      "-3.628": 0.5957266581680271
+    },
+    "timestamp": "2025-02-07T10:26:26.998683Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate((g**2 * exp(g)).subs(g, x)",
+    "reasoning": "As a geometry enthusiast, let's think of x**2 as a transformation of x, impacting the shape of exp(x).",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "change a function to a different one",
+      "exchange similar functions (e.g., sin to cos)",
+      "rearrange the order of terms",
+      "modify an exponent slightly",
+      "factor common terms differently"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:26:27.076906Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(((x**3)/(x)) * exp(x), x)",
+    "reasoning": "As a creative mathematician, I'll rewrite x**2 with a different but equivalent form for fun.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "change a function to a different one",
+      "exchange similar functions (e.g., sin to cos)",
+      "rearrange the order of terms",
+      "modify an exponent slightly",
+      "factor common terms differently"
+    ],
+    "solution": "(x**2 - 2*x + 2)*exp(x)",
+    "evaluations": {
+      "-2.657": 1.0082421663940295,
+      "0.889": 2.4629560694144406,
+      "-6.951": 0.06152109089020346
+    },
+    "timestamp": "2025-02-07T10:26:26.842703Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate((sin(pi/2)**2 * (x**2) + cos(pi/2)**2 * (x**2)) * exp(x), x)",
+    "reasoning": "As a theoretical physicist, consider using a trigonometric ratio to express part of the polynomial.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "change a function to a different one",
+      "exchange similar functions (e.g., sin to cos)",
+      "rearrange the order of terms",
+      "modify an exponent slightly",
+      "factor common terms differently"
+    ],
+    "solution": "(x**2 - 2*x + 2)*exp(x)",
+    "evaluations": {
+      "-9.507": 0.008279511233884217,
+      "-1.493": 1.6211372693797412,
+      "-7.719": 0.03423374900882944
+    },
+    "timestamp": "2025-02-07T10:26:35.304589Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate((x**2 + 2*x) * exp(x), x)",
+    "reasoning": "As a calculus professor, I want to simplify the function a bit while keeping the integration basic. Therefore, I replace x^2 with a similar polynomial degree term, such as (x^2 + 2x).",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "easier",
+    "transformations_used": [
+      "change coefficient values slightly",
+      "modify an exponent slightly",
+      "rewrite the integrand in a different form without changing overall complexity",
+      "change a function to an easier one",
+      "substitute equivalent exponential forms"
+    ],
+    "solution": "x**2*exp(x)",
+    "evaluations": {
+      "1.374": 7.455546670099101,
+      "2.259": 48.89925601130768,
+      "6.405": 24813.313963727076
+    },
+    "timestamp": "2025-02-07T10:26:35.314073Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(x * (x + 1) * exp(x), x)",
+    "reasoning": "As a creative mathematician, I'm fond of non-standard substitutions. Let\u2019s factor x out for another similar degree polynomial.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "change coefficient values slightly",
+      "modify an exponent slightly",
+      "rewrite the integrand in a different form without changing overall complexity",
+      "change a function to an easier one",
+      "substitute equivalent exponential forms"
+    ],
+    "solution": "(x**2 - x + 1)*exp(x)",
+    "evaluations": {
+      "5.965": 11933.859927093848,
+      "-5.711": 0.13013449247586445,
+      "0.371": 1.111251460750524
+    },
+    "timestamp": "2025-02-07T10:27:19.803016Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate((x**2 + (1/2) - (1/2)) * exp(x), x)",
+    "reasoning": "As a student enjoying rational functions, I like adding and subtracting fractions that equal integers to practice partial fractions.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "change coefficient values slightly",
+      "modify an exponent slightly",
+      "rewrite the integrand in a different form without changing overall complexity",
+      "change a function to an easier one",
+      "substitute equivalent exponential forms"
+    ],
+    "solution": "(x**2 - 2*x + 2)*exp(x)",
+    "evaluations": {
+      "1.823": 10.380409748530674,
+      "7.49": 77219.59414702759,
+      "4.391": 1008.5531042906598
+    },
+    "timestamp": "2025-02-07T10:27:19.171556Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(x**2 * (exp(x) + exp(-x))/2, x)",
+    "reasoning": "As a theoretical physicist, I find beauty in hyperbolic substitutions, so I use hyperbolic cos and sin, which are exponential forms.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "change coefficient values slightly",
+      "modify an exponent slightly",
+      "rewrite the integrand in a different form without changing overall complexity",
+      "change a function to an easier one",
+      "substitute equivalent exponential forms"
+    ],
+    "solution": "(-2*x**2 - 4*x - 4)*exp(-x)/4 + (2*x**2 - 4*x + 4)*exp(x)/4",
+    "evaluations": {
+      "8.467": 134883.80981545962,
+      "5.177": 1633.5012475231865,
+      "-6.482": -10136.364116954273
+    },
+    "timestamp": "2025-02-07T10:27:19.566313Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(x**2 * (1 + x), x)",
+    "reasoning": "As an engineer, I often use linear approximations for practical computations. Let\u2019s approximate the exponential function with its linear series expansion.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "easier",
+    "transformations_used": [
+      "change coefficient values slightly",
+      "modify an exponent slightly",
+      "rewrite the integrand in a different form without changing overall complexity",
+      "change a function to an easier one",
+      "substitute equivalent exponential forms"
+    ],
+    "solution": "x**4/4 + x**3/3",
+    "evaluations": {
+      "-1.385": 0.03468149702737601,
+      "9.555": 2374.41879457988,
+      "-7.798": 766.470240838281
+    },
+    "timestamp": "2025-02-07T10:27:19.550868Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate((x**2 + 3) * exp(x), x)",
+    "reasoning": "As a number theorist, I prefer working with prime numbers to explore distinct behavior; thus, I'm adding a constant prime number to spice things up.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "change coefficient values slightly",
+      "modify an exponent slightly",
+      "rewrite the integrand in a different form without changing overall complexity",
+      "change a function to an easier one",
+      "substitute equivalent exponential forms"
+    ],
+    "solution": "(x**2 - 2*x + 5)*exp(x)",
+    "evaluations": {
+      "-9.618": 0.007766008693732045,
+      "0.608": 7.62924728817687,
+      "-0.866": 3.147695015035498
+    },
+    "timestamp": "2025-02-07T10:27:19.462049Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate((x + 1)**2 * exp(x), x)",
+    "reasoning": "As a geometry enthusiast, transforming to a shifted perspective enriches the view, like changing variables slightly.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "change coefficient values slightly",
+      "modify an exponent slightly",
+      "rewrite the integrand in a different form without changing overall complexity",
+      "change a function to an easier one",
+      "substitute equivalent exponential forms"
+    ],
+    "solution": "(x**2 + 1)*exp(x)",
+    "evaluations": {
+      "-2.839": 0.5298426869360585,
+      "8.662": 439540.8448123712,
+      "-3.061": 0.48580411730079676
+    },
+    "timestamp": "2025-02-07T10:27:19.714606Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(1.01 * x**2 * exp(x), x)",
+    "reasoning": "As a calculus professor, I introduce a very small coefficient to explore sensitivity to substitution in near-identity forms.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "change coefficient values slightly",
+      "modify an exponent slightly",
+      "rewrite the integrand in a different form without changing overall complexity",
+      "change a function to an easier one",
+      "substitute equivalent exponential forms"
+    ],
+    "solution": "1.0*(1.01*x**2 - 2.02*x + 2.02)*exp(x)",
+    "evaluations": {
+      "-8.834": 0.014376110487249294,
+      "4.044": 591.9820290781147,
+      "7.94": 139315.93327833086
+    },
+    "timestamp": "2025-02-07T10:27:21.837973Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate((x**2 + 22/7) * exp(x), x)",
+    "reasoning": "As a number theorist intrigued by rational expressions, using a nearby rational coefficient introduces a subtle complexity.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "change coefficient values slightly",
+      "modify an exponent slightly",
+      "rewrite the integrand in a different form without changing overall complexity",
+      "change a function to an easier one",
+      "substitute equivalent exponential forms"
+    ],
+    "solution": "(7*x**2 - 14*x + 36)*exp(x)/7",
+    "evaluations": {
+      "5.709": 7939.247636971724,
+      "8.431": 272312.59855794784,
+      "-8.551": 0.01843845379393983
+    },
+    "timestamp": "2025-02-07T10:27:18.969456Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(\"x**2*exp(x)\", x)",
+    "reasoning": "As a calculus professor, I appreciate utilizing integration by parts to simplify this integral. Using \\(u = x^2\\) and \\(dv = e^x dx\\).",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "change a function to a different one",
+      "rewrite using different logarithmic properties",
+      "change a function to an easier one"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:27:19.740943Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(\"x**2 * (1 + x)\", x)",
+    "reasoning": "As a student fond of polynomials, I'll expand functions and break them into simpler components. Let's consider the first two terms of the Taylor series expansion of \\( e^x \\).",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "easier",
+    "transformations_used": [
+      "change a function to a different one",
+      "rewrite using different logarithmic properties",
+      "change a function to an easier one"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:27:19.586967Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(\"x**2 * (1 + x + (x**2)/2)\", x)",
+    "reasoning": "As a theoretical physicist, I favor trigonometric and exponential forms. By expressing the exponent as a Taylor series, I simplify the behavior of the integral.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "easier",
+    "transformations_used": [
+      "change a function to a different one",
+      "rewrite using different logarithmic properties",
+      "change a function to an easier one"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:27:19.703835Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(\"x**2 * (1 + x + x**2/2 + x**3/6)\", x)",
+    "reasoning": "As a number theorist, I'm interested in integral forms involving rational coefficients and their properties.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "easier",
+    "transformations_used": [
+      "change a function to a different one",
+      "rewrite using different logarithmic properties",
+      "change a function to an easier one"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:27:19.881292Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(\"((x-1)**2 + 2*(x-1) + 1) * exp(x-1)\", x)",
+    "reasoning": "As a geometry enthusiast, I'll consider geometric transformations. Using the scaled exponential function, I reframe the variable with a shift.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "change a function to a different one",
+      "rewrite using different logarithmic properties",
+      "change a function to an easier one"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:27:19.505820Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(\"x**2 * (sum((x**n)/factorial(n) for n in range(5)))\", x)",
+    "reasoning": "As a creative mathematician seeking simplicity, define a helper function for \\( e^x \\) that estimates its antiderivative.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "easier",
+    "transformations_used": [
+      "change a function to a different one",
+      "rewrite using different logarithmic properties",
+      "change a function to an easier one"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:27:19.468397Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(\"x**2 * exp(x) * cos(0)\", x)",
+    "reasoning": "As a theoretical physicist, I sometimes consider the Laplace transform of functions for practical computations.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "easier",
+    "transformations_used": [
+      "change a function to a different one",
+      "rewrite using different logarithmic properties",
+      "change a function to an easier one"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:27:19.528390Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(x**2*exp(x), x)",
+    "reasoning": "As a calculus professor, I love elegant simplifications. By integrating by parts, one can simplify \\( \\int x^n e^x \\, dx \\) in terms of known simpler integrals.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "adjust parameters while keeping the integral equivalent",
+      "rewrite using different logarithmic properties",
+      "change coefficient values slightly",
+      "distribute terms differently",
+      "change a function to an easier one"
+    ],
+    "solution": "(x**2 - 2*x + 2)*exp(x)",
+    "evaluations": {
+      "-8.226": 0.023041880108371826,
+      "-3.609": 0.6024683342150519,
+      "-9.298": 0.009809590707287607
+    },
+    "timestamp": "2025-02-07T10:27:19.230700Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(x**2 * exp(x), x)",
+    "reasoning": "As a student who prefers working with polynomials, using derivatives and known polynomial-antiderivative pairs help reduce complexity.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "adjust parameters while keeping the integral equivalent",
+      "rewrite using different logarithmic properties",
+      "change coefficient values slightly",
+      "distribute terms differently",
+      "change a function to an easier one"
+    ],
+    "solution": "(x**2 - 2*x + 2)*exp(x)",
+    "evaluations": {
+      "9.876": 1553055.1575573478,
+      "-1.178": 1.768326851811572,
+      "-5.413": 0.18774588107078014
+    },
+    "timestamp": "2025-02-07T10:27:19.540558Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(2*x*exp(x) - exp(x), x)",
+    "reasoning": "As an engineer, computing the integral iteratively using numerical approximation or parts is practical.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "adjust parameters while keeping the integral equivalent",
+      "rewrite using different logarithmic properties",
+      "change coefficient values slightly",
+      "distribute terms differently",
+      "change a function to an easier one"
+    ],
+    "solution": "(2*x - 3)*exp(x)",
+    "evaluations": {
+      "-1.645": -1.2141134078679292,
+      "4.493": 535.1338656682814,
+      "9.932": 347058.961317683
+    },
+    "timestamp": "2025-02-07T10:27:19.575147Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate((1 + (1/2)*x**2)*exp(x), x)",
+    "reasoning": "As a number theorist, exploration with exponents and rational coefficients leads to new insights.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "easier",
+    "transformations_used": [
+      "adjust parameters while keeping the integral equivalent",
+      "rewrite using different logarithmic properties",
+      "change coefficient values slightly",
+      "distribute terms differently",
+      "change a function to an easier one"
+    ],
+    "solution": "(x**2 - 2*x + 4)*exp(x)/2",
+    "evaluations": {
+      "6.502": 11092.585324293414,
+      "7.393": 35645.07547174907,
+      "4.727": 953.4505478444383
+    },
+    "timestamp": "2025-02-07T10:27:20.040129Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate((i*x**2)*exp(i*x), x)",
+    "reasoning": "As a creative mathematician favoring substitutions, using symmetry in exponential forms allows exploration of imaginary components.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "adjust parameters while keeping the integral equivalent",
+      "rewrite using different logarithmic properties",
+      "change coefficient values slightly",
+      "distribute terms differently",
+      "change a function to an easier one"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:27:19.601613Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "equivalent",
+    "variant": "integrate(x**2 * (1 + x + x**2/2), x)",
+    "reasoning": "As a student who loves polynomials, I'd expand \\( e^x \\) using its Taylor series up to the second degree, which makes the polynomial form more apparent.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "easier",
+    "transformations_used": [
+      "rewrite the integrand in a different form without changing overall complexity",
+      "rewrite using different logarithmic properties",
+      "change a function to a different one"
+    ],
+    "solution": "x**5/10 + x**4/4 + x**3/3",
+    "evaluations": {
+      "-2.865": -10.289955999179988,
+      "8.106": 4756.514355629808,
+      "6.841": 2152.4115752287794
+    },
+    "timestamp": "2025-02-07T10:27:20.021722Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate((x**2 + 2*x)*exp(x), x)",
+    "reasoning": "As a calculus professor, I appreciate the beauty of integration by parts. By adding a linear term, we can apply the method more intricately.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "easier",
+    "transformations_used": [
+      "embed an extra constant factor that makes the expression less trivial",
+      "add a product of functions",
+      "complicate the denominator",
+      "introduce a composite trigonometric function",
+      "insert a logarithmic factor"
+    ],
+    "solution": "x**2*exp(x)",
+    "evaluations": {
+      "1.385": 7.660060279194564,
+      "9.878": 1903209.3834600074,
+      "-4.087": 0.2803971074662789
+    },
+    "timestamp": "2025-02-07T10:27:20.560993Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(x**2*exp(x)*log(x+1), x)",
+    "reasoning": "As a creative mathematician, I delight in unusual substitutions. Introducing a logarithmic factor can add complexity and depth.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "embed an extra constant factor that makes the expression less trivial",
+      "add a product of functions",
+      "complicate the denominator",
+      "introduce a composite trigonometric function",
+      "insert a logarithmic factor"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:27:18.851360Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate((x**2*exp(x)) / (1 + x**2), x)",
+    "reasoning": "As a student who prefers polynomials and rational functions, I find rational function integrals compelling and aesthetically challenging.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "embed an extra constant factor that makes the expression less trivial",
+      "add a product of functions",
+      "complicate the denominator",
+      "introduce a composite trigonometric function",
+      "insert a logarithmic factor"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:27:18.980606Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(x**2*exp(x)*sin(x), x)",
+    "reasoning": "As a theoretical physicist, I often use trigonometric and exponential functions. Composing these forms elevates the integral's complexity.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "embed an extra constant factor that makes the expression less trivial",
+      "add a product of functions",
+      "complicate the denominator",
+      "introduce a composite trigonometric function",
+      "insert a logarithmic factor"
+    ],
+    "solution": "x**2*exp(x)*sin(x)/2 - x**2*exp(x)*cos(x)/2 + x*exp(x)*cos(x) - exp(x)*sin(x)/2 - exp(x)*cos(x)/2",
+    "evaluations": {
+      "7.222": 12613.709331975457,
+      "-2.947": 0.36219371531939326,
+      "3.49": 32.906911820944046
+    },
+    "timestamp": "2025-02-07T10:27:19.039840Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(x**2*exp(x) + exp(x**2), x)",
+    "reasoning": "As an engineer focused on practicality, including mixed exponential and polynomial terms in a single integrand enhances computational challenge.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "embed an extra constant factor that makes the expression less trivial",
+      "add a product of functions",
+      "complicate the denominator",
+      "introduce a composite trigonometric function",
+      "insert a logarithmic factor"
+    ],
+    "solution": "x**2*exp(x) - 2*x*exp(x) + 2*exp(x) + sqrt(pi)*erfi(x)/2",
+    "evaluations": {
+      "-5.715": -13636648922230.27,
+      "-4.703": -438416509.5338531,
+      "7.178": 1.6638444097147744e+21
+    },
+    "timestamp": "2025-02-07T10:27:19.030880Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(3*x**2*exp(5*x), x)",
+    "reasoning": "As a number theorist, adding prime-related coefficients injects a unique difficulty and fascination.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "embed an extra constant factor that makes the expression less trivial",
+      "add a product of functions",
+      "complicate the denominator",
+      "introduce a composite trigonometric function",
+      "insert a logarithmic factor"
+    ],
+    "solution": "(75*x**2 - 30*x + 6)*exp(5*x)/125",
+    "evaluations": {
+      "4.909": 609743175773.9712,
+      "5.695": 42148210093395.22,
+      "-9.235": 4.721247488305002e-19
+    },
+    "timestamp": "2025-02-07T10:27:19.071405Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate((2*x + 1)**2 * exp(x), x)",
+    "reasoning": "As a geometry enthusiast, transformations such as scaling and shifting can reveal new insights about the integral's structure.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "embed an extra constant factor that makes the expression less trivial",
+      "add a product of functions",
+      "complicate the denominator",
+      "introduce a composite trigonometric function",
+      "insert a logarithmic factor"
+    ],
+    "solution": "(4*x**2 - 4*x + 5)*exp(x)",
+    "evaluations": {
+      "-1.784": 4.177199476211469,
+      "-6.025": 0.42128959231054275,
+      "9.188": 2990042.8703946457
+    },
+    "timestamp": "2025-02-07T10:27:19.059794Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(x**2*exp(x)*cosh(x), x)",
+    "reasoning": "As a calculus professor, introducing a hyperbolic function magnifies the variety of functions involved, enhancing the integration process intricacies.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "embed an extra constant factor that makes the expression less trivial",
+      "add a product of functions",
+      "complicate the denominator",
+      "introduce a composite trigonometric function",
+      "insert a logarithmic factor"
+    ],
+    "solution": "-x**3*exp(x)*sinh(x)/6 + x**3*exp(x)*cosh(x)/6 + x**2*exp(x)*sinh(x)/4 + x**2*exp(x)*cosh(x)/4 - x*exp(x)*sinh(x)/4 - x*exp(x)*cosh(x)/4 + exp(x)*sinh(x)/4",
+    "evaluations": {
+      "1.018": 1.0418105976429164,
+      "-1.169": -0.31825748482277644,
+      "-5.118": -22.464441831854653
+    },
+    "timestamp": "2025-02-07T10:27:18.906367Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate((x**2*exp(x))/sqrt(x + 2), x)",
+    "reasoning": "As a creative mathematician, mixing a rational expression with exponential growth spawns a personally satisfying puzzle.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "embed an extra constant factor that makes the expression less trivial",
+      "add a product of functions",
+      "complicate the denominator",
+      "introduce a composite trigonometric function",
+      "insert a logarithmic factor"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:27:18.978072Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(x**2*exp(x)*cos(x)*x**2, x)",
+    "reasoning": "As a student drawn to interacting polynomial and trigonometric functions, the added products create layers of complexity.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "embed an extra constant factor that makes the expression less trivial",
+      "add a product of functions",
+      "complicate the denominator",
+      "introduce a composite trigonometric function",
+      "insert a logarithmic factor"
+    ],
+    "solution": "x**4*exp(x)*sin(x)/2 + x**4*exp(x)*cos(x)/2 - 2*x**3*exp(x)*sin(x) + 3*x**2*exp(x)*sin(x) - 3*x**2*exp(x)*cos(x) + 6*x*exp(x)*cos(x) - 3*exp(x)*sin(x) - 3*exp(x)*cos(x)",
+    "evaluations": {
+      "0.719": -2.9423913926998146,
+      "7.266": 1942653.0930470764,
+      "6.189": 299946.31491409364
+    },
+    "timestamp": "2025-02-07T10:27:19.083624Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(x**2 * exp(x) * sin(x), x)",
+    "reasoning": "As a calculus professor, adding a trigonometric component might make the integral tougher and require integration by parts cleverly combined with trigonometric integrals.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "increase the exponent",
+      "complicate the denominator",
+      "embed an extra constant factor that makes the expression less trivial"
+    ],
+    "solution": "x**2*exp(x)*sin(x)/2 - x**2*exp(x)*cos(x)/2 + x*exp(x)*cos(x) - exp(x)*sin(x)/2 - exp(x)*cos(x)/2",
+    "evaluations": {
+      "7.125": 7558.956706545841,
+      "-2.707": 0.3270732832732846,
+      "-2.177": 0.15160296886838837
+    },
+    "timestamp": "2025-02-07T10:27:19.515199Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(x**5 * exp(x), x)",
+    "reasoning": "A creative mathematician might include a polynomial raised to a higher power, increasing the complexity and the cascading integrations by parts.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "increase the exponent",
+      "complicate the denominator",
+      "embed an extra constant factor that makes the expression less trivial"
+    ],
+    "solution": "(x**5 - 5*x**4 + 20*x**3 - 60*x**2 + 120*x - 120)*exp(x)",
+    "evaluations": {
+      "-0.249": -119.99996753517846,
+      "4.396": 58495.24418525923,
+      "-9.009": -13.814655964644352
+    },
+    "timestamp": "2025-02-07T10:27:19.163084Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(x**2 * exp(x) / (x + 1), x)",
+    "reasoning": "As a student comfortable with rational functions, coupling the polynomial with a fraction will add the need for partial fraction decomposition in addition to integration by parts.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "increase the exponent",
+      "complicate the denominator",
+      "embed an extra constant factor that makes the expression less trivial"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:27:19.678829Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(x**2 * exp(x) * cos(x), x)",
+    "reasoning": "The theoretical physicist persona would explore exponential growth compounded with periodicity to find connections between advanced functions.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "increase the exponent",
+      "complicate the denominator",
+      "embed an extra constant factor that makes the expression less trivial"
+    ],
+    "solution": "x**2*exp(x)*sin(x)/2 + x**2*exp(x)*cos(x)/2 - x*exp(x)*sin(x) + exp(x)*sin(x)/2 - exp(x)*cos(x)/2",
+    "evaluations": {
+      "1.293": 0.4854214647473322,
+      "7.93": 60013.58949621625,
+      "2.712": -34.279764165857465
+    },
+    "timestamp": "2025-02-07T10:27:20.295754Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(x**2 * exp(x) * log(x), x)",
+    "reasoning": "An engineer might appreciate introducing practical complexity with a logarithmic term, simulating real-world engineering problems.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "increase the exponent",
+      "complicate the denominator",
+      "embed an extra constant factor that makes the expression less trivial"
+    ],
+    "solution": "-x*exp(x) + (x**2*exp(x) - 2*x*exp(x) + 2*exp(x))*log(x) + 3*exp(x) - 2*Ei(x)",
+    "evaluations": {
+      "1.335": 1.9070163502690722,
+      "0.067": 1.8452530813547465,
+      "8.402": 503615.4596060095
+    },
+    "timestamp": "2025-02-07T10:27:19.022260Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(x**3 * exp(x), x)",
+    "reasoning": "A number theorist might complicate the expression by introducing prime number powers.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "increase the exponent",
+      "complicate the denominator",
+      "embed an extra constant factor that makes the expression less trivial"
+    ],
+    "solution": "(x**3 - 3*x**2 + 6*x - 6)*exp(x)",
+    "evaluations": {
+      "5.55": 27239.01442296826,
+      "6.954": 237739.37653138099,
+      "-9.879": -0.06772618408285848
+    },
+    "timestamp": "2025-02-07T10:27:19.354311Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(sqrt(x) * x**2 * exp(x), x)",
+    "reasoning": "A geometry enthusiast might introduce a geometric transformation by including a rotated axis term, adding a square root to complicate the analysis.",
+    "variant_response": null,
+    "verification_passed": false,
+    "evaluation": "harder",
+    "transformations_used": [
+      "increase the exponent",
+      "complicate the denominator",
+      "embed an extra constant factor that makes the expression less trivial"
+    ],
+    "solution": null,
+    "evaluations": {},
+    "timestamp": "2025-02-07T10:27:19.387045Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate((3*x)**2 * exp(3*x), x)",
+    "reasoning": "A calculus professor might encourage a stretch transformation to the variable, introducing a new constant to the variable fixed in the exponent.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "increase the exponent",
+      "complicate the denominator",
+      "embed an extra constant factor that makes the expression less trivial"
+    ],
+    "solution": "(9*x**2 - 6*x + 2)*exp(3*x)/3",
+    "evaluations": {
+      "9.705": 1164099380030959.8,
+      "6.012": 6599159849.955964,
+      "9.88": 2043107894841894.0
+    },
+    "timestamp": "2025-02-07T10:27:19.370192Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(x**2 * exp(x) * exp(2*x), x)",
+    "reasoning": "This creative mathematician would mix exponential bases different from 'e', challenging the usual exponential handling techniques.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "increase the exponent",
+      "complicate the denominator",
+      "embed an extra constant factor that makes the expression less trivial"
+    ],
+    "solution": "(9*x**2 - 6*x + 2)*exp(3*x)/27",
+    "evaluations": {
+      "-4.001": 3.854006556352292e-05,
+      "-0.503": 0.05973186941430967,
+      "-8.824": 8.913173017710129e-11
+    },
+    "timestamp": "2025-02-07T10:27:19.267596Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(x**2 * exp(-x) * exp(x), x)",
+    "reasoning": "Lift an engineer's interest in applying realistic scenarios, using a product of exponential functions and a polynomial under a damping factor.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "increase the exponent",
+      "complicate the denominator",
+      "embed an extra constant factor that makes the expression less trivial"
+    ],
+    "solution": "x**3/3",
+    "evaluations": {
+      "-3.522": -14.563643807094845,
+      "-9.292": -267.4620564096807,
+      "1.957": 2.49958612871933
+    },
+    "timestamp": "2025-02-07T10:27:20.090859Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate((x**2 + x**3) * exp(x), x)",
+    "reasoning": "A creative mathematician in me might enjoy using substitution techniques to handle a polynomial trinomial by adding another quadratic term.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "add a non-linear term",
+      "insert a logarithmic factor",
+      "embed an extra constant factor that makes the expression less trivial"
+    ],
+    "solution": "(x**3 - 2*x**2 + 4*x - 4)*exp(x)",
+    "evaluations": {
+      "-7.316": -0.3534982535612343,
+      "4.467": 5499.388881695059,
+      "-2.333": -3.5807210404669427
+    },
+    "timestamp": "2025-02-07T10:27:20.189538Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate((x**2 + x**3 + 1/x) * exp(x), x)",
+    "reasoning": "As a student who prefers polynomials, I like adding a cubic polynomial to increase the complexity of finding antiderivatives involving rational functions.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "add a non-linear term",
+      "insert a logarithmic factor",
+      "embed an extra constant factor that makes the expression less trivial"
+    ],
+    "solution": "x**3*exp(x) - 2*x**2*exp(x) + 4*x*exp(x) - 4*exp(x) + Ei(x)",
+    "evaluations": {
+      "5.935": 59943.098321810496,
+      "6.028": 69206.70807469914,
+      "-0.465": -4.620691959683274
+    },
+    "timestamp": "2025-02-07T10:27:19.725992Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(x**2 * exp(x) * exp(-x/2), x)",
+    "reasoning": "The theoretical physicist in me likes using exponential damping factors, which can require transformations such as integration by parts multiple times.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "add a non-linear term",
+      "insert a logarithmic factor",
+      "embed an extra constant factor that makes the expression less trivial"
+    ],
+    "solution": "(2*x**2 - 8*x + 16)*exp(x/2)",
+    "evaluations": {
+      "5.552": 533.5510654857178,
+      "0.994": 16.47795205397621,
+      "3.254": 56.72650237052932
+    },
+    "timestamp": "2025-02-07T10:27:19.786094Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate((3*x**2 + 5) * exp(x), x)",
+    "reasoning": "As a number theorist, I find prime numbers interesting, so I multiply the integrand by a factor involving prime arithmetic coefficients.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "add a non-linear term",
+      "insert a logarithmic factor",
+      "embed an extra constant factor that makes the expression less trivial"
+    ],
+    "solution": "(3*x**2 - 6*x + 11)*exp(x)",
+    "evaluations": {
+      "0.105": 11.556112641000132,
+      "1.515": 40.015049169204325,
+      "6.386": 56424.141061365954
+    },
+    "timestamp": "2025-02-07T10:27:19.864261Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(((2*x + 1)**2) * exp(x), x)",
+    "reasoning": "As a geometry enthusiast, I think about transformations like translating and scaling x by a linear function, hence introducing some extra complexity.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "add a non-linear term",
+      "insert a logarithmic factor",
+      "embed an extra constant factor that makes the expression less trivial"
+    ],
+    "solution": "(4*x**2 - 4*x + 5)*exp(x)",
+    "evaluations": {
+      "-1.792": 4.167611322180967,
+      "-3.798": 1.7455737960722337,
+      "-1.141": 4.719287482095706
+    },
+    "timestamp": "2025-02-07T10:27:20.107835Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(x**2 * exp(x) * sinh(x), x)",
+    "reasoning": "A creative mathematician may enjoy complicating the function with a hyperbolic function, which requires careful manipulation using their unique properties.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "add a non-linear term",
+      "insert a logarithmic factor",
+      "embed an extra constant factor that makes the expression less trivial"
+    ],
+    "solution": "x**3*exp(x)*sinh(x)/6 - x**3*exp(x)*cosh(x)/6 + x**2*exp(x)*sinh(x)/4 + x**2*exp(x)*cosh(x)/4 - x*exp(x)*sinh(x)/4 - x*exp(x)*cosh(x)/4 + exp(x)*sinh(x)/4",
+    "evaluations": {
+      "1.741": 13.540656484998001,
+      "-8.412": 99.10019302621578,
+      "9.279": 2218866126.0102634
+    },
+    "timestamp": "2025-02-07T10:27:20.266045Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate((x**2 / x**2) * exp(x), x)",
+    "reasoning": "As an engineer, introducing a time-varying factor like an inverse square can make functions useful in fields like electromagnetics more complex to deal with.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "add a non-linear term",
+      "insert a logarithmic factor",
+      "embed an extra constant factor that makes the expression less trivial"
+    ],
+    "solution": "exp(x)",
+    "evaluations": {
+      "-0.449": 0.6380978497421779,
+      "-7.143": 0.0007907222771057196,
+      "-3.844": 0.021402811378268556
+    },
+    "timestamp": "2025-02-07T10:27:19.845034Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(x**3*exp(x), x)",
+    "reasoning": "As a calculus professor, I enjoy adding complexity by introducing products of functions with higher exponents. Let's consider a cubic term to increase computational complexity.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "add a product of functions",
+      "increase the exponent",
+      "introduce an additional polynomial factor",
+      "insert a logarithmic factor",
+      "add a non-linear term"
+    ],
+    "solution": "(x**3 - 3*x**2 + 6*x - 6)*exp(x)",
+    "evaluations": {
+      "4.932": 9779.246771353213,
+      "-3.08": -3.7758031397064045,
+      "-6.927": -0.5140177856941324
+    },
+    "timestamp": "2025-02-07T10:27:19.001816Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate((x**2 + x + 1)*exp(x), x)",
+    "reasoning": "As a student, I like polynomials, so I will add a quadratic polynomial factor to challenge my integral manipulation skills.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "equivalent",
+    "transformations_used": [
+      "add a product of functions",
+      "increase the exponent",
+      "introduce an additional polynomial factor",
+      "insert a logarithmic factor",
+      "add a non-linear term"
+    ],
+    "solution": "(x**2 - x + 2)*exp(x)",
+    "evaluations": {
+      "0.774": 3.9561465904940007,
+      "-7.882": 0.027190010242727675,
+      "2.093": 34.78676162002494
+    },
+    "timestamp": "2025-02-07T10:27:20.169561Z"
+  },
+  {
+    "original": "integrate(x**2*exp(x), x)",
+    "requested_difficulty": "harder",
+    "variant": "integrate(x**2*exp(x)*log(x), x)",
+    "reasoning": "As a theoretical physicist, I find logarithmic complexities intriguing because they lead to interesting transformations.",
+    "variant_response": null,
+    "verification_passed": true,
+    "evaluation": "harder",
+    "transformations_used": [
+      "add a product of functions",
+      "increase the exponent",
+      "introduce an additional polynomial factor",
+      "insert a logarithmic factor",
+      "add a non-linear term"
+    ],
+    "solution": "-x*exp(x) + (x**2*exp(x) - 2*x*exp(x) + 2*exp(x))*log(x) + 3*exp(x) - 2*Ei(x)",
+    "evaluations": {
+      "6.398": 31320.924925851632,
+      "0.077": 1.8451014251604747,
+      "2.305": 17.222834685732508
+    },
+    "timestamp": "2025-02-07T10:27:21.022211Z"
+  }
+]

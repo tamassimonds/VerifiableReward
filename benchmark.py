@@ -27,7 +27,7 @@ import sympy as sp
 import asyncio
 import mpmath as mp  # for numerical integration
 from utils.inference import generate_text  # Ensure this function is available
-from eval_questions import QUESTIONS_INCORRECT as QUESTIONS
+from base_datasets.test_questions import TEST_QUESTIONS as QUESTIONS
 
 # ---------------- Configuration ----------------
 SAVE_INCORRECT_QUESTIONS = True  # Set to True to save a new file with the integrals answered incorrectly.
@@ -331,7 +331,7 @@ def save_correct_questions(results, filename: str):
 
 if __name__ == "__main__":
     async def main():
-        results = await benchmark_integrals(batch_size=30, model="Qwen/Qwen2.5-7B-Instruct")
+        results = await benchmark_integrals(batch_size=100, model="meta-llama/Llama-3.2-3B-Instruct")
         if SAVE_INCORRECT_QUESTIONS:
             save_incorrect_questions(results, INCORRECT_FILENAME)
         
