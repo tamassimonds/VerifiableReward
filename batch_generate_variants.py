@@ -11,11 +11,12 @@ import json
 from datetime import datetime
 from pathlib import Path
 from typing import List, Dict
-from base_questions import BASE_QUESTIONS as QUESTIONS
+from questions.mit_bee_qualifiying_questions import BASE_QUESTIONS as QUESTIONS
 from generate_variants import process_integral
 import random
-BATCH_SIZE = 1  # Number of integrals to process concurrently
-VARIANTS_PER_INTEGRAL = 30  # Number of variants to generate for each integral
+
+BATCH_SIZE = 10  # Number of integrals to process concurrently
+VARIANTS_PER_INTEGRAL = 10  # Number of variants to generate for each integral
 DIFFICULTIES = ["easier", "equivalent"]  # We want easier and equivalent variants
 
 async def process_batch(integrals: List[str]) -> List[Dict]:

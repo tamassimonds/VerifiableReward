@@ -27,7 +27,7 @@ import sympy as sp
 import asyncio
 import mpmath as mp  # for numerical integration
 from utils.inference import generate_text  # Ensure this function is available
-from eval_questions import QUESTIONS_INCORRECT as QUESTIONS
+from questions.mit_bee_qualifiying_questions import BASE_QUESTIONS as QUESTIONS
 
 # ---------------- Configuration ----------------
 SAVE_INCORRECT_QUESTIONS = True  # Set to True to save a new file with the integrals answered incorrectly.
